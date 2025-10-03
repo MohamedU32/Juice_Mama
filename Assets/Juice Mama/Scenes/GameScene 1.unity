@@ -119,6 +119,130 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2529996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2529997}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2529997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529996}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2692912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2692913}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2692913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &34579572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34579573}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34579573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34579572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &47411361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47411362}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &47411362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47411361}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72083928
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +275,37 @@ Transform:
   - {fileID: 1286655626}
   - {fileID: 1819627845}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &89577506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89577507}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &89577507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89577506}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &97237520
 GameObject:
@@ -260,6 +415,130 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97237520}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &115693559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115693560}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115693560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115693559}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &135703622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135703623}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135703623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135703622}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &150998004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150998005}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150998005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150998004}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &151466797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151466798}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &151466798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151466797}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167526071
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +647,130 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167526071}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &168444314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168444315}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168444315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168444314}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &197399870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197399871}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197399871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197399870}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &214828015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214828016}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214828016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214828015}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &278637147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278637148}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278637148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278637147}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &316940198
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +879,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316940198}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &318186408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318186409}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318186409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318186408}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320099529
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +1017,378 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1557935024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &323368392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323368393}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323368393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323368392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &352234168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1155214518}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 115693560}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 318186409}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1303984409}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1140903834}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1002829938}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1984248470}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1015461584}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 761944603}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1155214518}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115693560}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 318186409}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1303984409}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1140903834}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1002829938}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1984248470}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1015461584}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 761944603}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &400463359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400463360}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400463360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400463359}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432889149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432889150}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432889150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432889149}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &443053794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1831591013}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 168444315}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 730871741}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1691684403}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1221980774}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2029729805}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1353971516}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 727771525}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 151466798}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831591013}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168444315}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 730871741}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1691684403}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1221980774}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2029729805}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1353971516}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 727771525}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 151466798}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &451068475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451068476}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451068476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451068475}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502713005
 GameObject:
@@ -692,6 +1498,161 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502713005}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &520955545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1119302625}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 728839816}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2044959010}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1995118430}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2102566823}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1866969339}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1522182071}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1201243509}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1810836754}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119302625}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 728839816}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2044959010}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995118430}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2102566823}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866969339}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1522182071}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1201243509}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1810836754}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &526865194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526865195}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &526865195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526865194}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &529520013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,24 +1663,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: appleSpawnPoints.Array.size
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: 'appleSpawnPoints.Array.data[0]'
       value: 
-      objectReference: {fileID: 1336451090}
+      objectReference: {fileID: 1213359010}
     - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: 'appleSpawnPoints.Array.data[1]'
       value: 
-      objectReference: {fileID: 1416688345}
+      objectReference: {fileID: 89577507}
     - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: 'appleSpawnPoints.Array.data[2]'
       value: 
-      objectReference: {fileID: 735216061}
+      objectReference: {fileID: 1979795307}
     - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: 'appleSpawnPoints.Array.data[3]'
       value: 
-      objectReference: {fileID: 556286843}
+      objectReference: {fileID: 2021328231}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 278637148}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 432889150}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1631447355}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1801485580}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 150998005}
     - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.336414
@@ -769,49 +1750,33 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 556286843}
+      addedObject: {fileID: 1213359010}
     - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 735216061}
+      addedObject: {fileID: 89577507}
     - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1416688345}
+      addedObject: {fileID: 1979795307}
     - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1336451090}
+      addedObject: {fileID: 2021328231}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278637148}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 432889150}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1631447355}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1801485580}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 150998005}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
---- !u!1 &556286842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 556286843}
-  m_Layer: 0
-  m_Name: SpawnPoint4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &556286843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556286842}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.25, y: 0.19, z: -1.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 746068238}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556875075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1993,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560151109}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &566487918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 443053794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577627570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,63 +2106,192 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &686719168
+--- !u!1001 &582605016
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1516119445}
+    m_TransformParent: {fileID: 1419377502}
     m_Modifications:
-    - target: {fileID: 5473569773201198281, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
-      propertyPath: m_Name
-      value: Apple
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2529997}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2089901833}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 526865195}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1921403986}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1971398984}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1590143557}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1617018279}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1402635086}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 197399871}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.336414
+      value: -11.88
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.4976873
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.236529
+      value: 0.0034704208
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2529997}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089901833}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 526865195}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1921403986}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1971398984}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1590143557}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1617018279}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402635086}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 197399871}
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &635102574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635102575}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &635102575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635102574}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &654454166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654454167}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654454167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654454166}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +2497,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719861985}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &735216060
+--- !u!1 &727771524
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1406,28 +2505,90 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 735216061}
+  - component: {fileID: 727771525}
   m_Layer: 0
-  m_Name: SpawnPoint3
+  m_Name: AppleSpawn_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &735216061
+--- !u!4 &727771525
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735216060}
+  m_GameObject: {fileID: 727771524}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -1.4976873, z: -1.45}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 746068238}
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &728839815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 728839816}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &728839816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728839815}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &730871740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730871741}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &730871741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730871740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &746068238 stripped
 Transform:
@@ -1537,11 +2698,42 @@ Transform:
   m_GameObject: {fileID: 758536802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.8, y: 0, z: 0.96}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &761944602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761944603}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761944603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761944602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768615632
 GameObject:
@@ -1759,6 +2951,192 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1557935024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &874500824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874500825}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874500825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874500824}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &901562948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 635102575}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 451068476}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2037432712}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1901449329}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1746596779}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 400463360}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 2130627184}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 47411362}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2097174386}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0034704208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635102575}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 451068476}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037432712}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1901449329}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1746596779}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 400463360}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2130627184}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 47411362}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2097174386}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &930654710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930654711}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930654711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930654710}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +3243,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1292828198}
+--- !u!1 &1002829937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002829938}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1002829938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002829937}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1015461583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015461584}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015461584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015461583}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1073916510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 582605016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1085189328 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 352234168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085714635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +3531,223 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1557935024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119302624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119302625}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1119302625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119302624}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1131613533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 214828016}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 34579573}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1234702942}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2143354543}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1569351843}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1913076586}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 654454167}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 323368393}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1700355957}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0034704208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 214828016}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 34579573}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234702942}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2143354543}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1569351843}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1913076586}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 654454167}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 323368393}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1700355957}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &1140903833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1140903834}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1140903834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140903833}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1155214517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155214518}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1155214518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155214517}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1183891247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +3855,161 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1557935024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1188754668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188754669}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188754669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188754668}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1201243508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201243509}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201243509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201243508}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1213359009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213359010}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213359010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213359009}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1221980773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221980774}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221980774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221980773}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1234702941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234702942}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234702942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234702941}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286655622
 GameObject:
@@ -2418,7 +4240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c445c6fc09d15b4dae2a45eb3b761e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1336451089
+--- !u!1 &1303984408
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2426,29 +4248,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1336451090}
+  - component: {fileID: 1303984409}
   m_Layer: 0
-  m_Name: SpawnPoint1
+  m_Name: AppleSpawn_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1336451090
+--- !u!4 &1303984409
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336451089}
+  m_GameObject: {fileID: 1303984408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.336414, y: 0.4, z: -1.95}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 746068238}
+  m_Father: {fileID: 1085189328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1317042622 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 1519148211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338345872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,7 +4384,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338345872}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1416688344
+--- !u!1 &1353971515
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2565,28 +4392,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1416688345}
+  - component: {fileID: 1353971516}
   m_Layer: 0
-  m_Name: SpawnPoint2
+  m_Name: AppleSpawn_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1416688345
+--- !u!4 &1353971516
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416688344}
+  m_GameObject: {fileID: 1353971515}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.55, y: -1.4976873, z: -1.91}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 746068238}
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402635085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402635086}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402635086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402635085}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419377500
 GameObject:
@@ -2618,7 +4476,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeData: {fileID: 11400000, guid: 56f6fe176bc006743aa0fe4bea66646a, type: 2}
-  appleSpawnPoints: []
+  appleSpawnPoints:
+  - {fileID: 1213359010}
+  - {fileID: 89577507}
+  - {fileID: 1979795307}
+  - {fileID: 2021328231}
+  - {fileID: 278637148}
+  - {fileID: 432889150}
+  - {fileID: 1631447355}
+  - {fileID: 1801485580}
+  - {fileID: 150998005}
 --- !u!4 &1419377502
 Transform:
   m_ObjectHideFlags: 0
@@ -2633,9 +4500,140 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 746068238}
+  - {fileID: 2060679158}
+  - {fileID: 1946397015}
+  - {fileID: 1073916510}
+  - {fileID: 566487918}
+  - {fileID: 1816696085}
+  - {fileID: 1085189328}
+  - {fileID: 1317042622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1516119444
+--- !u!1001 &1519148211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419377502}
+    m_Modifications:
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: appleSpawnPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 874500825}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1188754669}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2073236293}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2141235391}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 930654711}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 135703623}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1533799310}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2692913}
+    - target: {fileID: 4870678968725234014, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: 'appleSpawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1815772536}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4976873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695003846789727565, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      propertyPath: m_Name
+      value: AppleTree (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 874500825}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1188754669}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2073236293}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2141235391}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 930654711}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 135703623}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1533799310}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2692913}
+    - targetCorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815772536}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+--- !u!1 &1522182070
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2643,29 +4641,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1516119445}
+  - component: {fileID: 1522182071}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: AppleSpawn_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1516119445
+--- !u!4 &1522182071
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516119444}
+  m_GameObject: {fileID: 1522182070}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.336414, y: -1.4976873, z: 10.236529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2143290294}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 1816696085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526640214
 GameObject:
@@ -2706,6 +4703,37 @@ Transform:
   - {fileID: 167526072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1533799309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533799310}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533799310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533799309}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557935023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +4773,321 @@ Transform:
   - {fileID: 872441212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1569351842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569351843}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1569351843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569351842}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1590143556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590143557}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590143557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590143556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1617018278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617018279}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1617018279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617018278}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1631447354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631447355}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631447355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631447354}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1691684402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691684403}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691684403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691684402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1700355956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700355957}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700355957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700355956}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1746596778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746596779}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1746596779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746596778}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1801485579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801485580}
+  m_Layer: 0
+  m_Name: AppleSpawn_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801485580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801485579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 4.543, z: 0.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1810836753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1810836754}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1810836754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810836753}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1815772535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815772536}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815772536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815772535}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1816696085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 520955545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819627841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +5195,383 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 72083929}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1831591012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831591013}
+  m_Layer: 0
+  m_Name: AppleSpawn_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1831591013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831591012}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.328, y: 3.415, z: -1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1866969338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1866969339}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1866969339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866969338}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1901449328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901449329}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901449329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901449328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1913076585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913076586}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913076586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913076585}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1921403985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921403986}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921403986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921403985}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1946397015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 1131613533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1971398983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971398984}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971398984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971398983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1979795306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979795307}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979795307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979795306}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1984248469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984248470}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1984248470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984248469}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085189328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995118429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995118430}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995118430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995118429}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2021328230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2021328231}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2021328231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021328230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746068238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2029729804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029729805}
+  m_Layer: 0
+  m_Name: AppleSpawn_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2029729805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029729804}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 2.93, z: -1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566487918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2037432711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037432712}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037432712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037432711}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040536899
 GameObject:
@@ -2961,6 +5681,166 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040536899}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2044959009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044959010}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2044959010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044959009}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2060679158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bf40a60ca9305454a8129b2d3c525466, type: 3}
+  m_PrefabInstance: {fileID: 901562948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2073236292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2073236293}
+  m_Layer: 0
+  m_Name: AppleSpawn_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2073236293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073236292}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.91, y: -1.6, z: -5.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2089901832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089901833}
+  m_Layer: 0
+  m_Name: AppleSpawn_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2089901833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089901832}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0.47, z: -4.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073916510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2097174385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097174386}
+  m_Layer: 0
+  m_Name: AppleSpawn_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097174386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097174385}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 2.97, z: -1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2102566822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102566823}
+  m_Layer: 0
+  m_Name: AppleSpawn_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2102566823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102566822}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 2.409, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816696085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130137275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,11 +5949,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1557935024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2143290294 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
-  m_PrefabInstance: {fileID: 686719168}
+--- !u!1 &2130627183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130627184}
+  m_Layer: 0
+  m_Name: AppleSpawn_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130627184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130627183}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 4.35, z: 0.827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060679158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2141235390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141235391}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141235391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141235390}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317042622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2143354542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143354543}
+  m_Layer: 0
+  m_Name: AppleSpawn_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2143354543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143354542}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 2.64, z: -2.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946397015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3087,4 +6055,3 @@ SceneRoots:
   - {fileID: 72083929}
   - {fileID: 577627574}
   - {fileID: 1419377502}
-  - {fileID: 1516119445}

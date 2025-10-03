@@ -1,38 +1,33 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 public class TreeView : MonoBehaviour
 {
     private List<GameObject> activeApples = new List<GameObject>();
 
-    public void SpawnApples(int count, GameObject applePrefab, Transform treeTransform, Action<Apple> onAppleClicked)
+    public void SpawnApples(int count, GameObject applePrefab, Transform[] spawnPoints, Action<Apple> onAppleClicked)
     {
-        ClearAllApples(); // Remove previous apples
+        ClearAllApples(); // Remove old apples
 
-        float radius = 2f; // How far apples can spawn from tree center
-        float minHeight = 2f;
-        float maxHeight = 5f;
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogWarning("No spawn points assigned for apples!");
+            return;
+        }
 
         for (int i = 0; i < count; i++)
         {
-            float angle = UnityEngine.Random.Range(0f, 360f) * Mathf.Deg2Rad;
-            float distance = UnityEngine.Random.Range(0.5f * radius, radius);
-            float height = UnityEngine.Random.Range(minHeight, maxHeight);
+            // Pick a random spawn point
+            Transform point = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
 
-            Vector3 spawnPos = treeTransform.position + new Vector3(
-                Mathf.Cos(angle) * distance,
-                height,
-                Mathf.Sin(angle) * distance
-            );
-
-            GameObject appleObj = Instantiate(applePrefab, spawnPos, Quaternion.identity, treeTransform);
+            GameObject appleObj = Instantiate(applePrefab, point.position, point.rotation, point);
             activeApples.Add(appleObj);
 
             Apple apple = appleObj.GetComponent<Apple>();
             if (apple != null)
             {
-                apple.OnClicked += onAppleClicked; // Subscribe safely
+                apple.OnClicked += onAppleClicked;
             }
         }
     }
@@ -43,14 +38,14 @@ public class TreeView : MonoBehaviour
 
         GameObject apple = activeApples[0];
         activeApples.RemoveAt(0);
-        Destroy(apple); // Destroying GameObject automatically removes all event subscribers
+        Destroy(apple);
     }
 
     public void ClearAllApples()
     {
-        foreach (var appleObj in activeApples)
+        foreach (var apple in activeApples)
         {
-            Destroy(appleObj); // Safe: events are removed with GameObject
+            if (apple != null) Destroy(apple);
         }
         activeApples.Clear();
     }

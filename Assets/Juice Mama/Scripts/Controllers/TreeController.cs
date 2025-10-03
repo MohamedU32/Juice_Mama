@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Linq;
 
 public class TreeController : MonoBehaviour
 {
     public AppleTreeData treeData;
+    [Tooltip("Optional: Place spawn points as children of this GameObject and assign here.")]
+    public Transform[] appleSpawnPoints;
 
     private TreeModel treeModel;
     private TreeView treeView;
@@ -27,6 +30,19 @@ public class TreeController : MonoBehaviour
             return;
         }
 
+        // ✅ Auto-detect spawn points if none were assigned in Inspector
+        if (appleSpawnPoints == null || appleSpawnPoints.Length == 0)
+        {
+            appleSpawnPoints = GetComponentsInChildren<Transform>()
+                .Where(t => t != this.transform) // ignore the tree root
+                .ToArray();
+
+            if (appleSpawnPoints.Length == 0)
+            {
+                Debug.LogError("No apple spawn points found! Please add child empty GameObjects as spawn points.", this);
+            }
+        }
+
         treeModel = new TreeModel(treeData);
 
         treeModel.OnGrowthStarted += OnGrowthStarted;
@@ -46,8 +62,14 @@ public class TreeController : MonoBehaviour
 
     private void OnGrowthCompleted()
     {
-        // spawn apples and subscribe click event immediately
-        treeView.SpawnApples(treeModel.currentApples, treeData.applePrefab, transform, HandleAppleClicked);
+        if (appleSpawnPoints == null || appleSpawnPoints.Length == 0) return;
+
+        treeView.SpawnApples(
+            treeModel.currentApples,
+            treeData.applePrefab,
+            appleSpawnPoints,
+            HandleAppleClicked
+        );
     }
 
     private void HandleAppleClicked(Apple apple)
