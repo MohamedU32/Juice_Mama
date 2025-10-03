@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4475fbf3facb7fe4ca8055572dde5076, type: 3}
+  m_Name: NewAppleTreeData
+  m_EditorClassIdentifier: 
+  applePrefab: {fileID: 5473569773201198281, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+  baseMaxApples: 3
+  appleColor: {r: 1, g: 0, b: 0, a: 1}
+  baseGrowthTime: 5
+  maxUpgradeLevel: 5
+  growthTimeMultiplierPerLevel: 0.9
+  extraApplesPerLevel: 1
