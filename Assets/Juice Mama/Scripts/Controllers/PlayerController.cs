@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 15.0f;
-    
+
     private float horizontalInput;
     private float verticalInput;
 
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerAnimator = GetComponent<Animator>();
+        if (!playerAnimator) playerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

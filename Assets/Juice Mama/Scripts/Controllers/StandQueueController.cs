@@ -22,9 +22,8 @@ public class StandQueueController : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void ServeNextCustomer()
     {
-        Debug.Log("Clicked on stand queue");
         CustomersManager.Instance.OnCustomerServed(DequeueFront());
     }
 
