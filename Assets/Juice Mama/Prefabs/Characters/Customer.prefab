@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2425660052034269643}
-  waypoints: []
 --- !u!54 &6821028718664390738
 Rigidbody:
   m_ObjectHideFlags: 0

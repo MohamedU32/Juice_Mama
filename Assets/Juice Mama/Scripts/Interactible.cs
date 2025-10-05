@@ -7,7 +7,7 @@ public class Interactible : MonoBehaviour
     [SerializeField] float bobAmp = 0.25f;
     [SerializeField] float bobSpeed = 2f;
     [SerializeField] UnityEvent onClick;
-    [SerializeField]
+    [SerializeField] private GameObject hoverPrefab;
     private GameObject hover;
     Vector3 baseOffset;
     bool active;
@@ -21,7 +21,14 @@ public class Interactible : MonoBehaviour
             box.isTrigger = true;
         }
         else col.isTrigger = true;
-        hover = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        if (!hoverPrefab)
+        {
+            hover = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        }
+        else
+        {
+            hover = Instantiate(hoverPrefab);
+        }
         hover.transform.SetParent(transform);
         baseOffset = Vector3.up * heightOffset;
         hover.transform.position = transform.position + baseOffset;

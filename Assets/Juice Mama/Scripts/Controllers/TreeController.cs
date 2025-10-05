@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 public class TreeController : MonoBehaviour
 {
-    public AppleTreeData treeData;
+    public TreeData treeData;
     [Tooltip("Optional: Place spawn points as children of this GameObject and assign here.")]
-    public Transform[] appleSpawnPoints;
+    public Transform[] spawnPoints;
+    private List<GameObject> spawnedFruits = new List<GameObject>();
 
     private TreeModel treeModel;
     private TreeView treeView;
@@ -30,16 +32,16 @@ public class TreeController : MonoBehaviour
             return;
         }
 
-        // ✅ Auto-detect spawn points if none were assigned in Inspector
-        if (appleSpawnPoints == null || appleSpawnPoints.Length == 0)
+        //  Auto-detect spawn points if none were assigned in Inspector
+        if (spawnPoints == null || spawnPoints.Length == 0)
         {
-            appleSpawnPoints = GetComponentsInChildren<Transform>()
+            spawnPoints = GetComponentsInChildren<Transform>()
                 .Where(t => t != this.transform) // ignore the tree root
                 .ToArray();
 
-            if (appleSpawnPoints.Length == 0)
+            if (spawnPoints.Length == 0)
             {
-                Debug.LogError("No apple spawn points found! Please add child empty GameObjects as spawn points.", this);
+                Debug.LogError("No spawn points found! Please add child empty GameObjects as spawn points.", this);
             }
         }
 
@@ -47,7 +49,7 @@ public class TreeController : MonoBehaviour
 
         treeModel.OnGrowthStarted += OnGrowthStarted;
         treeModel.OnGrowthCompleted += OnGrowthCompleted;
-        treeModel.OnAppleHarvested += remaining => treeView.RemoveOneApple();
+        GameEvents.OnFruitCollected += OnFruitCollected;
 
         treeModel.StartGrowth();
     }
@@ -62,22 +64,24 @@ public class TreeController : MonoBehaviour
 
     private void OnGrowthCompleted()
     {
-        if (appleSpawnPoints == null || appleSpawnPoints.Length == 0) return;
+        if (spawnPoints == null || spawnPoints.Length == 0) return;
 
-        treeView.SpawnApples(
-            treeModel.currentApples,
-            treeData.applePrefab,
-            appleSpawnPoints,
-            HandleAppleClicked
+        treeView.SpawnFruit(
+            treeModel.currentFruits,
+            treeData.fruitData.fruitPrefab,
+            spawnPoints
         );
     }
 
-    private void HandleAppleClicked(Apple apple)
+    private void OnFruitCollected(FruitData fruitData)
     {
-        if (apple != null)
+        if (fruitData != null)
         {
-            treeModel.HarvestApple();
-            Destroy(apple.gameObject);
+            if (fruitData.id == treeData.fruitData.id)
+            {
+                treeModel.HarvestFruit();
+                treeView.RemoveOneFruit();
+            }
         }
     }
 
@@ -87,7 +91,6 @@ public class TreeController : MonoBehaviour
         {
             treeModel.OnGrowthStarted -= OnGrowthStarted;
             treeModel.OnGrowthCompleted -= OnGrowthCompleted;
-            treeModel.OnAppleHarvested -= remaining => treeView.RemoveOneApple();
         }
     }
 }
