@@ -4,49 +4,41 @@ using System.Collections.Generic;
 
 public class TreeView : MonoBehaviour
 {
-    private List<GameObject> activeApples = new List<GameObject>();
+    private List<GameObject> activeFruits = new List<GameObject>();
 
-    public void SpawnApples(int count, GameObject applePrefab, Transform[] spawnPoints, Action<Apple> onAppleClicked)
+    public void SpawnFruit(int count, GameObject fruitPrefab, Transform[] spawnPoints)
     {
-        ClearAllApples(); // Remove old apples
+        ClearAllFruits();
 
-        if (spawnPoints == null || spawnPoints.Length == 0)
+        if (fruitPrefab == null || spawnPoints == null || spawnPoints.Length == 0)
         {
-            Debug.LogWarning("No spawn points assigned for apples!");
+            Debug.LogWarning("Invalid fruit prefab or spawn points.");
             return;
         }
 
         for (int i = 0; i < count; i++)
         {
-            // Pick a random spawn point
             Transform point = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-
-            GameObject appleObj = Instantiate(applePrefab, point.position, point.rotation, point);
-            activeApples.Add(appleObj);
-
-            Apple apple = appleObj.GetComponent<Apple>();
-            if (apple != null)
-            {
-                apple.OnClicked += onAppleClicked;
-            }
+            GameObject fruitObj = Instantiate(fruitPrefab, point.position, point.rotation, point);
+            activeFruits.Add(fruitObj);
         }
     }
 
-    public void RemoveOneApple()
+    public void RemoveOneFruit()
     {
-        if (activeApples.Count == 0) return;
+        if (activeFruits.Count == 0) return;
 
-        GameObject apple = activeApples[0];
-        activeApples.RemoveAt(0);
-        Destroy(apple);
+        GameObject fruit = activeFruits[0];
+        activeFruits.RemoveAt(0);
+        if (fruit != null) Destroy(fruit);
     }
 
-    public void ClearAllApples()
+    public void ClearAllFruits()
     {
-        foreach (var apple in activeApples)
+        foreach (var fruit in activeFruits)
         {
-            if (apple != null) Destroy(apple);
+            if (fruit != null) Destroy(fruit);
         }
-        activeApples.Clear();
+        activeFruits.Clear();
     }
 }

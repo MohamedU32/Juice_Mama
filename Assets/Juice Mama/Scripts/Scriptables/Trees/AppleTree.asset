@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb0c542e77624345baeeb7603fd9ee5, type: 3}
+  m_Name: AppleTree
+  m_EditorClassIdentifier: 
+  id: apple-tree
+  displayName: Apple Tree
+  level: 0
+  fruitData: {fileID: 11400000, guid: 22dc717143208ff4d825885c8463cbfe, type: 2}
+  growthTime: 5
+  count: 0
+  maxCount: 4
+  maxUpgradeLevel: 5
+  growthTimeMultiplierPerLevel: 0.9
+  extraFruitPerLevel: 1

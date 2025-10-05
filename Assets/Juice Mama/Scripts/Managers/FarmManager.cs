@@ -4,7 +4,7 @@ public class FarmManager : MonoBehaviour
 {
     public GameObject treePrefab;      // assign Tree prefab
     public GameObject applePrefab;     // assign Apple prefab
-    public AppleTreeData treeData;     // assign AppleTreeData ScriptableObject
+    public TreeData treeData;     // assign TreeData ScriptableObject
 
     private Vector3[] plotPositions = new Vector3[]
     {

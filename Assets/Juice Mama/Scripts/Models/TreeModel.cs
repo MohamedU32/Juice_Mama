@@ -3,33 +3,32 @@ using System;
 
 public class TreeModel
 {
-    public AppleTreeData treeData;
+    public TreeData treeData;
     public int upgradeLevel = 0;
-    public int currentApples = 0;
+    public int currentFruits = 0;
     public bool isGrowing = false;
     public float growthStartTime = 0f;
 
     public event Action OnGrowthStarted;
     public event Action OnGrowthCompleted;
-    public event Action<int> OnAppleHarvested;
 
-    public TreeModel(AppleTreeData data)
+    public TreeModel(TreeData data)
     {
         if (data == null)
         {
-            Debug.LogError("TreeModel was created without a valid AppleTreeData!");
+            Debug.LogError("TreeModel was created without a valid TreeData!");
             return;
         }
         treeData = data;
     }
 
-    // MaxApples calculation
-    public int MaxApples
+    // MaxCount calculation
+    public int MaxCount
     {
         get
         {
             if (treeData == null) return 0;
-            return treeData.baseMaxApples + (upgradeLevel * treeData.extraApplesPerLevel);
+            return treeData.maxCount + (upgradeLevel * treeData.extraFruitPerLevel);
         }
     }
 
@@ -39,7 +38,7 @@ public class TreeModel
         get
         {
             if (treeData == null) return 0f;
-            return treeData.baseGrowthTime * Mathf.Pow(treeData.growthTimeMultiplierPerLevel, upgradeLevel);
+            return treeData.growthTime * Mathf.Pow(treeData.growthTimeMultiplierPerLevel, upgradeLevel);
         }
     }
 
@@ -51,7 +50,7 @@ public class TreeModel
             return;
         }
 
-        if (!isGrowing && currentApples == 0)
+        if (!isGrowing && currentFruits == 0)
         {
             isGrowing = true;
             growthStartTime = Time.time;
@@ -81,34 +80,33 @@ public class TreeModel
         }
 
         isGrowing = false;
-        currentApples = MaxApples;
+        currentFruits = MaxCount;
         OnGrowthCompleted?.Invoke();
-        Debug.Log($"Growth completed! {currentApples} apples spawned");
+        Debug.Log($"Growth completed! {currentFruits} fruits spawned");
     }
 
-    public void HarvestApple()
+    public void HarvestFruit()
     {
         if (treeData == null)
         {
-            Debug.LogWarning("Cannot harvest apple: treeData is null");
+            Debug.LogWarning("Cannot harvest fruit: treeData is null");
             return;
         }
 
-        if (currentApples > 0)
+        if (currentFruits > 0)
         {
-            currentApples--;
-            OnAppleHarvested?.Invoke(currentApples);
-            Debug.Log($"Apple harvested! {currentApples} remaining");
+            currentFruits--;
+            Debug.Log($"Fruit harvested! {currentFruits} remaining");
 
-            // Auto-start growth when all apples are harvested
-            if (currentApples == 0)
+            // Auto-start growth when all fruits are harvested
+            if (currentFruits == 0)
             {
                 StartGrowth();
             }
         }
         else
         {
-            Debug.LogWarning("No apples available to harvest");
+            Debug.LogWarning("No fruits available to harvest");
         }
     }
 
@@ -123,7 +121,7 @@ public class TreeModel
         if (upgradeLevel < treeData.maxUpgradeLevel)
         {
             upgradeLevel++;
-            Debug.Log($"Tree upgraded to level {upgradeLevel}! Max apples: {MaxApples}, Growth time: {GrowthTime}s");
+            Debug.Log($"Tree upgraded to level {upgradeLevel}! Max fruits: {MaxCount}, Growth time: {GrowthTime}s");
         }
         else
         {
