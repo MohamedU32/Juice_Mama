@@ -29,7 +29,6 @@ public class FloatingJoystick_Custom : Joystick
     {
         if (!isDragging)
         {
-            Debug.Log("dragging");
             background.gameObject.SetActive(true);      // Show joystick on first drag
             background.position = eventData.position;
             isDragging = true;
