@@ -1,18 +1,26 @@
 using UnityEngine;
-using System;
 
 public class Fruit : MonoBehaviour
 {
-    [SerializeField] private FruitData fruitData;
-    private bool isHarvested = false; // Prevent double harvesting
+    [Header("References")]
+    public FruitData fruitData;  // Assigned by TreeView when spawning
+    public TreeView treeView;    // Assigned when spawned
 
+    private bool isHarvested = false; 
     public bool IsHarvested => isHarvested;
 
     private void OnMouseDown()
     {
-        if (isHarvested) return; // Ignore multiple clicks
+        if (isHarvested) return; // Prevent double harvesting
         isHarvested = true;
 
-        GameEvents.OnFruitCollected?.Invoke(fruitData); // Notify TreeController
+        // Remove fruit from tree
+        treeView?.RemoveOneFruit(gameObject);
+
+        // Add to inventory
+        FruitCollectionManager.Instance.AddFruit(fruitData, 1);
+
+        // Optional: Notify other systems
+        GameEvents.OnFruitCollected?.Invoke(fruitData);
     }
 }

@@ -1,36 +1,43 @@
 using UnityEngine;
-using System;
 using System.Collections.Generic;
 
 public class TreeView : MonoBehaviour
 {
-    private List<GameObject> activeFruits = new List<GameObject>();
+    public FruitData fruitData; // Assign apple, mango, etc.
+    private List<GameObject> activeFruits = new();
 
-    public void SpawnFruit(int count, GameObject fruitPrefab, Transform[] spawnPoints)
+    public void SpawnFruit(int count, Transform[] spawnPoints)
     {
         ClearAllFruits();
 
-        if (fruitPrefab == null || spawnPoints == null || spawnPoints.Length == 0)
+        if (fruitData == null || fruitData.fruitPrefab == null || spawnPoints.Length == 0)
         {
-            Debug.LogWarning("Invalid fruit prefab or spawn points.");
+            Debug.LogWarning("Missing fruit data, prefab, or spawn points!");
             return;
         }
 
         for (int i = 0; i < count; i++)
         {
-            Transform point = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-            GameObject fruitObj = Instantiate(fruitPrefab, point.position, point.rotation, point);
+            Transform point = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            GameObject fruitObj = Instantiate(fruitData.fruitPrefab, point.position, point.rotation, point);
+
+            var fruit = fruitObj.GetComponent<Fruit>();
+            if (fruit != null)
+            {
+                fruit.treeView = this;
+                fruit.fruitData = fruitData;
+            }
+
             activeFruits.Add(fruitObj);
         }
     }
 
-    public void RemoveOneFruit()
+    public void RemoveOneFruit(GameObject fruit)
     {
-        if (activeFruits.Count == 0) return;
+        if (fruit == null || !activeFruits.Contains(fruit)) return;
 
-        GameObject fruit = activeFruits[0];
-        activeFruits.RemoveAt(0);
-        if (fruit != null) Destroy(fruit);
+        activeFruits.Remove(fruit);
+        Destroy(fruit);
     }
 
     public void ClearAllFruits()
