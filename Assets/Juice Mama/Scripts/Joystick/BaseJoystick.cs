@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class BaseJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    public float Horizontal { get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; } }
-    public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
+    public float Horizontal { get { return (snapX) ? SnapFloat(input.x, JoystickAxisOptions.Horizontal) : input.x; } }
+    public float Vertical { get { return (snapY) ? SnapFloat(input.y, JoystickAxisOptions.Vertical) : input.y; } }
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
 
     public float HandleRange
@@ -21,13 +21,13 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         set { deadZone = Mathf.Abs(value); }
     }
 
-    public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
+    public JoystickAxisOptions JoystickAxisOptions { get { return JoystickAxisOptions; } set { joystickaxisOptions = value; } }
     public bool SnapX { get { return snapX; } set { snapX = value; } }
     public bool SnapY { get { return snapY; } set { snapY = value; } }
 
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
-    [SerializeField] private AxisOptions axisOptions = AxisOptions.Both;
+    [SerializeField] private JoystickAxisOptions joystickaxisOptions = JoystickAxisOptions.Both;
     [SerializeField] private bool snapX = false;
     [SerializeField] private bool snapY = false;
 
@@ -89,28 +89,28 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private void FormatInput()
     {
-        if (axisOptions == AxisOptions.Horizontal)
+        if (joystickaxisOptions == JoystickAxisOptions.Horizontal)
             input = new Vector2(input.x, 0f);
-        else if (axisOptions == AxisOptions.Vertical)
+        else if (joystickaxisOptions == JoystickAxisOptions.Vertical)
             input = new Vector2(0f, input.y);
     }
 
-    private float SnapFloat(float value, AxisOptions snapAxis)
+    private float SnapFloat(float value, JoystickAxisOptions snapAxis)
     {
         if (value == 0)
             return value;
 
-        if (axisOptions == AxisOptions.Both)
+        if (joystickaxisOptions == JoystickAxisOptions.Both)
         {
             float angle = Vector2.Angle(input, Vector2.up);
-            if (snapAxis == AxisOptions.Horizontal)
+            if (snapAxis == JoystickAxisOptions.Horizontal)
             {
                 if (angle < 22.5f || angle > 157.5f)
                     return 0;
                 else
                     return (value > 0) ? 1 : -1;
             }
-            else if (snapAxis == AxisOptions.Vertical)
+            else if (snapAxis == JoystickAxisOptions.Vertical)
             {
                 if (angle > 67.5f && angle < 112.5f)
                     return 0;
@@ -147,4 +147,4 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     }
 }
 
-public enum AxisOptions { Both, Horizontal, Vertical }
+public enum JoystickAxisOptions { Both, Horizontal, Vertical }

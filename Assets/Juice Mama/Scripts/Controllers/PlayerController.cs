@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 15.0f;
-    [SerializeField] private FloatingJoystick joystick;
+    [SerializeField] private FloatingJoystick_Custom joystick;
 
     private float horizontalInput;
     private float verticalInput;
