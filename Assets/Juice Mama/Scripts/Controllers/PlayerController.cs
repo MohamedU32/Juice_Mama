@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    //#
+    public AudioSource playerAudioSource;
+    //*
+
     void Start()
     {
         if (!playerAnimator) playerAnimator = GetComponentInChildren<Animator>();
