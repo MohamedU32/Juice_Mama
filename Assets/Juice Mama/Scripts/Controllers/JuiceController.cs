@@ -4,9 +4,13 @@ using System.Linq;
 
 public class JuicerController : MonoBehaviour
 {
+    [Header("Juicer Settings")]
     public JuicerData juicerData;
     public Transform juiceSpawnPoint;
     public GameObject processingEffect;
+
+    [Header("Player Interaction")]
+    public KeyCode interactionKey = KeyCode.E;
 
     private bool isProcessing = false;
     private bool playerInRange = false;
@@ -26,44 +30,42 @@ public class JuicerController : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            TryDepositFruits();
-        }
+        if (playerInRange && Input.GetKeyDown(interactionKey))
+            DepositFruits();
     }
 
-    private void TryDepositFruits()
+    private void DepositFruits()
     {
-        if (juicerData == null || juicerData.recipe == null)
+        if (juicerData?.recipe == null)
         {
-            Debug.LogWarning("Juicer has no data or recipe!");
+            Debug.LogWarning("Juicer has no data or recipe assigned!");
             return;
         }
 
-        bool depositedSomething = false;
+        bool anyDeposited = false;
 
         foreach (var recipeItem in juicerData.recipe)
         {
-            int available = FruitCollectionManager.Instance.GetFruitCount(recipeItem.fruit);
-            int required = recipeItem.count;
+            int requiredAmount = recipeItem.count;
+            int availableAmount = FruitCollectionManager.Instance.GetFruitCount(recipeItem.fruit);
 
-            if (available >= required)
+            if (availableAmount >= requiredAmount)
             {
-                FruitCollectionManager.Instance.AddFruit(recipeItem.fruit, -required);
-                fruitsDeposited += required;
-                depositedSomething = true;
-                Debug.Log($"Deposited {required} {recipeItem.fruit.displayName}!");
+                if (FruitCollectionManager.Instance.RemoveFruit(recipeItem.fruit, requiredAmount))
+                {
+                    fruitsDeposited += requiredAmount;
+                    anyDeposited = true;
+                    Debug.Log($"Deposited {requiredAmount} {recipeItem.fruit.displayName}!");
+                }
             }
             else
             {
-                Debug.Log($"Not enough {recipeItem.fruit.displayName}. Need {required}, have {available}");
+                Debug.Log($"Not enough {recipeItem.fruit.displayName}. Need {requiredAmount}, have {availableAmount}.");
             }
         }
 
-        if (depositedSomething && !isProcessing && fruitsDeposited >= RequiredFruitCount())
-        {
+        if (anyDeposited && !isProcessing && fruitsDeposited >= RequiredFruitCount())
             StartCoroutine(ProcessJuice());
-        }
     }
 
     private int RequiredFruitCount()
@@ -76,9 +78,13 @@ public class JuicerController : MonoBehaviour
         isProcessing = true;
         Debug.Log($"Processing {juicerData.displayName}...");
 
-        if (processingEffect) processingEffect.SetActive(true);
+        if (processingEffect)
+            processingEffect.SetActive(true);
+
         yield return new WaitForSeconds(juicerData.processTime);
-        if (processingEffect) processingEffect.SetActive(false);
+
+        if (processingEffect)
+            processingEffect.SetActive(false);
 
         SpawnJuice();
         fruitsDeposited = 0;
@@ -87,13 +93,13 @@ public class JuicerController : MonoBehaviour
 
     private void SpawnJuice()
     {
-        if (juicerData.juiceData == null || juicerData.juiceData.juicePrefab == null)
+        if (juicerData.juiceData?.juicePrefab == null)
         {
-            Debug.LogWarning("Missing juice data or prefab!");
+            Debug.LogWarning("Juice prefab or data missing!");
             return;
         }
 
-        GameObject juice = Instantiate(
+        GameObject juiceInstance = Instantiate(
             juicerData.juiceData.juicePrefab,
             juiceSpawnPoint.position,
             Quaternion.identity
