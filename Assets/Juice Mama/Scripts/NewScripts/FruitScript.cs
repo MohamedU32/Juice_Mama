@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class FruitGrow : MonoBehaviour
+public class FruitScript : MonoBehaviour
 {
     public bool isGrown = false;
     [SerializeField] private Vector3 targetScale = new Vector3(4, 4, 4);
@@ -44,7 +44,7 @@ public class FruitGrow : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isGrown)
+        if (isGrown && player.GetComponent<PlayerController>().canCarry)
         {
             moveToPlayer = true;
             player.GetComponent<PlayerController>().playerAudioSource.PlayOneShot(collectedSoundEffect, 1.0f);

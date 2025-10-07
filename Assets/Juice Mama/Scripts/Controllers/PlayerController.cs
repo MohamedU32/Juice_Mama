@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource playerAudioSource;
     public int fruitsCarried = 0;
     public int maxFruitCapacity = 3;
+    public bool canCarry = true;
     //*
 
     void Start()
@@ -41,9 +42,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Fruit") && fruitsCarried < maxFruitCapacity)
+        if (collision.gameObject.CompareTag("Fruit") && canCarry )
         {           
             fruitsCarried ++;
+            if (fruitsCarried >= maxFruitCapacity)
+            {
+                canCarry = false;
+            }
         }
     }
 }

@@ -126,7 +126,7 @@ MonoBehaviour:
   isGrown: 0
   targetScale: {x: 4, y: 4, z: 4}
   scaleValue: 0.01
-  speed: 10
+  speed: 15
   collectedSoundEffect: {fileID: 8300000, guid: 4cebb7eef99a832449a22dcf77bf3b63, type: 3}
 --- !u!135 &3472913649488852962
 SphereCollider:
