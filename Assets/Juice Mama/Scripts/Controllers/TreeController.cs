@@ -7,7 +7,6 @@ public class TreeController : MonoBehaviour
     public TreeData treeData;
     [Tooltip("Optional: Place spawn points as children of this GameObject and assign here.")]
     public Transform[] spawnPoints;
-    private List<GameObject> spawnedFruits = new List<GameObject>();
 
     private TreeModel treeModel;
     private TreeView treeView;
@@ -32,11 +31,11 @@ public class TreeController : MonoBehaviour
             return;
         }
 
-        //  Auto-detect spawn points if none were assigned in Inspector
+        // Auto-detect spawn points if none were assigned
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
             spawnPoints = GetComponentsInChildren<Transform>()
-                .Where(t => t != this.transform) // ignore the tree root
+                .Where(t => t != this.transform)
                 .ToArray();
 
             if (spawnPoints.Length == 0)
@@ -66,6 +65,7 @@ public class TreeController : MonoBehaviour
     {
         if (spawnPoints == null || spawnPoints.Length == 0) return;
 
+        // ✅ This now matches TreeView’s 3-parameter overload
         treeView.SpawnFruit(
             treeModel.currentFruits,
             treeData.fruitData.fruitPrefab,
@@ -75,13 +75,11 @@ public class TreeController : MonoBehaviour
 
     private void OnFruitCollected(FruitData fruitData)
     {
-        if (fruitData != null)
+        if (fruitData != null && fruitData.id == treeData.fruitData.id)
         {
-            if (fruitData.id == treeData.fruitData.id)
-            {
-                treeModel.HarvestFruit();
-                treeView.RemoveOneFruit();
-            }
+            treeModel.HarvestFruit();
+            // ✅ Works with new overload (no arguments)
+            treeView.RemoveOneFruit();
         }
     }
 
@@ -92,5 +90,7 @@ public class TreeController : MonoBehaviour
             treeModel.OnGrowthStarted -= OnGrowthStarted;
             treeModel.OnGrowthCompleted -= OnGrowthCompleted;
         }
+
+        GameEvents.OnFruitCollected -= OnFruitCollected;
     }
 }
