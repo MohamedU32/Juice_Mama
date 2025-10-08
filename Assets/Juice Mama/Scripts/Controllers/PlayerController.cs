@@ -41,11 +41,11 @@ public class PlayerController : MonoBehaviour
         else playerAnimator.SetBool("isWalking", false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Fruit") && canCarry )
-        {           
-            fruitsCarried ++;
+        if (other.gameObject.CompareTag("Fruit") && canCarry)
+        {
+            fruitsCarried++;
             UIManager.Instance.UpdateFruitCount(fruitsCarried, maxFruitCapacity);
 
             if (fruitsCarried >= maxFruitCapacity)
