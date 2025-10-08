@@ -12,6 +12,12 @@ public class Interactible : MonoBehaviour
     Vector3 baseOffset;
     bool active;
 
+
+    //#
+    PlayerController playerController;
+    [SerializeField] AudioClip soundEffect;
+    //*
+    
     void Awake()
     {
         var col = GetComponent<Collider>();
@@ -37,6 +43,14 @@ public class Interactible : MonoBehaviour
         p.interactible = this;
         hover.SetActive(false);
     }
+
+    //#
+    private void Start()
+    {
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+    //*
+
 
     void LateUpdate()
     {
@@ -65,6 +79,9 @@ public class Interactible : MonoBehaviour
     public void Click()
     {
         if (active) onClick?.Invoke();
+        //#
+        playerController.playerAudioSource.PlayOneShot(soundEffect,1.0f);
+        //*
     }
 }
 

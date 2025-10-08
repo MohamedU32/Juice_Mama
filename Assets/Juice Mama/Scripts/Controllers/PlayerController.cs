@@ -10,9 +10,17 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    //#
+    public AudioSource playerAudioSource;
+    public int fruitsCarried = 0;
+    public int maxFruitCapacity = 4;
+    public bool canCarry = true;
+    //*
+
     void Start()
     {
         if (!playerAnimator) playerAnimator = GetComponentInChildren<Animator>();
+        UIManager.Instance.UpdateFruitCount(fruitsCarried, maxFruitCapacity);
     }
 
     // Update is called once per frame
@@ -31,5 +39,19 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("isWalking", true);
         }
         else playerAnimator.SetBool("isWalking", false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Fruit") && canCarry )
+        {           
+            fruitsCarried ++;
+            UIManager.Instance.UpdateFruitCount(fruitsCarried, maxFruitCapacity);
+
+            if (fruitsCarried >= maxFruitCapacity)
+            {
+                canCarry = false;
+            }
+        }
     }
 }
