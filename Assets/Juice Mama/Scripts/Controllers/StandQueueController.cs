@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using System.Collections;
 
 public class StandQueueController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StandQueueController : MonoBehaviour
     [SerializeField]
     private int maxQueueLength = 4;
     private readonly List<NavMeshAgent> q = new List<NavMeshAgent>();
+    private bool isServing = false;
 
     private void Awake()
     {
@@ -24,7 +26,16 @@ public class StandQueueController : MonoBehaviour
 
     public void ServeNextCustomer()
     {
+        if (isServing) return;
+        StartCoroutine(ServiceRoutine());
+    }
+
+    private IEnumerator ServiceRoutine()
+    {
+        isServing = true;
+        yield return new WaitForSeconds(0.8f);
         CustomersManager.Instance.OnCustomerServed(DequeueFront());
+        isServing = false;
     }
 
     public bool IsFull => q.Count >= maxQueueLength;

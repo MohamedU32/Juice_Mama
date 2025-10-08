@@ -3788,7 +3788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b304af405ebd3794ba7d10ab92bdacd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 2399213993253069767, guid: 82bda7803f4509a42a7708ac41d7fbec, type: 3}
+  customerPrefab: {fileID: 2399213993253069767, guid: b0e763571d8d2514b906824fdf8938d5, type: 3}
   spawnPoint: {fileID: 1278960571}
   maxCustomers: 10
   spawnIntervalRange: {x: 2, y: 5}
