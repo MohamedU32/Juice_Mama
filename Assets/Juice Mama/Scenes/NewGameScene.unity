@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   juicePacketPrefab: {fileID: 1256417900779130, guid: 5810c64f2732e41458782e77db3446c7, type: 3}
+  soundEffect: {fileID: 8300000, guid: d6593931e83c83941b8c1e81823febbf, type: 3}
 --- !u!65 &72083931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3383,9 +3384,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   juicerData: {fileID: 11400000, guid: 3be824c6c92364c459e33cd9cac74fac, type: 2}
-  juiceSpawnPoint: {fileID: 0}
+  juicePacketPrefab: {fileID: 0}
+  spawnPoints: []
   processingEffect: {fileID: 0}
-  interactionKey: 101
 --- !u!1001 &859239433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8729,6 +8730,34 @@ PrefabInstance:
     - target: {fileID: 2353407185796777782, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 72083930}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ProcessJuice
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: JuiceMachine, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425714593701000343, guid: eb3cd9e49dd632f40b5883bd6d222c33, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
