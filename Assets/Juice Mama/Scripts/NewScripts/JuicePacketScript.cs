@@ -3,9 +3,9 @@ using UnityEngine;
 public class JuicePacketScript : MonoBehaviour
 {
     [Header("Juice Packet Settings")]
-    public AudioClip collectedSoundEffect;
+    public AudioClip collectedJuiceSoundEffect;
     [HideInInspector] public JuiceData juiceData;
-    [SerializeField] private float moveSpeed = 5f; // Speed to move toward the player
+    [SerializeField] private float moveSpeed = 10.0f; // Speed to move toward the player
 
     private GameObject player;
     private bool moveToPlayer = false;
@@ -19,7 +19,9 @@ public class JuicePacketScript : MonoBehaviour
 
     private void Update()
     {
-        // 1️⃣ Move the packet toward the player if clicked
+        DetectJuiceTouch();
+
+        // Move the packet toward the player if clicked/tapped
         if (moveToPlayer && player != null)
         {
             Vector3 targetPos = player.transform.position + Vector3.up * 1f;
@@ -35,26 +37,6 @@ public class JuicePacketScript : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-
-        // 2️⃣ Detect clicks on the packet using raycast
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-            {
-                if (hit.collider == GetComponent<Collider>())
-                {
-                    moveToPlayer = true;
-
-                    // Play collection sound
-                    var audioSource = player.GetComponent<PlayerController>()?.playerAudioSource;
-                    if (audioSource != null && collectedSoundEffect != null)
-                        audioSource.PlayOneShot(collectedSoundEffect, 1f);
-
-                    Debug.Log("Juice packet clicked!");
-                }
-            }
-        }
     }
 
     // Optional: automatically collect if player touches it
@@ -64,6 +46,31 @@ public class JuicePacketScript : MonoBehaviour
         {
             JuiceFridgeManager.Instance.AddJuice(juiceData, 1); // Event updates UI
             gameObject.SetActive(false);
+        }
+    }
+
+    // Detect clicks/taps on the fruit using raycast
+    void DetectJuiceTouch()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+            {
+                if (hit.collider.gameObject == gameObject)
+                {
+                    if (player == null)
+                    {
+                        Debug.LogError("Player not found! Make sure the player is tagged 'Player'.");
+                        return;
+                    }
+
+                    var playerController = player.GetComponent<PlayerController>();
+
+                    // Let the player decide if it can collect the fruit
+                    if (playerController.TryCollectJuice())  moveToPlayer = true;
+                }
+            }
         }
     }
 }

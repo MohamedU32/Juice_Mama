@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     private GameObject player;
 
     [SerializeField] private TextMeshProUGUI m_fruitText;
-
+    [SerializeField] private TextMeshProUGUI m_juiceText;
 
     private void Awake()
     {
@@ -33,6 +33,11 @@ public class UIManager : MonoBehaviour
     public void UpdateFruitCount(int fruitCarried, int maxFruitCapacity)
     {
         m_fruitText.text = "" + fruitCarried + "/" + maxFruitCapacity;
-        Debug.Log("Fruit Count Updated");
+    }
+
+    public void UpdateJuiceCount(int juicesCarried, int maxJuiceCapacity)
+    {
+        m_juiceText.text = "" + juicesCarried + "/" + maxJuiceCapacity;
+        Debug.Log("Juice Count Updated");
     }
 }
