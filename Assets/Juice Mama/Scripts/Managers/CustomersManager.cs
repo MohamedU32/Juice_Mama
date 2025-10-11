@@ -42,6 +42,11 @@ public class CustomersManager : MonoBehaviour
     {
         var go = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
         var agent = go.GetComponent<NavMeshAgent>();
+        var thought = go.GetComponentInChildren<ThoughtBubble>();
+        if (thought != null)
+        {
+            thought.ShowThought(0, 5f);
+        }
         spawnedCount++;
         if (!AssignToStand(agent)) waitingAgents.Enqueue(agent);
         if (retryRoutine == null) retryRoutine = StartCoroutine(RetryAssignLoop());

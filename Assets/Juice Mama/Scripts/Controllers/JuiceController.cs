@@ -1,46 +1,46 @@
 using UnityEngine;
-using System.Collections;
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 public class JuicerController : MonoBehaviour
 {
     [Header("Juicer Settings")]
     public JuicerData juicerData;
-    public Transform juiceSpawnPoint;
-    public GameObject processingEffect;
+    public GameObject juicePacketPrefab;
 
-    [Header("Player Interaction")]
-    public KeyCode interactionKey = KeyCode.E;
+    [Tooltip("Optional: Place spawn points as children of this GameObject and assign here.")]
+    public Transform[] spawnPoints;
+
+    public GameObject processingEffect;
 
     private bool isProcessing = false;
     private bool playerInRange = false;
     private int fruitsDeposited = 0;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.CompareTag("Player"))
-            playerInRange = true;
-    }
+        // Auto-detect spawn points if none were assigned
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            spawnPoints = GetComponentsInChildren<Transform>()
+                .Where(t => t != this.transform)
+                .ToArray();
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            playerInRange = false;
+            if (spawnPoints.Length == 0)
+                Debug.LogError("No spawn points found! Please add child empty GameObjects as spawn points.");
+        }
     }
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(interactionKey))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
             DepositFruits();
     }
 
     private void DepositFruits()
     {
-        if (juicerData?.recipe == null)
-        {
-            Debug.LogWarning("Juicer has no data or recipe assigned!");
-            return;
-        }
+        if (juicerData?.recipe == null) return;
 
         bool anyDeposited = false;
 
@@ -58,54 +58,69 @@ public class JuicerController : MonoBehaviour
                     Debug.Log($"Deposited {requiredAmount} {recipeItem.fruit.displayName}!");
                 }
             }
-            else
-            {
-                Debug.Log($"Not enough {recipeItem.fruit.displayName}. Need {requiredAmount}, have {availableAmount}.");
-            }
         }
 
         if (anyDeposited && !isProcessing && fruitsDeposited >= RequiredFruitCount())
             StartCoroutine(ProcessJuice());
     }
 
-    private int RequiredFruitCount()
-    {
-        return juicerData.recipe.Sum(r => r.count);
-    }
+    private int RequiredFruitCount() => juicerData.recipe.Sum(r => r.count);
 
     private IEnumerator ProcessJuice()
     {
         isProcessing = true;
-        Debug.Log($"Processing {juicerData.displayName}...");
-
-        if (processingEffect)
-            processingEffect.SetActive(true);
+        if (processingEffect) processingEffect.SetActive(true);
 
         yield return new WaitForSeconds(juicerData.processTime);
 
-        if (processingEffect)
-            processingEffect.SetActive(false);
+        if (processingEffect) processingEffect.SetActive(false);
 
-        SpawnJuice();
+        SpawnJuicePackets(fruitsDeposited);
         fruitsDeposited = 0;
         isProcessing = false;
     }
 
-    private void SpawnJuice()
+    private void SpawnJuicePackets(int packetCount)
     {
-        if (juicerData.juiceData?.juicePrefab == null)
+        if (spawnPoints == null || spawnPoints.Length == 0 || juicePacketPrefab == null) return;
+
+        StartCoroutine(SpawnPacketsCoroutine(packetCount));
+    }
+
+    private IEnumerator SpawnPacketsCoroutine(int packetCount)
+    {
+        int spawned = 0;
+
+        while (spawned < packetCount)
         {
-            Debug.LogWarning("Juice prefab or data missing!");
-            return;
+            foreach (var spawnPoint in spawnPoints)
+            {
+                GameObject packet = Instantiate(juicePacketPrefab, spawnPoint.position, Quaternion.identity);
+
+                // Assign JuiceData so the packet can be collected
+                var packetScript = packet.GetComponent<JuicePacketScript>();
+                if (packetScript != null)
+                    packetScript.juiceData = juicerData.juiceData;
+
+                spawned++;
+
+                if (spawned >= packetCount)
+                    yield break;
+
+                yield return new WaitForSeconds(0.2f); // optional stagger
+            }
         }
+    }
 
-        GameObject juiceInstance = Instantiate(
-            juicerData.juiceData.juicePrefab,
-            juiceSpawnPoint.position,
-            Quaternion.identity
-        );
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
 
-        Debug.Log($"Created {juicerData.juiceData.displayName}!");
-        GameEvents.OnJuiceProcessed?.Invoke(juicerData.juiceData);
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
     }
 }

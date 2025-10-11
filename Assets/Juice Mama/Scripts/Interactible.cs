@@ -17,7 +17,7 @@ public class Interactible : MonoBehaviour
     PlayerController playerController;
     [SerializeField] AudioClip soundEffect;
     //*
-    
+
     void Awake()
     {
         var col = GetComponent<Collider>();
@@ -80,7 +80,10 @@ public class Interactible : MonoBehaviour
     {
         if (active) onClick?.Invoke();
         //#
-        playerController.playerAudioSource.PlayOneShot(soundEffect,1.0f);
+        if (soundEffect != null)
+        {
+            playerController.playerAudioSource.PlayOneShot(soundEffect, 1.0f);
+        }
         //*
     }
 }

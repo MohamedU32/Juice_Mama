@@ -7,6 +7,7 @@ public class JuiceMachine : MonoBehaviour
     public GameObject juicePacketPrefab; // Assign in Inspector
     private Transform spawnPointsParent;
     private List<Transform> spawnPoints = new List<Transform>();
+    [SerializeField] AudioClip soundEffect;
 
     private void Start()
     {
@@ -26,18 +27,6 @@ public class JuiceMachine : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerController playerController = other.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                StartCoroutine(SpawnJuicePackets(playerController.fruitsCarried));
-            }
-        }
-    }
-
     private IEnumerator SpawnJuicePackets(int fruitCount)
     {
         int packetsSpawned = 0;
@@ -53,6 +42,19 @@ public class JuiceMachine : MonoBehaviour
                     yield break;
 
                 yield return new WaitForSeconds(2f);
+            }
+        }
+    }
+
+    public void ProcessJuice()
+    {
+        PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (playerController != null && playerController.fruitsCarried > 0)
+        {
+            StartCoroutine(SpawnJuicePackets(playerController.fruitsCarried));
+            if (soundEffect != null)
+            {
+                playerController.playerAudioSource.PlayOneShot(soundEffect, 1.0f);
             }
         }
     }
