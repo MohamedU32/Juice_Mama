@@ -1,10 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/Juice")]
-public class JuiceData : ScriptableObject
+[CreateAssetMenu(menuName = "Data/JuiceSO")]
+public class JuiceData : ItemData
 {
-    public string id;
-    public string displayName;
-    public Sprite icon;
-    public GameObject juicePrefab;
+    public float price = 5f;
 }
