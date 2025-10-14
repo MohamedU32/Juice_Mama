@@ -7,6 +7,9 @@ public class StandQueueController : MonoBehaviour
 {
     [SerializeField]
     private List<Vector3> points;
+    [SerializeField] private PlayerData playerData;
+    [SerializeField] private StorageController fridgeStorage;
+    [SerializeField] private JuiceData juiceData;
 
     [SerializeField]
     private int maxQueueLength = 4;
@@ -27,6 +30,11 @@ public class StandQueueController : MonoBehaviour
     public void ServeNextCustomer()
     {
         if (isServing) return;
+        if (fridgeStorage.GetCount(juiceData) <= 0)
+        {
+            AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION, 1.0f);
+            return;
+        }
         StartCoroutine(ServiceRoutine());
     }
 
@@ -34,6 +42,10 @@ public class StandQueueController : MonoBehaviour
     {
         isServing = true;
         yield return new WaitForSeconds(0.8f);
+        fridgeStorage.Remove(juiceData, 1);
+        playerData.money += juiceData.price;
+        UIManager.Instance.UpdateMoney();
+        AudioManager.Instance.PlaySound(AudioNames.JUICE_SOLD, 1.0f);
         CustomersManager.Instance.OnCustomerServed(DequeueFront());
         isServing = false;
     }

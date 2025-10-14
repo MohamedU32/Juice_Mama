@@ -15,6 +15,7 @@ MonoBehaviour:
   id: simple-apple-juicer
   displayName: Apple Juice Machine
   processTime: 2
+  maxPerFruit: 5
   juiceData: {fileID: 11400000, guid: 8cd2aa14a7c37fd46b5cc161919b06b1, type: 2}
   outputCount: 1
   recipe:

@@ -2093,6 +2093,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587245526}
   m_Mesh: {fileID: -1529448159014218909, guid: 03aa99419670d9840a32509ff44e82f8, type: 3}
+--- !u!114 &631558631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5324748616247124787, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+  m_PrefabInstance: {fileID: 1897542296863646374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377e73381ad2b114bbc3ca9798956691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &674498449
 GameObject:
   m_ObjectHideFlags: 0
@@ -7543,6 +7554,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2242688857875149295, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 631558631}
+    - target: {fileID: 2242688857875149295, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryUnlock
+      objectReference: {fileID: 0}
     - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: m_Name
       value: LockedTree
@@ -7999,6 +8018,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1847316753718013502, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
+      propertyPath: juiceData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cd2aa14a7c37fd46b5cc161919b06b1, type: 2}
+    - target: {fileID: 1847316753718013502, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+    - target: {fileID: 1847316753718013502, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
+      propertyPath: fridgeStorage
+      value: 
+      objectReference: {fileID: 1332041646}
     - target: {fileID: 2382249025648559211, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
       propertyPath: m_Name
       value: LockedStand

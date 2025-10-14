@@ -28,6 +28,7 @@ public class UnlockController : MonoBehaviour
             playerData.money -= unlockable.unlockCost;
             UIManager.Instance.UpdateMoney();
             isUnlocked = true;
+            unlockable.isUnlockedByDefault = true;
             lockObject.SetActive(false);
             gameObject.SetActive(true);
         }
