@@ -117,5 +117,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        GameEvents.OnFridgeLoaded?.Invoke();
     }
 }
