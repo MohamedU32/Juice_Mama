@@ -33,6 +33,13 @@ public class PlayerController : MonoBehaviour
         if (!playerAnimator) playerAnimator = GetComponentInChildren<Animator>();
     }
 
+    private void Start()
+    {
+
+        AudioManager.Instance.PlaySound(AudioNames.BACKGROUND_MUSIC);
+        AudioManager.Instance.SetVolume(AudioNames.BACKGROUND_MUSIC, 0.3f);
+    }
+
     // Update is called once per frame
     void Update()
     {
