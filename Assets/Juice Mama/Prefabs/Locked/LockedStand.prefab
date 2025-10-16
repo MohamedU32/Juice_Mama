@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7326384283288127037, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+    - target: {fileID: 7326384283288127037, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: juiceCountText
+      value: 
+      objectReference: {fileID: 2160300066988488442}
     - target: {fileID: 8493351879554058677, guid: 28f674d211f183542b13c0b017960f56, type: 3}
       propertyPath: m_Name
       value: SellingStand
@@ -204,6 +212,17 @@ MonoBehaviour:
   lockObject: {fileID: 3547416444605884671}
   costText: {fileID: 1881397629635292001}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+--- !u!114 &2160300066988488442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7058435890388950777, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+  m_PrefabInstance: {fileID: 8939213687413647363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6469528665536658085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2721886629061808806, guid: 28f674d211f183542b13c0b017960f56, type: 3}
