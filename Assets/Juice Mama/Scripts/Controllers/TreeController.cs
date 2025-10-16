@@ -1,96 +1,58 @@
 using UnityEngine;
-using System.Linq;
-using System.Collections.Generic;
 
 public class TreeController : MonoBehaviour
 {
-    public TreeData treeData;
-    [Tooltip("Optional: Place spawn points as children of this GameObject and assign here.")]
-    public Transform[] spawnPoints;
+    [SerializeField] private TreeData treeData;
+    private GameObject[] spawnedFruits;
+    private bool isWaitingToRespawn = false;
 
-    private TreeModel treeModel;
-    private TreeView treeView;
-
-    public void SetTreeView(TreeView view)
+    void Start()
     {
-        treeView = view;
-    }
-
-    void Awake()
-    {
-        if (treeView == null)
-        {
-            treeView = GetComponent<TreeView>();
-            if (treeView == null) treeView = gameObject.AddComponent<TreeView>();
-        }
-
-        if (treeData == null)
-        {
-            Debug.LogError("TreeData not assigned!", this);
-            enabled = false;
-            return;
-        }
-
-        // Auto-detect spawn points if none were assigned
-        if (spawnPoints == null || spawnPoints.Length == 0)
-        {
-            spawnPoints = GetComponentsInChildren<Transform>()
-                .Where(t => t != this.transform)
-                .ToArray();
-
-            if (spawnPoints.Length == 0)
-            {
-                Debug.LogError("No spawn points found! Please add child empty GameObjects as spawn points.", this);
-            }
-        }
-
-        treeModel = new TreeModel(treeData);
-
-        treeModel.OnGrowthStarted += OnGrowthStarted;
-        treeModel.OnGrowthCompleted += OnGrowthCompleted;
-        GameEvents.OnFruitCollected += OnFruitCollected;
-
-        treeModel.StartGrowth();
+        SpawnFruits();
     }
 
     void Update()
     {
-        if (treeModel != null && treeModel.IsGrowthTimeElapsed())
-            treeModel.CompleteGrowth();
+        MonitorFruitStatus();
     }
 
-    private void OnGrowthStarted() => Debug.Log("Growth started!");
-
-    private void OnGrowthCompleted()
+    void SpawnFruits()
     {
-        if (spawnPoints == null || spawnPoints.Length == 0) return;
-
-        // ✅ This now matches TreeView’s 3-parameter overload
-        treeView.SpawnFruit(
-            treeModel.currentFruits,
-            treeData.fruitData.fruitPrefab,
-            spawnPoints
-        );
-    }
-
-    private void OnFruitCollected(FruitData fruitData)
-    {
-        if (fruitData != null && fruitData.id == treeData.fruitData.id)
+        Transform spawnParent = transform.Find("SpawnPoints");
+        if (spawnParent == null)
         {
-            treeModel.HarvestFruit();
-            // ✅ Works with new overload (no arguments)
-            treeView.RemoveOneFruit();
-        }
-    }
-
-    void OnDestroy()
-    {
-        if (treeModel != null)
-        {
-            treeModel.OnGrowthStarted -= OnGrowthStarted;
-            treeModel.OnGrowthCompleted -= OnGrowthCompleted;
+            Debug.LogWarning("SpawnPoints child not found under Tree.");
+            return;
         }
 
-        GameEvents.OnFruitCollected -= OnFruitCollected;
+        int count = spawnParent.childCount;
+        spawnedFruits = new GameObject[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            Transform spawnPoint = spawnParent.GetChild(i);
+            GameObject fruit = Instantiate(treeData.fruitData.prefab, spawnPoint.position, Quaternion.identity, transform);
+            spawnedFruits[i] = fruit;
+        }
+
+        isWaitingToRespawn = false; // Reset flag
+    }
+
+    void MonitorFruitStatus()
+    {
+        bool allGone = true;
+
+        foreach (GameObject fruit in spawnedFruits)
+        {
+            if (fruit != null && fruit.activeSelf)
+            {
+                allGone = false;
+            }
+        }
+        if (allGone && !isWaitingToRespawn)
+        {
+            isWaitingToRespawn = true;
+            Invoke("SpawnFruits", 2f);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -5,33 +6,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 15.0f;
     [SerializeField] private FloatingJoystick_Custom joystick;
 
+    private StorageController playerStorage;
+
     private float horizontalInput;
     private float verticalInput;
 
     public Animator playerAnimator;
-
-    //#
-    public AudioSource playerAudioSource;
-
-    public int fruitsCarried = 0;
     public int maxFruitCapacity = 4;
     public AudioClip collectedFruitSoundEffect;
-    public bool canCarryFruit => fruitsCarried < maxFruitCapacity;
-    
-    public int juicesCarried = 0;
+    public bool canCarryFruit => playerStorage == null ? false : (playerStorage.GetFruitCount() < maxFruitCapacity);
+
     public int maxJuiceCapacity = 4;
     public AudioClip collectedJuiceSoundEffect;
 
     public AudioClip FailedCollectionSoundEffect;
 
-    public bool canCarryJuice => juicesCarried < maxJuiceCapacity;
-    //*
+    public bool canCarryJuice => playerStorage == null ? false : (playerStorage.GetJuiceCount() < maxJuiceCapacity);
 
-    void Start()
+    void Awake()
     {
+        playerStorage = gameObject.GetComponent<StorageController>();
+        if (playerStorage == null)
+        {
+            Debug.LogError("StorageController component not found on Player.");
+        }
         if (!playerAnimator) playerAnimator = GetComponentInChildren<Animator>();
-        UIManager.Instance.UpdateFruitCount(fruitsCarried, maxFruitCapacity);
-        UIManager.Instance.UpdateJuiceCount(juicesCarried, maxJuiceCapacity);
     }
 
     // Update is called once per frame
@@ -52,33 +51,73 @@ public class PlayerController : MonoBehaviour
         else playerAnimator.SetBool("isWalking", false);
     }
 
-    public bool TryCollectFruit()
+    public bool TryCollectFruit(FruitData fruitData)
     {
         if (canCarryFruit)
         {
-            fruitsCarried++;
-            UIManager.Instance.UpdateFruitCount(fruitsCarried, maxFruitCapacity);
-            playerAudioSource.PlayOneShot(collectedFruitSoundEffect, 1f);
+            playerStorage.Add(fruitData, 1);
+            UIManager.Instance.UpdateFruitCount();
+            AudioManager.Instance.PlaySound(AudioNames.COLLECTED_FRUIT);
             return true;
         }
 
         Debug.Log("Cannot carry more fruit!");
-        playerAudioSource.PlayOneShot(FailedCollectionSoundEffect, 1f);
+        AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION);
         return false;
     }
 
-    public bool TryCollectJuice()
+    public bool TryCollectJuice(JuiceData juiceData)
     {
         if (canCarryJuice)
         {
-            juicesCarried++;
-            UIManager.Instance.UpdateJuiceCount(juicesCarried, maxJuiceCapacity);
-            playerAudioSource.PlayOneShot(collectedJuiceSoundEffect, 1f);
+            playerStorage.Add(juiceData, 1);
+            UIManager.Instance.UpdateJuiceCount();
+            AudioManager.Instance.PlaySound(AudioNames.COLLECTED_JUICE);
             return true;
         }
 
         Debug.Log("Cannot carry more juice!");
-        playerAudioSource.PlayOneShot(FailedCollectionSoundEffect, 1f);
+        AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION);
         return false;
+    }
+
+    public void CollectJuice(JuicerController juicerController)
+    {
+        if (playerStorage == null || juicerController == null) return;
+        int count = maxJuiceCapacity - playerStorage.GetJuiceCount();
+        if (count <= 0)
+        {
+            Debug.Log("Cannot carry more juice!");
+            AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION);
+            return;
+        }
+        juicerController.PickJuice(playerStorage, count);
+        UIManager.Instance.UpdateFruitCount();
+        UIManager.Instance.UpdateJuiceCount();
+        AudioManager.Instance.PlaySound(AudioNames.COLLECTED_JUICE);
+    }
+
+    public void DepositJuiceInFridge(StorageController targetStorage)
+    {
+        if (playerStorage == null || targetStorage == null) return;
+        List<JuiceData> juices = playerStorage.GetAllJuices();
+
+        if (juices.Count == 0) return;
+
+        for (int i = 0; i < juices.Count; i++)
+        {
+            int count = playerStorage.GetCount(juices[i]);
+            if (count > 0)
+            {
+                int transferred = playerStorage.TransferItemsTo(targetStorage, juices[i], count);
+                if (transferred > 0)
+                {
+                    UIManager.Instance.UpdateJuiceCount();
+                    AudioManager.Instance.PlaySound(AudioNames.STORAGE_FILLED, 1.0f);
+                }
+            }
+        }
+
+        GameEvents.OnFridgeLoaded?.Invoke();
     }
 }

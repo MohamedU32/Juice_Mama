@@ -2,16 +2,22 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
 using System.Collections;
+using TMPro;
 
 public class StandQueueController : MonoBehaviour
 {
     [SerializeField]
     private List<Vector3> points;
+    [SerializeField] private PlayerData playerData;
+    [SerializeField] private StorageController fridgeStorage;
+    [SerializeField] private JuiceData juiceData;
+    [SerializeField] private TextMeshPro juiceCountText;
 
     [SerializeField]
     private int maxQueueLength = 4;
     private readonly List<NavMeshAgent> q = new List<NavMeshAgent>();
     private bool isServing = false;
+    private int totalJuiceCount = 0;
 
     private void Awake()
     {
@@ -24,9 +30,37 @@ public class StandQueueController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (fridgeStorage == null)
+        {
+            Debug.LogError("Fridge StorageController is not assigned in StandQueueController.");
+        }
+        if (juiceData == null)
+        {
+            Debug.LogError("JuiceData is not assigned in StandQueueController.");
+        }
+        UpdateJuiceCount(juiceData);
+    }
+
+    public void UpdateJuiceCount(JuiceData data)
+    {
+        if (data == null) return;
+        totalJuiceCount = fridgeStorage.GetCount(data);
+        if (juiceCountText != null)
+        {
+            juiceCountText.text = totalJuiceCount.ToString();
+        }
+    }
+
     public void ServeNextCustomer()
     {
         if (isServing) return;
+        if (fridgeStorage.GetCount(juiceData) <= 0 || q.Count == 0)
+        {
+            AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION, 1.0f);
+            return;
+        }
         StartCoroutine(ServiceRoutine());
     }
 
@@ -34,6 +68,11 @@ public class StandQueueController : MonoBehaviour
     {
         isServing = true;
         yield return new WaitForSeconds(0.8f);
+        fridgeStorage.Remove(juiceData, 1);
+        playerData.money += juiceData.price;
+        UIManager.Instance.UpdateMoney();
+        UpdateJuiceCount(juiceData);
+        AudioManager.Instance.PlaySound(AudioNames.JUICE_SOLD, 1.0f);
         CustomersManager.Instance.OnCustomerServed(DequeueFront());
         isServing = false;
     }
@@ -93,5 +132,20 @@ public class StandQueueController : MonoBehaviour
                 a.transform.rotation = Quaternion.RotateTowards(a.transform.rotation, rot, 360f * Time.deltaTime);
             }
         }
+    }
+
+    void OnFridgeLoaded()
+    {
+        UpdateJuiceCount(juiceData);
+    }
+
+    void OnEnable()
+    {
+        GameEvents.OnFridgeLoaded += OnFridgeLoaded;
+    }
+
+    void OnDisable()
+    {
+        GameEvents.OnFridgeLoaded -= OnFridgeLoaded;
     }
 }

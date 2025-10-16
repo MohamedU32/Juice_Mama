@@ -8,7 +8,7 @@ public class CustomersManager : MonoBehaviour
     public static CustomersManager Instance { get; private set; }
     public GameObject customerPrefab;
     public Transform spawnPoint;
-    public int maxCustomers = 10;
+    public int maxCustomers = 1;
     public Vector2 spawnIntervalRange = new Vector2(2f, 5f);
     [SerializeField] Transform exitPoint;
     const string SellingStandTag = "SellingStand";
@@ -20,8 +20,12 @@ public class CustomersManager : MonoBehaviour
 
     void Awake()
     {
-        RefreshStands();
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); } else Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        InvokeRepeating(nameof(RefreshStands), 5f, 5f);
     }
 
     void Update()
