@@ -441,6 +441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 7707303330505999897, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_TagString
+      value: AppleTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2287967843019441751, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
     m_RemovedGameObjects:
