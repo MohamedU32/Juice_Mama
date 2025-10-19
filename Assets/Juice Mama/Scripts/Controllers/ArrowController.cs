@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//for 3d asset arrow(incase we switch assets)
+
 public class ArrowController : MonoBehaviour
 {
     public Transform player;
