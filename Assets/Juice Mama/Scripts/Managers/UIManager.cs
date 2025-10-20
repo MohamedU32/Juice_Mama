@@ -6,178 +6,158 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    [Header("Player References")]
-    private GameObject player;
-    private PlayerController playerController;
-    private StorageController playerStorage;
-    [SerializeField] private PlayerData playerData;
+    [Header("Player References (Auto-find if null)")]
+    public PlayerController playerController;
+    public StorageController playerStorage;
+    public PlayerData playerData;
 
     [Header("Resource Display")]
-    [SerializeField] private TextMeshProUGUI m_fruitText;
-    [SerializeField] private TextMeshProUGUI m_juiceText;
-    [SerializeField] private TextMeshProUGUI m_moneyText;
+    [SerializeField] private TextMeshProUGUI fruitText;
+    [SerializeField] private TextMeshProUGUI juiceText;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     [Header("Tutorial Instruction UI")]
     [SerializeField] private GameObject instructionPanel;
     [SerializeField] private TextMeshProUGUI instructionText;
-    [SerializeField] private Image instructionBackground;
     [SerializeField] private float instructionFadeSpeed = 5f;
-
+    
     private CanvasGroup instructionCanvasGroup;
     private bool instructionVisible = false;
+    private GameObject player;
 
     private void Awake()
     {
         // Singleton pattern
         if (Instance == null)
+        {
             Instance = this;
+        }
         else
         {
             Destroy(gameObject);
             return;
         }
 
-        SetupInstructionUI();
+        // Setup instruction panel if it exists
+        if (instructionPanel != null)
+        {
+            instructionCanvasGroup = instructionPanel.GetComponent<CanvasGroup>();
+            if (instructionCanvasGroup == null)
+            {
+                instructionCanvasGroup = instructionPanel.AddComponent<CanvasGroup>();
+            }
+            instructionCanvasGroup.alpha = 0f;
+            instructionPanel.SetActive(true);
+        }
     }
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player != null)
+        Debug.Log("=== UIManager Start() ===");
+        
+        // Auto-find player references if not assigned in Inspector
+        if (playerController == null || playerStorage == null)
         {
-            playerController = player.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerStorage = player.GetComponent<StorageController>();
-                if (playerStorage == null)
-                    Debug.LogError("StorageController not found on Player.");
+            Debug.Log("Auto-finding player references...");
+            player = GameObject.FindGameObjectWithTag("Player");
 
-                UpdateFruitCount();
-                UpdateJuiceCount();
+            if (player != null)
+            {
+                Debug.Log($"Player found: {player.name}");
+                
+                if (playerController == null)
+                {
+                    playerController = player.GetComponent<PlayerController>();
+                    if (playerController == null)
+                    {
+                        Debug.LogError("PlayerController component not found on Player.");
+                    }
+                    else
+                    {
+                        Debug.Log("PlayerController found!");
+                    }
+                }
+
+                if (playerStorage == null)
+                {
+                    playerStorage = player.GetComponent<StorageController>();
+                    if (playerStorage == null)
+                    {
+                        Debug.LogError("StorageController component not found on Player.");
+                    }
+                    else
+                    {
+                        Debug.Log("StorageController found!");
+                    }
+                }
             }
             else
             {
-                Debug.LogError("PlayerController not found on Player.");
+                Debug.LogError("Player not found! Make sure the player is tagged 'Player'.");
             }
         }
         else
         {
-            Debug.LogError("Player not found! Tag it as 'Player'.");
+            Debug.Log("Player references already assigned in Inspector");
         }
 
+        // Debug UI references
+        Debug.Log($"fruitText assigned: {fruitText != null}");
+        Debug.Log($"juiceText assigned: {juiceText != null}");
+        Debug.Log($"moneyText assigned: {moneyText != null}");
+        Debug.Log($"playerData assigned: {playerData != null}");
+        Debug.Log($"instructionPanel assigned: {instructionPanel != null}");
+        Debug.Log($"instructionText assigned: {instructionText != null}");
+
+        // Initial UI updates
         UpdateMoney();
+        UpdateFruitCount();
+        UpdateJuiceCount();
+        
+        Debug.Log("=== UIManager Start() Complete ===");
     }
 
     private void Update()
     {
-        // Smooth fade for instruction panel
+        // Handle instruction panel fade animation
         if (instructionCanvasGroup != null)
         {
             float targetAlpha = instructionVisible ? 1f : 0f;
             instructionCanvasGroup.alpha = Mathf.Lerp(
-                instructionCanvasGroup.alpha,
-                targetAlpha,
+                instructionCanvasGroup.alpha, 
+                targetAlpha, 
                 Time.deltaTime * instructionFadeSpeed
             );
         }
     }
 
-    #region Resource Updates
-
+    // === Resource Updates ===
     public void UpdateFruitCount()
     {
-        if (m_fruitText != null && playerStorage != null && playerController != null)
-            m_fruitText.text = $"{playerStorage.GetFruitCount()}/{playerController.maxFruitCapacity}";
+        if (fruitText != null && playerStorage != null && playerController != null)
+        {
+            fruitText.text = $"{playerStorage.GetFruitCount()}/{playerController.maxFruitCapacity}";
+        }
     }
 
     public void UpdateJuiceCount()
     {
-        if (m_juiceText != null && playerStorage != null && playerController != null)
+        if (juiceText != null && playerStorage != null && playerController != null)
         {
-            m_juiceText.text = $"{playerStorage.GetJuiceCount()}/{playerController.maxJuiceCapacity}";
+            juiceText.text = $"{playerStorage.GetJuiceCount()}/{playerController.maxJuiceCapacity}";
             Debug.Log("Juice Count Updated");
         }
     }
 
     public void UpdateMoney()
     {
-        if (m_moneyText != null && playerData != null)
-            m_moneyText.text = "$" + playerData.money;
-    }
-
-    #endregion
-
-    #region Tutorial Instruction Display
-
-    private void SetupInstructionUI()
-    {
-        if (instructionPanel == null)
+        if (moneyText != null && playerData != null)
         {
-            CreateInstructionPanel();
-        }
-        else
-        {
-            instructionCanvasGroup = instructionPanel.GetComponent<CanvasGroup>();
-            if (instructionCanvasGroup == null)
-                instructionCanvasGroup = instructionPanel.AddComponent<CanvasGroup>();
-
-            instructionCanvasGroup.alpha = 0;
-            instructionPanel.SetActive(true);
+            moneyText.text = $"${(int)playerData.money}";
         }
     }
 
-    private void CreateInstructionPanel()
-    {
-        // Find or create a canvas
-        Canvas tutorialCanvas = FindObjectOfType<Canvas>();
-        if (tutorialCanvas == null)
-        {
-            GameObject canvasObj = new GameObject("TutorialCanvas");
-            tutorialCanvas = canvasObj.AddComponent<Canvas>();
-            tutorialCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
-        }
-
-        // Create panel
-        instructionPanel = new GameObject("InstructionPanel");
-        instructionPanel.transform.SetParent(tutorialCanvas.transform, false);
-
-        RectTransform panelRect = instructionPanel.AddComponent<RectTransform>();
-        panelRect.anchorMin = new Vector2(0.5f, 1f); // Top center
-        panelRect.anchorMax = new Vector2(0.5f, 1f);
-        panelRect.pivot = new Vector2(0.5f, 1f);
-        panelRect.anchoredPosition = new Vector2(0, -20);
-        panelRect.sizeDelta = new Vector2(500, 100);
-
-        // Background
-        instructionBackground = instructionPanel.AddComponent<Image>();
-        instructionBackground.color = new Color(0, 0, 0, 0.85f);
-
-        // CanvasGroup for fade
-        instructionCanvasGroup = instructionPanel.AddComponent<CanvasGroup>();
-        instructionCanvasGroup.alpha = 0;
-
-        // Text
-        GameObject textObj = new GameObject("Text");
-        textObj.transform.SetParent(instructionPanel.transform, false);
-
-        RectTransform textRect = textObj.AddComponent<RectTransform>();
-        textRect.anchorMin = Vector2.zero;
-        textRect.anchorMax = Vector2.one;
-        textRect.offsetMin = new Vector2(20, 10);
-        textRect.offsetMax = new Vector2(-20, -10);
-
-        instructionText = textObj.AddComponent<TextMeshProUGUI>();
-        instructionText.fontSize = 20;
-        instructionText.color = Color.white;
-        instructionText.alignment = TextAlignmentOptions.Center;
-        instructionText.enableWordWrapping = true;
-
-        instructionPanel.SetActive(true);
-    }
-
+    // === Tutorial Instructions ===
     public void ShowInstruction(string text)
     {
         if (instructionText != null)
@@ -185,7 +165,9 @@ public class UIManager : MonoBehaviour
             instructionText.text = text;
             instructionVisible = true;
             if (instructionPanel != null && !instructionPanel.activeSelf)
+            {
                 instructionPanel.SetActive(true);
+            }
         }
     }
 
@@ -194,11 +176,9 @@ public class UIManager : MonoBehaviour
         instructionVisible = false;
     }
 
-    public void UpdateInstruction(string text)
+    // === Utility Methods ===
+    public bool AreReferencesValid()
     {
-        if (instructionText != null && instructionVisible)
-            instructionText.text = text;
+        return playerController != null && playerStorage != null && playerData != null;
     }
-
-    #endregion
 }

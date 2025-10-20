@@ -9,6 +9,7 @@ public class JuicePacketController : MonoBehaviour
 
     private GameObject player;
     private bool moveToPlayer = false;
+    private bool tutorialNotified = false; // Prevents double completion call
 
     private void Start()
     {
@@ -31,10 +32,20 @@ public class JuicePacketController : MonoBehaviour
             {
                 // Add juice to fridge when packet reaches player
                 if (juiceData != null)
-                    // JuiceFridgeManager.Instance.AddJuice(juiceData, 1); // Event will update UI automatically
+                {
+                    // JuiceFridgeManager.Instance.AddJuice(juiceData, 1); // Optional line
+                    AudioManager.Instance?.PlaySound(AudioNames.COLLECTED_JUICE);
 
-                    // Remove packet from scene
-                    gameObject.SetActive(false);
+                    // Notify tutorial step completion
+                    if (!tutorialNotified)
+                    {
+                        SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
+                        tutorialNotified = true;
+                    }
+                }
+
+                // Remove packet from scene
+                gameObject.SetActive(false);
             }
         }
     }
@@ -44,12 +55,21 @@ public class JuicePacketController : MonoBehaviour
     {
         if (other.CompareTag("Player") && juiceData != null)
         {
-            // JuiceFridgeManager.Instance.AddJuice(juiceData, 1); // Event updates UI
+            // JuiceFridgeManager.Instance.AddJuice(juiceData, 1);
+            AudioManager.Instance?.PlaySound(AudioNames.COLLECTED_JUICE);
+
+            //  Tutorial completion
+            if (!tutorialNotified)
+            {
+                SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
+                tutorialNotified = true;
+            }
+
             gameObject.SetActive(false);
         }
     }
 
-    // Detect clicks/taps on the fruit using raycast
+    // Detect clicks/taps on the juice using raycast
     void DetectJuiceTouch()
     {
         if (Input.GetMouseButtonDown(0))
@@ -67,8 +87,11 @@ public class JuicePacketController : MonoBehaviour
 
                     var playerController = player.GetComponent<PlayerController>();
 
-                    // Let the player decide if it can collect the fruit
-                    if (playerController.TryCollectJuice(juiceData)) moveToPlayer = true;
+                    // Let the player decide if it can collect the juice
+                    if (playerController.TryCollectJuice(juiceData))
+                    {
+                        moveToPlayer = true;
+                    }
                 }
             }
         }

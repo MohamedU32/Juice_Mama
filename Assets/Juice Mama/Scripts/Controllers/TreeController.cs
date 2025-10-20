@@ -5,6 +5,7 @@ public class TreeController : MonoBehaviour
     [SerializeField] private TreeData treeData;
     private GameObject[] spawnedFruits;
     private bool isWaitingToRespawn = false;
+    private bool tutorialNotified = false; //  ensures we trigger the tutorial only once
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class TreeController : MonoBehaviour
 
     void MonitorFruitStatus()
     {
+        if (spawnedFruits == null || spawnedFruits.Length == 0) return;
+
         bool allGone = true;
 
         foreach (GameObject fruit in spawnedFruits)
@@ -47,12 +50,23 @@ public class TreeController : MonoBehaviour
             if (fruit != null && fruit.activeSelf)
             {
                 allGone = false;
+                break;
             }
         }
+
         if (allGone && !isWaitingToRespawn)
         {
             isWaitingToRespawn = true;
-            Invoke("SpawnFruits", 2f);
+
+            // Notify tutorial only once when the tree has been fully harvested
+            if (!tutorialNotified)
+            {
+                SimpleTutorialManager.Instance?.ManualComplete("CollectFruit");
+                tutorialNotified = true;
+            }
+
+            // Respawn fruits after a short delay
+            Invoke(nameof(SpawnFruits), 2f);
         }
     }
 }

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepName: Pick Fruits
   instructionText: 'Tap to Collect Apples '
-  targetTag: Apple
-  targetName: Apple
+  targetTag: AppleTree
+  targetName: AppleTree
   isCompleted: 0
   requiredMoney: 0
   showOnlyWhenAffordable: 0

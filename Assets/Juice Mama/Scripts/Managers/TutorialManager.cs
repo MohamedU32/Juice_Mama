@@ -1,202 +1,206 @@
-using UnityEngine;
 using System.Collections.Generic;
-using Kalkatos.DottedArrow;
+using UnityEngine;
 
-public class TutorialManager : MonoBehaviour
+public class SimpleTutorialManager : MonoBehaviour
 {
-    public static TutorialManager Instance;
-
-    [Header("Tutorial Steps")]
+    public static SimpleTutorialManager Instance;
     public List<TutorialStepData> steps;
-
-    [Header("References")]
-    public TutorialArrow arrow;
-    public Transform player;
+    public TutorialArrow3D arrow;
     public UIManager uiManager;
-
-    [Header("Settings")]
-    public bool resetStepsOnStart = true;
-    public bool autoAdvanceOnCompletion = true;
-    public float proximityCheckDistance = 2f;
+    public Transform player;
+    public float proximityDistance = 2f;
 
     private int currentStepIndex = 0;
     private Transform currentTarget;
-    private TutorialStepData currentStep;
-    private bool checkingProximity = false;
+    private bool active = false;
+    private bool stepCompleted = false; // Prevents double completion
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Instance == null) Instance = this;
+        else { Destroy(gameObject); return; }
 
-        // Auto-find components
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
-        if (uiManager == null)
-            uiManager = UIManager.Instance;
-
-        if (arrow == null)
-            arrow = FindObjectOfType<TutorialArrow>();
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (uiManager == null) uiManager = UIManager.Instance;
+        if (arrow == null) arrow = FindObjectOfType<TutorialArrow3D>();
     }
 
-    void Start()
+    private void Start()
     {
-        if (resetStepsOnStart)
-        {
-            foreach (var step in steps)
-                step.ResetCompletion();
-        }
-
-        if (steps.Count > 0)
-            StartStep(0);
-        else
-            Debug.LogWarning(" No tutorial steps assigned!");
+        foreach (var step in steps) step.ResetCompletion();
+        if (steps.Count > 0) StartStep(0);
     }
 
-    void Update()
+    private void Update()
     {
-        // Check proximity to target for auto-completion
-        if (checkingProximity && currentTarget != null && player != null)
+        if (!active || currentTarget == null || player == null || stepCompleted) return;
+
+        var currentStep = steps[currentStepIndex];
+        
+        // Only auto-complete based on proximity for movement steps
+        if (currentStep.stepName.Contains("GoTo") || currentStep.stepName.Contains("Walk") || currentStep.stepName.Contains("Move"))
         {
-            float distance = Vector3.Distance(player.position, currentTarget.position);
-            if (distance < proximityCheckDistance)
+            if (Vector3.Distance(player.position, currentTarget.position) < proximityDistance)
             {
-                CompleteCurrentStep();
-                checkingProximity = false;
+                Debug.Log($"✅ Proximity complete: {currentStep.stepName}");
+                CompleteStep();
             }
         }
-
-        // Auto-advance when step is completed
-        if (autoAdvanceOnCompletion && currentStep != null && currentStep.isCompleted)
-        {
-            NextStep();
-        }
     }
 
-    void StartStep(int stepIndex)
+    private void StartStep(int index)
     {
-        if (stepIndex >= steps.Count)
+        if (index >= steps.Count)
         {
             CompleteTutorial();
             return;
         }
 
-        currentStepIndex = stepIndex;
-        currentStep = steps[stepIndex];
+        currentStepIndex = index;
+        stepCompleted = false; // Reset flag for new step
+        var step = steps[index];
+
+        Debug.Log($"🎯 Starting Step {index}: '{step.stepName}' - {step.instructionText}");
 
         // Find target
-        currentTarget = FindTargetInScene(currentStep);
+        currentTarget = null;
+        
+        if (!string.IsNullOrEmpty(step.targetTag))
+        {
+            GameObject targetObj = GameObject.FindGameObjectWithTag(step.targetTag);
+            currentTarget = targetObj?.transform;
+            Debug.Log($"Found target by tag '{step.targetTag}': {(targetObj != null ? targetObj.name : "NULL")}");
+        }
+        
+        if (currentTarget == null && !string.IsNullOrEmpty(step.targetName))
+        {
+            GameObject targetObj = GameObject.Find(step.targetName);
+            currentTarget = targetObj?.transform;
+            Debug.Log($"Found target by name '{step.targetName}': {(targetObj != null ? targetObj.name : "NULL")}");
+        }
 
         if (currentTarget == null)
         {
-            Debug.LogWarning($" Could not find target for: {currentStep.stepName}");
+            Debug.LogWarning($"⚠️ Cannot find target for step: {step.stepName}. Continuing without arrow...");
+            // Don't skip - just show instruction without arrow
+        }
+
+        // Update UI and arrow
+        if (uiManager != null)
+        {
+            uiManager.ShowInstruction(step.instructionText);
+            Debug.Log($"📝 Instruction shown: {step.instructionText}");
+        }
+        
+        if (arrow != null && currentTarget != null)
+        {
+            arrow.SetTarget(currentTarget);
+            Debug.Log($"➡️ Arrow pointing to: {currentTarget.name} at {currentTarget.position}");
+        }
+        else if (arrow != null)
+        {
+            arrow.Hide(); // Hide arrow if no target
+            Debug.Log("➡️ Arrow hidden (no target)");
+        }
+        
+        active = true;
+    }
+
+    private void CompleteStep()
+    {
+        if (stepCompleted) return; // Prevent double completion
+        
+        stepCompleted = true;
+        var step = steps[currentStepIndex];
+        step.isCompleted = true;
+        Debug.Log($"✅ Step {currentStepIndex} Complete: '{step.stepName}'");
+        
+        // Small delay before next step for better UX
+        Invoke(nameof(NextStep), 0.5f);
+    }
+
+    private void NextStep()
+    {
+        currentStepIndex++;
+        if (currentStepIndex >= steps.Count)
+        {
+            CompleteTutorial();
+        }
+        else
+        {
+            StartStep(currentStepIndex);
+        }
+    }
+
+    private void CompleteTutorial()
+    {
+        active = false;
+        
+        if (arrow != null)
+        {
+            arrow.Hide();
+            Debug.Log("➡️ Arrow hidden - Tutorial complete");
+        }
+        
+        if (uiManager != null)
+        {
+            uiManager.HideInstruction();
+            Debug.Log("📝 Instructions hidden - Tutorial complete");
+        }
+        
+        Debug.Log("🎉 🎉 🎉 Tutorial Complete! 🎉 🎉 🎉");
+    }
+
+    public void ManualComplete(string stepName)
+    {
+        if (currentStepIndex >= steps.Count)
+        {
+            Debug.LogWarning($"Tutorial already complete, ignoring ManualComplete for: '{stepName}'");
             return;
         }
 
-        // Show instruction
-        uiManager?.ShowInstruction(currentStep.instructionText);
-
-        // Show arrow
-        if (arrow != null && player != null)
+        if (stepCompleted)
         {
-            arrow.SetTargets(player, currentTarget);
-            arrow.SetActive(true);
+            Debug.LogWarning($"Step already completed, ignoring duplicate ManualComplete for: '{stepName}'");
+            return;
         }
 
-        // Enable proximity checking
-        checkingProximity = true;
+        var currentStep = steps[currentStepIndex];
+        
+        Debug.Log($"🔔 ManualComplete called for: '{stepName}' | Current step: '{currentStep.stepName}'");
 
-        Debug.Log($"✓ Tutorial Step {stepIndex + 1}/{steps.Count}: {currentStep.stepName}");
-    }
+        // Check if step names match (case-insensitive and trimmed)
+        string currentStepName = currentStep.stepName.Trim().ToLower();
+        string calledStepName = stepName.Trim().ToLower();
 
-    Transform FindTargetInScene(TutorialStepData step)
-    {
-        GameObject targetObj = null;
-
-        // Try tag first
-        if (!string.IsNullOrEmpty(step.targetTag))
+        if (currentStepName == calledStepName)
         {
-            targetObj = GameObject.FindGameObjectWithTag(step.targetTag);
-            if (targetObj != null)
-                Debug.Log($"✓ Found by tag: {step.targetTag}");
+            Debug.Log($"✅ ✅ Manual completion ACCEPTED for: '{stepName}'");
+            CompleteStep();
         }
-
-        // Try name
-        if (targetObj == null && !string.IsNullOrEmpty(step.targetName))
-        {
-            targetObj = GameObject.Find(step.targetName);
-            if (targetObj != null)
-                Debug.Log($"✓ Found by name: {step.targetName}");
-        }
-
-        return targetObj?.transform;
-    }
-
-    // ===== PUBLIC API =====
-
-    public void CompleteCurrentStep()
-    {
-        if (currentStep != null && !currentStep.isCompleted)
-        {
-            currentStep.isCompleted = true;
-            checkingProximity = false;
-            Debug.Log($"✓ Completed: {currentStep.stepName}");
-        }
-    }
-
-    public void CompleteStep(string stepName)
-    {
-        TutorialStepData step = steps.Find(s => s.stepName == stepName);
-        if (step != null && !step.isCompleted)
-        {
-            step.isCompleted = true;
-            Debug.Log($"✓ Completed: {stepName}");
-
-            if (step == currentStep && !autoAdvanceOnCompletion)
-                NextStep();
-        }
-    }
-
-    public void NextStep()
-    {
-        if (currentStep != null)
-            currentStep.isCompleted = true;
-
-        currentStepIndex++;
-
-        if (currentStepIndex >= steps.Count)
-            CompleteTutorial();
         else
-            StartStep(currentStepIndex);
-    }
-
-    public void GoToStep(int stepIndex)
-    {
-        if (stepIndex >= 0 && stepIndex < steps.Count)
         {
-            currentStepIndex = stepIndex;
-            StartStep(stepIndex);
+            Debug.LogWarning($"⚠️ ManualComplete IGNORED. Expected '{currentStep.stepName}' but got '{stepName}'");
+            Debug.LogWarning($"💡 TIP: Make sure your stepName in TutorialStepData exactly matches the ManualComplete() call");
         }
     }
 
-    void CompleteTutorial()
+    // Helper: Get current step name (useful for debugging)
+    public string GetCurrentStepName()
     {
-        arrow?.Deactivate();
-        uiManager?.HideInstruction();
-        checkingProximity = false;
-        Debug.Log("Tutorial Complete!");
+        if (currentStepIndex < steps.Count)
+            return steps[currentStepIndex].stepName;
+        return "None - Tutorial Complete";
     }
 
-    // ===== HELPER METHODS =====
-
-    public bool IsTutorialComplete() => currentStepIndex >= steps.Count;
-    public int GetCurrentStepIndex() => currentStepIndex;
-    public string GetCurrentStepName() => currentStep?.stepName ?? "None";
-    public int GetTotalSteps() => steps.Count;
+    // Force complete current step (debugging only)
+    [ContextMenu("Force Complete Current Step")]
+    public void ForceCompleteCurrentStep()
+    {
+        if (currentStepIndex < steps.Count && !stepCompleted)
+        {
+            Debug.Log($"🔧 FORCED completion of: {steps[currentStepIndex].stepName}");
+            CompleteStep();
+        }
+    }
 }

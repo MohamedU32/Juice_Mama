@@ -1,158 +1,120 @@
-
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Kalkatos.DottedArrow
+public class TutorialArrow3D : MonoBehaviour
 {
-    
-    
-    [RequireComponent(typeof(RectTransform))]
-    public class TutorialArrow : MonoBehaviour
+    [Header("Arrow Settings")]
+    public Transform player;
+    public float heightOffset = 2.5f;
+    public float minScale = 0.8f;
+    public float maxScale = 1.5f;
+    public float maxDistance = 15f;
+    public float hideDistance = 2f;
+    public float rotationSpeed = 10f;
+    public float bobSpeed = 2f; // Bouncing animation speed
+    public float bobAmount = 0.3f; // How much the arrow bobs up and down
+
+    private Transform target;
+    private Vector3 baseOffset;
+    private bool isVisible = false;
+
+    private void Start()
     {
-        [Header("References")]
-        [SerializeField] private Transform player;
-        [SerializeField] private Transform target;
-        [SerializeField] private RectTransform baseRect; // Dotted line sprite
-        [SerializeField] private Canvas canvas;
-
-        [Header("Settings")]
-        [SerializeField] private float maxDistance = 15f;
-        [SerializeField] private float minScale = 0.5f;
-        [SerializeField] private float maxScale = 1.5f;
-        [SerializeField] private float hideDistance = 2f; // Hide arrow when player is close
-        [SerializeField] private float rotationOffset = -90f; // Adjust if sprite points wrong
-        [SerializeField] private bool startsActive = false;
-
-        [Header("Next Target Settings")]
-        [SerializeField] private Transform nextTarget; // Optional next target
-        [SerializeField] private float nextTargetDelay = 1f;
-
-        private RectTransform myRect;
-        private Camera mainCamera;
-        private CanvasGroup canvasGroup;
-        private bool isActive;
-        private bool taskCompleted;
-
-        private void Awake()
+        if (player == null)
         {
-            myRect = GetComponent<RectTransform>();
-            mainCamera = Camera.main;
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+        
+        baseOffset = Vector3.up * heightOffset;
+    }
 
-            if (canvas == null)
-                canvas = GetComponentInParent<Canvas>();
-
-            if (canvas == null)
-            {
-                Debug.LogError(" TutorialArrow must be a child of a Canvas!");
-                enabled = false;
-                return;
-            }
-
-            canvasGroup = GetComponent<CanvasGroup>();
-            if (canvasGroup == null)
-                canvasGroup = gameObject.AddComponent<CanvasGroup>();
-
-            SetActive(startsActive);
+    private void Update()
+    {
+        if (target == null || player == null)
+        {
+            if (isVisible) Hide();
+            return;
         }
 
-        private void Update()
+        float distance = Vector3.Distance(player.position, target.position);
+        
+        // Hide arrow when very close to target
+        if (distance < hideDistance)
         {
-            if (!isActive || player == null || target == null || taskCompleted)
-                return;
-
-            float distance = Vector3.Distance(player.position, target.position);
-            if (distance < hideDistance)
-            {
-                canvasGroup.alpha = 0;
-                return;
-            }
-            else
-            {
-                canvasGroup.alpha = 1;
-            }
-
-            UpdateArrow();
+            if (isVisible) Hide();
+            return;
         }
 
-        private void UpdateArrow()
+        if (!isVisible) Show();
+        UpdateArrow(distance);
+    }
+
+    private void UpdateArrow(float distance)
+    {
+        // Position arrow above player with bobbing animation
+        float bobOffset = Mathf.Sin(Time.time * bobSpeed) * bobAmount;
+        Vector3 finalOffset = baseOffset + Vector3.up * bobOffset;
+        transform.position = player.position + finalOffset;
+
+        // Point arrow toward target (only horizontal rotation)
+        Vector3 directionToTarget = target.position - player.position;
+        directionToTarget.y = 0; // Keep arrow level
+
+        if (directionToTarget.sqrMagnitude > 0.01f)
         {
-            // Convert world positions to screen points
-            Vector2 playerScreen = RectTransformUtility.WorldToScreenPoint(mainCamera, player.position);
-            Vector2 targetScreen = RectTransformUtility.WorldToScreenPoint(mainCamera, target.position);
-
-            // Convert to canvas-local positions
-            RectTransform canvasRect = canvas.transform as RectTransform;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                canvasRect, playerScreen, mainCamera, out Vector2 localPlayer);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                canvasRect, targetScreen, mainCamera, out Vector2 localTarget);
-
-            // Position arrow at player
-            myRect.anchoredPosition = localPlayer;
-
-            // Rotate arrow
-            Vector2 direction = localTarget - localPlayer;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + rotationOffset;
-            myRect.localRotation = Quaternion.Euler(0, 0, angle);
-
-            // Stretch the dotted line
-            if (baseRect != null)
-            {
-                float lineLength = direction.magnitude;
-                Vector2 size = baseRect.sizeDelta;
-                size.x = Mathf.Max(10f, lineLength); // Prevent zero-length
-                baseRect.sizeDelta = size;
-            }
-
-            // Scale arrow based on distance
-            float t = Mathf.Clamp01(Vector3.Distance(player.position, target.position) / maxDistance);
-            float scale = Mathf.Lerp(maxScale, minScale, t);
-            myRect.localScale = Vector3.one * scale;
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        // Scale based on distance (closer = smaller, further = larger)
+        float normalizedDistance = Mathf.Clamp01(distance / maxDistance);
+        float scale = Mathf.Lerp(maxScale, minScale, normalizedDistance);
+        transform.localScale = Vector3.one * scale;
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+        
+        if (newTarget != null)
         {
-            if (other.CompareTag("Player") && !taskCompleted)
-                CompleteTask();
+            Debug.Log($"➡️ Arrow target set to: {newTarget.name}");
+            Show();
         }
-
-        private void CompleteTask()
+        else
         {
-            taskCompleted = true;
-            SetActive(false);
-
-            Debug.Log("Task Completed!");
-
-            if (nextTarget != null)
-                Invoke(nameof(ShowNextTarget), nextTargetDelay);
+            Debug.Log("➡️ Arrow target cleared");
+            Hide();
         }
+    }
 
-        private void ShowNextTarget()
+    public void Hide()
+    {
+        if (isVisible)
         {
-            target = nextTarget;
-            taskCompleted = false;
-            SetActive(true);
+            gameObject.SetActive(false);
+            isVisible = false;
+            Debug.Log("➡️ Arrow hidden");
         }
+    }
 
-        public void SetTargets(Transform newPlayer, Transform newTarget)
+    public void Show()
+    {
+        if (!isVisible)
         {
-            player = newPlayer;
-            target = newTarget;
-            taskCompleted = false;
-            SetActive(true);
+            gameObject.SetActive(true);
+            isVisible = true;
+            Debug.Log("➡️ Arrow shown");
         }
+    }
 
-        public void SetActive(bool active)
+    // Optional: Draw debug line in Scene view
+    private void OnDrawGizmos()
+    {
+        if (target != null && player != null)
         {
-            isActive = active;
-            gameObject.SetActive(active);
-            if (active && canvasGroup != null)
-                canvasGroup.alpha = 1;
-
-            if (active)
-                UpdateArrow();
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(player.position + Vector3.up * heightOffset, target.position);
+            Gizmos.DrawWireSphere(target.position, hideDistance);
         }
-
-        public void Deactivate() => SetActive(false);
     }
 }

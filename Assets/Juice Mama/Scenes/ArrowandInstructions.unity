@@ -2635,12 +2635,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff94f6a606773e3489f4745246e3540e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {fileID: 0}
+  player: {fileID: 0}
   target: {fileID: 0}
   baseRect: {fileID: 880520304}
-  baseHeight: 100
+  canvas: {fileID: 0}
+  maxDistance: 15
+  minScale: 0.5
+  maxScale: 1.5
+  hideDistance: 2
+  rotationOffset: -90
   startsActive: 0
-  originOffset: {x: 0, y: 0, z: 0}
+  nextTarget: {fileID: 0}
+  nextTargetDelay: 1
 --- !u!224 &736918171
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3274,6 +3280,10 @@ MonoBehaviour:
   m_fruitText: {fileID: 674498451}
   m_juiceText: {fileID: 533840119}
   m_moneyText: {fileID: 2069477762}
+  instructionPanel: {fileID: 0}
+  instructionText: {fileID: 0}
+  instructionBackground: {fileID: 0}
+  instructionFadeSpeed: 5
 --- !u!4 &962871025
 Transform:
   m_ObjectHideFlags: 0
@@ -6408,10 +6418,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 13ae81ff6101cb34296c38c03125b2b6, type: 2}
   arrow: {fileID: 1703053031}
   player: {fileID: 1622765033}
-  floatingInstruction: {fileID: 1316159897}
-  instructionFollowsTarget: 0
+  uiManager: {fileID: 0}
   resetStepsOnStart: 1
   autoAdvanceOnCompletion: 1
+  proximityCheckDistance: 2
 --- !u!114 &1703053031 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7008004432487245812, guid: 27661a3ea4b619a45b23ad43d8680d54, type: 3}
@@ -8647,13 +8657,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 962871025}
   - {fileID: 6080839070705984119}
   - {fileID: 4701456737671252250}
   - {fileID: 1706698099}
   - {fileID: 447134917}
   - {fileID: 859239433}
   - {fileID: 417248062}
+  - {fileID: 962871025}
   - {fileID: 1417110326}
   - {fileID: 1200139849}
   - {fileID: 654790224602103825}
