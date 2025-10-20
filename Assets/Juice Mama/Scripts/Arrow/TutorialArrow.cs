@@ -77,12 +77,12 @@ public class TutorialArrow3D : MonoBehaviour
         
         if (newTarget != null)
         {
-            Debug.Log($"➡️ Arrow target set to: {newTarget.name}");
+            Debug.Log($" Arrow target set to: {newTarget.name}");
             Show();
         }
         else
         {
-            Debug.Log("➡️ Arrow target cleared");
+            Debug.Log(" Arrow target cleared");
             Hide();
         }
     }
@@ -93,7 +93,7 @@ public class TutorialArrow3D : MonoBehaviour
         {
             gameObject.SetActive(false);
             isVisible = false;
-            Debug.Log("➡️ Arrow hidden");
+            Debug.Log(" Arrow hidden");
         }
     }
 
@@ -103,7 +103,7 @@ public class TutorialArrow3D : MonoBehaviour
         {
             gameObject.SetActive(true);
             isVisible = true;
-            Debug.Log("➡️ Arrow shown");
+            Debug.Log("Arrow shown");
         }
     }
 

@@ -24,7 +24,7 @@ public class FruitController : MonoBehaviour
         
         if (player == null)
         {
-            Debug.LogError("❌ Player not found! Make sure the player is tagged 'Player'.");
+            Debug.LogError(" Player not found! Make sure the player is tagged 'Player'.");
             return;
         }
 
@@ -33,7 +33,7 @@ public class FruitController : MonoBehaviour
         
         if (playerController == null)
         {
-            Debug.LogError("❌ PlayerController component not found on Player GameObject!");
+            Debug.LogError(" PlayerController component not found on Player GameObject!");
         }
     }
 
@@ -85,13 +85,13 @@ public class FruitController : MonoBehaviour
                     // Safety checks
                     if (player == null)
                     {
-                        Debug.LogError("❌ Player reference is null!");
+                        Debug.LogError("Player reference is null!");
                         return;
                     }
 
                     if (playerController == null)
                     {
-                        Debug.LogError("❌ PlayerController component is null! Make sure Player has PlayerController script attached.");
+                        Debug.LogError(" PlayerController component is null! Make sure Player has PlayerController script attached.");
                         return;
                     }
 
@@ -108,7 +108,7 @@ public class FruitController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("🍎 Inventory full or cannot collect fruit right now.");
+                        Debug.Log(" Inventory full or cannot collect fruit right now.");
                     }
                 }
             }

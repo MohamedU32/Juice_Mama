@@ -42,7 +42,7 @@ public class SimpleTutorialManager : MonoBehaviour
         {
             if (Vector3.Distance(player.position, currentTarget.position) < proximityDistance)
             {
-                Debug.Log($"✅ Proximity complete: {currentStep.stepName}");
+                Debug.Log($"Proximity complete: {currentStep.stepName}");
                 CompleteStep();
             }
         }
@@ -60,7 +60,7 @@ public class SimpleTutorialManager : MonoBehaviour
         stepCompleted = false; // Reset flag for new step
         var step = steps[index];
 
-        Debug.Log($"🎯 Starting Step {index}: '{step.stepName}' - {step.instructionText}");
+        Debug.Log($" Starting Step {index}: '{step.stepName}' - {step.instructionText}");
 
         // Find target
         currentTarget = null;
@@ -81,7 +81,7 @@ public class SimpleTutorialManager : MonoBehaviour
 
         if (currentTarget == null)
         {
-            Debug.LogWarning($"⚠️ Cannot find target for step: {step.stepName}. Continuing without arrow...");
+            Debug.LogWarning($" Cannot find target for step: {step.stepName}. Continuing without arrow...");
             // Don't skip - just show instruction without arrow
         }
 
@@ -89,18 +89,18 @@ public class SimpleTutorialManager : MonoBehaviour
         if (uiManager != null)
         {
             uiManager.ShowInstruction(step.instructionText);
-            Debug.Log($"📝 Instruction shown: {step.instructionText}");
+            Debug.Log($" Instruction shown: {step.instructionText}");
         }
         
         if (arrow != null && currentTarget != null)
         {
             arrow.SetTarget(currentTarget);
-            Debug.Log($"➡️ Arrow pointing to: {currentTarget.name} at {currentTarget.position}");
+            Debug.Log($" Arrow pointing to: {currentTarget.name} at {currentTarget.position}");
         }
         else if (arrow != null)
         {
             arrow.Hide(); // Hide arrow if no target
-            Debug.Log("➡️ Arrow hidden (no target)");
+            Debug.Log(" Arrow hidden (no target)");
         }
         
         active = true;
@@ -113,7 +113,7 @@ public class SimpleTutorialManager : MonoBehaviour
         stepCompleted = true;
         var step = steps[currentStepIndex];
         step.isCompleted = true;
-        Debug.Log($"✅ Step {currentStepIndex} Complete: '{step.stepName}'");
+        Debug.Log($" Step {currentStepIndex} Complete: '{step.stepName}'");
         
         // Small delay before next step for better UX
         Invoke(nameof(NextStep), 0.5f);
@@ -139,16 +139,16 @@ public class SimpleTutorialManager : MonoBehaviour
         if (arrow != null)
         {
             arrow.Hide();
-            Debug.Log("➡️ Arrow hidden - Tutorial complete");
+            Debug.Log("Arrow hidden - Tutorial complete");
         }
         
         if (uiManager != null)
         {
             uiManager.HideInstruction();
-            Debug.Log("📝 Instructions hidden - Tutorial complete");
+            Debug.Log("Instructions hidden - Tutorial complete");
         }
         
-        Debug.Log("🎉 🎉 🎉 Tutorial Complete! 🎉 🎉 🎉");
+        Debug.Log(" Tutorial Complete! ");
     }
 
     public void ManualComplete(string stepName)
@@ -167,7 +167,7 @@ public class SimpleTutorialManager : MonoBehaviour
 
         var currentStep = steps[currentStepIndex];
         
-        Debug.Log($"🔔 ManualComplete called for: '{stepName}' | Current step: '{currentStep.stepName}'");
+        Debug.Log($"ManualComplete called for: '{stepName}' | Current step: '{currentStep.stepName}'");
 
         // Check if step names match (case-insensitive and trimmed)
         string currentStepName = currentStep.stepName.Trim().ToLower();
@@ -175,13 +175,13 @@ public class SimpleTutorialManager : MonoBehaviour
 
         if (currentStepName == calledStepName)
         {
-            Debug.Log($"✅ ✅ Manual completion ACCEPTED for: '{stepName}'");
+            Debug.Log($"Manual completion ACCEPTED for: '{stepName}'");
             CompleteStep();
         }
         else
         {
-            Debug.LogWarning($"⚠️ ManualComplete IGNORED. Expected '{currentStep.stepName}' but got '{stepName}'");
-            Debug.LogWarning($"💡 TIP: Make sure your stepName in TutorialStepData exactly matches the ManualComplete() call");
+            Debug.LogWarning($" ManualComplete IGNORED. Expected '{currentStep.stepName}' but got '{stepName}'");
+            Debug.LogWarning($" stepName in TutorialStepData exactly matches the ManualComplete() call");
         }
     }
 
@@ -199,7 +199,7 @@ public class SimpleTutorialManager : MonoBehaviour
     {
         if (currentStepIndex < steps.Count && !stepCompleted)
         {
-            Debug.Log($"🔧 FORCED completion of: {steps[currentStepIndex].stepName}");
+            Debug.Log($" FORCED completion of: {steps[currentStepIndex].stepName}");
             CompleteStep();
         }
     }
