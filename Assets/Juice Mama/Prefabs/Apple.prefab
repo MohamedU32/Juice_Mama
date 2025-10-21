@@ -103,7 +103,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -123,5 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruitData: {fileID: 11400000, guid: 22dc717143208ff4d825885c8463cbfe, type: 2}
   isGrown: 0
+  moveToPlayer: 0
   startScale: {x: 0.25, y: 0.25, z: 0.25}
   targetScale: {x: 3, y: 3, z: 3}

@@ -1,8 +1,10 @@
-using System.Collections.Generic;
+  using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
+
     [SerializeField] private float speed = 15.0f;
     [SerializeField] private FloatingJoystick_Custom joystick;
 
@@ -13,18 +15,15 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
     public int maxFruitCapacity = 4;
-    public AudioClip collectedFruitSoundEffect;
     public bool canCarryFruit => playerStorage == null ? false : (playerStorage.GetFruitCount() < maxFruitCapacity);
-
     public int maxJuiceCapacity = 4;
-    public AudioClip collectedJuiceSoundEffect;
-
-    public AudioClip FailedCollectionSoundEffect;
-
     public bool canCarryJuice => playerStorage == null ? false : (playerStorage.GetJuiceCount() < maxJuiceCapacity);
 
     void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
         playerStorage = gameObject.GetComponent<StorageController>();
         if (playerStorage == null)
         {
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-
         AudioManager.Instance.PlaySound(AudioNames.BACKGROUND_MUSIC);
         AudioManager.Instance.SetVolume(AudioNames.BACKGROUND_MUSIC, 0.3f);
     }

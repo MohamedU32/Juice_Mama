@@ -16,4 +16,5 @@ MonoBehaviour:
   displayName: Apple
   icon: {fileID: 21300000, guid: 1c37041458002944e9cdea70017b65d5, type: 3}
   prefab: {fileID: 7636875300174412836, guid: 976d4c7fc2c6af941ac53fc8bf9e1800, type: 3}
-  growthTime: 10
+  moveSpeed: 10
+  growSpeed: 0.5
