@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         AudioManager.Instance.SetVolume(AudioNames.BACKGROUND_MUSIC, 0.3f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = joystick.Horizontal;
@@ -56,6 +55,7 @@ public class PlayerController : MonoBehaviour
         else playerAnimator.SetBool("isWalking", false);
     }
 
+    // ✅ Handles fruit collection and triggers tutorial event
     public bool TryCollectFruit(FruitData fruitData)
     {
         if (canCarryFruit)
@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour
             playerStorage.Add(fruitData, 1);
             UIManager.Instance.UpdateFruitCount();
             AudioManager.Instance.PlaySound(AudioNames.COLLECTED_FRUIT);
+
+            // Trigger tutorial event for collecting fruit
+            TutorialEventSystem.RaiseStepCompleted("CollectFruit");
             return true;
         }
 
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    // ✅ Handles juice collection and triggers tutorial event
     public bool TryCollectJuice(JuiceData juiceData)
     {
         if (canCarryJuice)
@@ -78,6 +82,9 @@ public class PlayerController : MonoBehaviour
             playerStorage.Add(juiceData, 1);
             UIManager.Instance.UpdateJuiceCount();
             AudioManager.Instance.PlaySound(AudioNames.COLLECTED_JUICE);
+
+            // Trigger tutorial event for collecting juice
+            TutorialEventSystem.RaiseStepCompleted("CollectJuice");
             return true;
         }
 

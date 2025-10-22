@@ -62,8 +62,8 @@ public class JuicerController : MonoBehaviour
             juicerStorage.Add(juicerData.juiceData, 1);
         }
 
-        // Notify tutorial system that juice was created
-        SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
+        // ✅ Notify tutorial that juice production is complete
+        TutorialEventSystem.RaiseStepCompleted("MakeJuice");
 
         SyncVisuals();
         isProcessing = false;

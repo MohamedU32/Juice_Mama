@@ -12,6 +12,7 @@ public class TutorialArrow3D : MonoBehaviour
     public float rotationSpeed = 10f;
     public float bobSpeed = 2f; // Bouncing animation speed
     public float bobAmount = 0.3f; // How much the arrow bobs up and down
+    public float followSmoothness = 8f; // NEW: smooth follow movement
 
     private Transform target;
     private Vector3 baseOffset;
@@ -19,15 +20,21 @@ public class TutorialArrow3D : MonoBehaviour
 
     private void Start()
     {
+        // Auto-assign player if not set
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
-        
+
         baseOffset = Vector3.up * heightOffset;
+
+        if (player == null)
+        {
+            Debug.LogError("TutorialArrow3D: Player not found! Make sure your player is tagged 'Player'.");
+        }
     }
 
-    private void Update()
+    private void LateUpdate() // Changed to LateUpdate for smoother camera-follow effect
     {
         if (target == null || player == null)
         {
@@ -36,8 +43,8 @@ public class TutorialArrow3D : MonoBehaviour
         }
 
         float distance = Vector3.Distance(player.position, target.position);
-        
-        // Hide arrow when very close to target
+
+        // Hide arrow when player is very close to the target
         if (distance < hideDistance)
         {
             if (isVisible) Hide();
@@ -45,19 +52,22 @@ public class TutorialArrow3D : MonoBehaviour
         }
 
         if (!isVisible) Show();
+
         UpdateArrow(distance);
     }
 
     private void UpdateArrow(float distance)
     {
-        // Position arrow above player with bobbing animation
+        // Bobbing motion
         float bobOffset = Mathf.Sin(Time.time * bobSpeed) * bobAmount;
-        Vector3 finalOffset = baseOffset + Vector3.up * bobOffset;
-        transform.position = player.position + finalOffset;
+        Vector3 desiredPosition = player.position + baseOffset + Vector3.up * bobOffset;
 
-        // Point arrow toward target (only horizontal rotation)
+        // Smoothly follow player position
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * followSmoothness);
+
+        // Rotate arrow to face target horizontally
         Vector3 directionToTarget = target.position - player.position;
-        directionToTarget.y = 0; // Keep arrow level
+        directionToTarget.y = 0;
 
         if (directionToTarget.sqrMagnitude > 0.01f)
         {
@@ -65,7 +75,7 @@ public class TutorialArrow3D : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
 
-        // Scale based on distance (closer = smaller, further = larger)
+        // Scale based on distance
         float normalizedDistance = Mathf.Clamp01(distance / maxDistance);
         float scale = Mathf.Lerp(maxScale, minScale, normalizedDistance);
         transform.localScale = Vector3.one * scale;
@@ -74,15 +84,15 @@ public class TutorialArrow3D : MonoBehaviour
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
-        
+
         if (newTarget != null)
         {
-            Debug.Log($" Arrow target set to: {newTarget.name}");
+            Debug.Log($"Arrow target set to: {newTarget.name}");
             Show();
         }
         else
         {
-            Debug.Log(" Arrow target cleared");
+            Debug.Log("Arrow target cleared");
             Hide();
         }
     }
@@ -93,7 +103,7 @@ public class TutorialArrow3D : MonoBehaviour
         {
             gameObject.SetActive(false);
             isVisible = false;
-            Debug.Log(" Arrow hidden");
+            Debug.Log("Arrow hidden");
         }
     }
 
@@ -107,7 +117,6 @@ public class TutorialArrow3D : MonoBehaviour
         }
     }
 
-    // Optional: Draw debug line in Scene view
     private void OnDrawGizmos()
     {
         if (target != null && player != null)
