@@ -90,10 +90,10 @@ public class TreeController : MonoBehaviour
         }
 
         // Optional: Notify tutorial system
-        if (SimpleTutorialManager.Instance != null)
-        {
-            SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
-        }
+        //if (SimpleTutorialManager.Instance != null)
+        //{
+        //    SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
+        //}
     }
 
     void MonitorFruitStatus()
@@ -117,10 +117,10 @@ public class TreeController : MonoBehaviour
 
             // Notify tutorial only once when the tree has been fully harvested
             if (!tutorialNotified)
-            {
-                SimpleTutorialManager.Instance?.ManualComplete("CollectFruit");
-                tutorialNotified = true;
-            }
+            //{
+            //    SimpleTutorialManager.Instance?.ManualComplete("CollectFruit");
+            //    tutorialNotified = true;
+            //}
 
             // Respawn fruits after a short delay
             Invoke(nameof(SpawnFruits), 2f);

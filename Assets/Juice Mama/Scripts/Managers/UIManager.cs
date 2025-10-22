@@ -17,9 +17,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
 
     [Header("Tutorial Instruction UI")]
-    [SerializeField] private GameObject instructionPanel;
-    [SerializeField] private TextMeshProUGUI instructionText;
-    [SerializeField] private float instructionFadeSpeed = 5f;
+    //[SerializeField] private GameObject instructionPanel;
+    //[SerializeField] private TextMeshProUGUI instructionText;
+    //[SerializeField] private float instructionFadeSpeed = 5f;
     
     private CanvasGroup instructionCanvasGroup;
     private bool instructionVisible = false;
@@ -39,16 +39,16 @@ public class UIManager : MonoBehaviour
         }
 
         // Setup instruction panel if it exists
-        if (instructionPanel != null)
-        {
-            instructionCanvasGroup = instructionPanel.GetComponent<CanvasGroup>();
-            if (instructionCanvasGroup == null)
-            {
-                instructionCanvasGroup = instructionPanel.AddComponent<CanvasGroup>();
-            }
-            instructionCanvasGroup.alpha = 0f;
-            instructionPanel.SetActive(true);
-        }
+        //if (instructionPanel != null)
+        //{
+        //    instructionCanvasGroup = instructionPanel.GetComponent<CanvasGroup>();
+        //    if (instructionCanvasGroup == null)
+        //    {
+        //        instructionCanvasGroup = instructionPanel.AddComponent<CanvasGroup>();
+        //    }
+        //    instructionCanvasGroup.alpha = 0f;
+        //    instructionPanel.SetActive(true);
+        //}
     }
 
     private void Start()
@@ -106,8 +106,8 @@ public class UIManager : MonoBehaviour
         Debug.Log($"juiceText assigned: {juiceText != null}");
         Debug.Log($"moneyText assigned: {moneyText != null}");
         Debug.Log($"playerData assigned: {playerData != null}");
-        Debug.Log($"instructionPanel assigned: {instructionPanel != null}");
-        Debug.Log($"instructionText assigned: {instructionText != null}");
+        //Debug.Log($"instructionPanel assigned: {instructionPanel != null}");
+        //Debug.Log($"instructionText assigned: {instructionText != null}");
 
         // Initial UI updates
         UpdateMoney();
@@ -120,15 +120,15 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         // Handle instruction panel fade animation
-        if (instructionCanvasGroup != null)
-        {
-            float targetAlpha = instructionVisible ? 1f : 0f;
-            instructionCanvasGroup.alpha = Mathf.Lerp(
-                instructionCanvasGroup.alpha, 
-                targetAlpha, 
-                Time.deltaTime * instructionFadeSpeed
-            );
-        }
+        //if (instructionCanvasGroup != null)
+        //{
+        //    float targetAlpha = instructionVisible ? 1f : 0f;
+        //    instructionCanvasGroup.alpha = Mathf.Lerp(
+        //        instructionCanvasGroup.alpha, 
+        //        targetAlpha, 
+        //        Time.deltaTime * instructionFadeSpeed
+        //    );
+        //}
     }
 
     // === Resource Updates ===
@@ -158,18 +158,18 @@ public class UIManager : MonoBehaviour
     }
 
     // === Tutorial Instructions ===
-    public void ShowInstruction(string text)
-    {
-        if (instructionText != null)
-        {
-            instructionText.text = text;
-            instructionVisible = true;
-            if (instructionPanel != null && !instructionPanel.activeSelf)
-            {
-                instructionPanel.SetActive(true);
-            }
-        }
-    }
+    //public void ShowInstruction(string text)
+    //{
+    //    if (instructionText != null)
+    //    {
+    //        instructionText.text = text;
+    //        instructionVisible = true;
+    //        if (instructionPanel != null && !instructionPanel.activeSelf)
+    //        {
+    //            instructionPanel.SetActive(true);
+    //        }
+    //    }
+    //}
 
     public void HideInstruction()
     {

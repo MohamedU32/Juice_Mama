@@ -37,11 +37,11 @@ public class JuicePacketController : MonoBehaviour
                     AudioManager.Instance?.PlaySound(AudioNames.COLLECTED_JUICE);
 
                     // Notify tutorial step completion
-                    if (!tutorialNotified)
-                    {
-                        SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
-                        tutorialNotified = true;
-                    }
+                    //if (!tutorialNotified)
+                    //{
+                    //    SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
+                    //    tutorialNotified = true;
+                    //}
                 }
 
                 // Remove packet from scene
@@ -59,11 +59,11 @@ public class JuicePacketController : MonoBehaviour
             AudioManager.Instance?.PlaySound(AudioNames.COLLECTED_JUICE);
 
             //  Tutorial completion
-            if (!tutorialNotified)
-            {
-                SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
-                tutorialNotified = true;
-            }
+            //if (!tutorialNotified)
+            //{
+            //    SimpleTutorialManager.Instance?.ManualComplete("MakeJuice");
+            //    tutorialNotified = true;
+            //}
 
             gameObject.SetActive(false);
         }
