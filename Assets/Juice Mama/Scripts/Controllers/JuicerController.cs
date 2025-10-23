@@ -9,7 +9,6 @@ public class JuicerController : MonoBehaviour
     [SerializeField] private Transform fruitsSpawnLocation;
     [SerializeField] private Transform juicesSpawnLocation;
 
-
     private List<Transform> spawnPoints = new List<Transform>();
     private StorageController juicerStorage;
 
@@ -27,9 +26,7 @@ public class JuicerController : MonoBehaviour
         if (spawnPointsParent != null)
         {
             foreach (Transform child in spawnPointsParent)
-            {
                 spawnPoints.Add(child);
-            }
         }
         else
         {
@@ -46,20 +43,28 @@ public class JuicerController : MonoBehaviour
     private IEnumerator SpawnJuicePackets(int count)
     {
         isProcessing = true;
+
         int maxBatches = count;
         foreach (RecipeEntry recipeItem in juicerData.recipe)
         {
             int available = juicerStorage.GetCount(recipeItem.fruitData) / recipeItem.count;
             if (available < maxBatches) maxBatches = available;
         }
+
         for (int i = 0; i < maxBatches; i++)
         {
             AudioManager.Instance.PlaySound(AudioNames.JUICER_PROCESSING, 1.0f);
             yield return new WaitForSeconds(juicerData.processTime);
+
             foreach (RecipeEntry recipeItem in juicerData.recipe)
                 juicerStorage.Remove(recipeItem.fruitData, recipeItem.count);
+
             juicerStorage.Add(juicerData.juiceData, 1);
         }
+
+        // ✅ Notify tutorial that juice production is complete
+        TutorialEventSystem.RaiseStepCompleted("MakeJuice");
+
         SyncVisuals();
         isProcessing = false;
     }
@@ -67,6 +72,7 @@ public class JuicerController : MonoBehaviour
     public void PickJuice(StorageController targetStorage, int count)
     {
         if (juicerStorage == null || targetStorage == null) return;
+
         int juiceCount = juicerStorage.GetCount(juicerData.juiceData);
         if (juiceCount > 0)
         {
@@ -81,13 +87,12 @@ public class JuicerController : MonoBehaviour
     private bool hasFruitsForRecipe()
     {
         if (juicerData.recipe.Count == 0) return false;
+
         foreach (RecipeEntry recipeItem in juicerData.recipe)
         {
             int availableCount = juicerStorage.GetCount(recipeItem.fruitData);
             if (availableCount < recipeItem.count)
-            {
                 return false;
-            }
         }
         return true;
     }
@@ -95,6 +100,7 @@ public class JuicerController : MonoBehaviour
     public void FillStorage(StorageController sourceStorage)
     {
         if (juicerStorage == null || sourceStorage == null) return;
+
         foreach (RecipeEntry recipeItem in juicerData.recipe)
         {
             int needed = juicerData.maxPerFruit - juicerStorage.GetCount(recipeItem.fruitData);
@@ -103,12 +109,12 @@ public class JuicerController : MonoBehaviour
                 int transferred = sourceStorage.TransferItemsTo(juicerStorage, recipeItem.fruitData, needed);
                 UIManager.Instance.UpdateFruitCount();
                 UIManager.Instance.UpdateJuiceCount();
+
                 if (transferred > 0)
-                {
                     AudioManager.Instance.PlaySound(AudioNames.STORAGE_FILLED, 1.0f);
-                }
             }
         }
+
         SyncVisuals();
     }
 
@@ -124,6 +130,7 @@ public class JuicerController : MonoBehaviour
     {
         foreach (Transform t in fruitsSpawnLocation) Destroy(t.gameObject);
         foreach (Transform t in juicesSpawnLocation) Destroy(t.gameObject);
+
         foreach (var entry in juicerStorage.GetItems)
         {
             if (entry.item is FruitData f)
@@ -133,6 +140,7 @@ public class JuicerController : MonoBehaviour
                     var fc = obj.GetComponent<FruitController>();
                     if (fc) Destroy(fc);
                 }
+
             if (entry.item is JuiceData j)
                 for (int i = 0; i < entry.count; i++)
                     Instantiate(j.prefab, juicesSpawnLocation);

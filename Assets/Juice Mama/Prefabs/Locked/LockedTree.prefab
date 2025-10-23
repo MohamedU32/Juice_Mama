@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1897726679828176461}
   m_Layer: 0
   m_Name: LockedTree
-  m_TagString: Untagged
+  m_TagString: AppleTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,6 +462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 7707303330505999897, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_TagString
+      value: AppleTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2287967843019441751, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
     m_RemovedGameObjects:
@@ -609,6 +613,10 @@ PrefabInstance:
     - target: {fileID: 6752576358379502863, guid: b67e49b6bf13c024dbe8142f324d9440, type: 3}
       propertyPath: m_Name
       value: Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752576358379502863, guid: b67e49b6bf13c024dbe8142f324d9440, type: 3}
+      propertyPath: m_TagString
+      value: AppleTree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

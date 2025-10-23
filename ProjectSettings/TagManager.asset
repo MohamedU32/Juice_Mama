@@ -8,6 +8,10 @@ TagManager:
   - Fruit
   - Fluid
   - Juice
+  - Fridge
+  - AppleTree
+  - Juicer
+  - Shop
   layers:
   - Default
   - TransparentFX
