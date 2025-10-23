@@ -15,4 +15,4 @@ MonoBehaviour:
   id: apple-tree-lock
   displayName: Apple Tree Lock
   unlockCost: 200
-  isUnlockedByDefault: 0
+  isUnlockedByDefault: 1

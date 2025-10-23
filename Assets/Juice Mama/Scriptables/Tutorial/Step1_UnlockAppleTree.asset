@@ -16,6 +16,7 @@ MonoBehaviour:
   instructionText: Tap the tree section to unlock it
   targetTag: AppleTree
   targetName: Tree
+  completesByProximity: 0
   isCompleted: 0
   requiredMoney: 200
   showOnlyWhenAffordable: 0

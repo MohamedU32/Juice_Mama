@@ -6313,6 +6313,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5577035033200366046, guid: 2232ad4df7763454d93e3d9dc99bc3bb, type: 3}
   m_PrefabInstance: {fileID: 812773926}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &815867491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815867493}
+  - component: {fileID: 815867492}
+  m_Layer: 0
+  m_Name: TutorialArrow3D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &815867492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815867491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff94f6a606773e3489f4745246e3540e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1622765033}
+  heightOffset: 2.5
+  minScale: 0.8
+  maxScale: 1.5
+  maxDistance: 15
+  hideDistance: 2
+  rotationSpeed: 10
+  bobSpeed: 2
+  bobAmount: 0.3
+  followSmoothness: 8
+--- !u!4 &815867493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815867491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.435477, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848467713
 GameObject:
   m_ObjectHideFlags: 0
@@ -18171,6 +18225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedTree
       objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: AppleTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8675054489927361184, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06
@@ -18663,6 +18721,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 707071689119162806, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
+      propertyPath: m_TagString
+      value: SellingStand
+      objectReference: {fileID: 0}
     - target: {fileID: 1847316753718013502, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
       propertyPath: juiceData
       value: 
@@ -18681,7 +18743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382249025648559211, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
       propertyPath: m_TagString
-      value: SellingStand
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6997038159061217852, guid: 3e97cb674dbca8042b3955b2ce4106fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18761,3 +18823,4 @@ SceneRoots:
   - {fileID: 4607813725933848928}
   - {fileID: 8542599417376643277}
   - {fileID: 257614022}
+  - {fileID: 815867493}
