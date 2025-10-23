@@ -290,24 +290,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-<<<<<<< HEAD
-  - m_Index: 34
-    m_Metrics:
-      m_Width: 67.921875
-      m_Height: 105.75
-      m_HorizontalBearingX: 6.328125
-      m_HorizontalBearingY: 105.046875
-      m_HorizontalAdvance: 64.828125
-    m_GlyphRect:
-      m_X: 308
-      m_Y: 138
-      m_Width: 69
-      m_Height: 107
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-=======
->>>>>>> ArrowandInstructions-Nicole
   - m_Index: 35
     m_Metrics:
       m_Width: 69.1875
@@ -316,13 +298,8 @@ MonoBehaviour:
       m_HorizontalBearingY: 106.3125
       m_HorizontalAdvance: 68.765625
     m_GlyphRect:
-<<<<<<< HEAD
-      m_X: 11
-      m_Y: 268
-=======
       m_X: 308
       m_Y: 138
->>>>>>> ArrowandInstructions-Nicole
       m_Width: 70
       m_Height: 107
     m_Scale: 1
@@ -336,17 +313,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 104.90625
       m_HorizontalAdvance: 67.21875
     m_GlyphRect:
-<<<<<<< HEAD
-      m_X: 492
-      m_Y: 11
-      m_Width: 78
-      m_Height: 104
-=======
       m_X: 11
       m_Y: 268
       m_Width: 69
       m_Height: 107
->>>>>>> ArrowandInstructions-Nicole
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -358,11 +328,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 104.90625
       m_HorizontalAdvance: 67.21875
     m_GlyphRect:
-<<<<<<< HEAD
-      m_X: 591
-=======
       m_X: 492
->>>>>>> ArrowandInstructions-Nicole
       m_Y: 11
       m_Width: 78
       m_Height: 104
@@ -418,32 +384,16 @@ MonoBehaviour:
     m_GlyphIndex: 37
     m_Scale: 1
   - m_ElementType: 1
-<<<<<<< HEAD
-=======
     m_Unicode: 54
     m_GlyphIndex: 35
     m_Scale: 1
   - m_ElementType: 1
->>>>>>> ArrowandInstructions-Nicole
     m_Unicode: 53
     m_GlyphIndex: 34
     m_Scale: 1
   - m_ElementType: 1
-<<<<<<< HEAD
-    m_Unicode: 54
-    m_GlyphIndex: 35
-    m_Scale: 1
-  - m_ElementType: 1
     m_Unicode: 50
     m_GlyphIndex: 31
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 55
-    m_GlyphIndex: 36
-=======
-    m_Unicode: 50
-    m_GlyphIndex: 31
->>>>>>> ArrowandInstructions-Nicole
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 57
@@ -494,26 +444,6 @@ MonoBehaviour:
     m_Height: 131
   - m_X: 297
     m_Y: 127
-<<<<<<< HEAD
-    m_Width: 90
-    m_Height: 128
-  - m_X: 0
-    m_Y: 257
-    m_Width: 91
-    m_Height: 128
-  - m_X: 481
-    m_Y: 0
-    m_Width: 99
-    m_Height: 125
-  - m_X: 580
-    m_Y: 0
-    m_Width: 84
-    m_Height: 127
-  - m_X: 481
-    m_Y: 125
-    m_Width: 90
-    m_Height: 129
-=======
     m_Width: 91
     m_Height: 128
   - m_X: 0
@@ -524,7 +454,6 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 99
     m_Height: 125
->>>>>>> ArrowandInstructions-Nicole
   m_FreeGlyphRects:
   - m_X: 0
     m_Y: 38
@@ -538,24 +467,14 @@ MonoBehaviour:
     m_Y: 252
     m_Width: 69
     m_Height: 771
-<<<<<<< HEAD
-  - m_X: 387
-    m_Y: 127
-    m_Width: 1
-    m_Height: 896
-=======
->>>>>>> ArrowandInstructions-Nicole
   - m_X: 268
     m_Y: 255
     m_Width: 755
     m_Height: 768
-<<<<<<< HEAD
-=======
   - m_X: 388
     m_Y: 149
     m_Width: 635
     m_Height: 874
->>>>>>> ArrowandInstructions-Nicole
   - m_X: 268
     m_Y: 135
     m_Width: 29
@@ -564,19 +483,6 @@ MonoBehaviour:
     m_Y: 385
     m_Width: 1023
     m_Height: 638
-<<<<<<< HEAD
-  - m_X: 91
-    m_Y: 266
-    m_Width: 932
-    m_Height: 757
-  - m_X: 91
-    m_Y: 257
-    m_Width: 73
-    m_Height: 766
-  - m_X: 664
-    m_Y: 0
-    m_Width: 359
-=======
   - m_X: 90
     m_Y: 266
     m_Width: 933
@@ -592,7 +498,6 @@ MonoBehaviour:
   - m_X: 580
     m_Y: 0
     m_Width: 443
->>>>>>> ArrowandInstructions-Nicole
     m_Height: 1023
   - m_X: 387
     m_Y: 254
