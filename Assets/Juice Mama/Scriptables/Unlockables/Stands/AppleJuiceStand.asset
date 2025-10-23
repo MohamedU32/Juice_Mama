@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Apple Juice Stand
   unlockCost: 150
   isUnlockedByDefault: 0
+  isAvailableByDefault: 0

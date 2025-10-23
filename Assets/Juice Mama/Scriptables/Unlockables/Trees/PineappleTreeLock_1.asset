@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Pineapple Tree Lock
   unlockCost: 450
   isUnlockedByDefault: 0
-  isAvailableByDefault: 1
+  isAvailableByDefault: 0
