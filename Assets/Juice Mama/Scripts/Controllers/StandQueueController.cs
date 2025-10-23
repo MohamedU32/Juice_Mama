@@ -43,6 +43,11 @@ public class StandQueueController : MonoBehaviour
         UpdateJuiceCount(juiceData);
     }
 
+    public JuiceData GetJuiceData()
+    {
+        return juiceData;
+    }
+
     public void UpdateJuiceCount(JuiceData data)
     {
         if (data == null) return;
@@ -57,6 +62,11 @@ public class StandQueueController : MonoBehaviour
     {
         if (isServing) return;
         if (fridgeStorage.GetCount(juiceData) <= 0 || q.Count == 0)
+        {
+            AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION, 1.0f);
+            return;
+        }
+        if (!q[0].gameObject.GetComponent<CustomerAgentController>().isWaiting)
         {
             AudioManager.Instance.PlaySound(AudioNames.FAILED_COLLECTION, 1.0f);
             return;
@@ -100,6 +110,13 @@ public class StandQueueController : MonoBehaviour
         UpdateTargets();
         f.SetDestination(Vector3.zero);
         return f;
+    }
+
+    public bool IsInFront(NavMeshAgent agent)
+    {
+        if (agent == null || q.Count == 0) return false;
+        if (q[0] == agent) return true;
+        return false;
     }
 
     public void Remove(NavMeshAgent a)

@@ -8,7 +8,6 @@ public class CustomersManager : MonoBehaviour
     public static CustomersManager Instance { get; private set; }
     public GameObject customerPrefab;
     public Transform spawnPoint;
-    public int maxCustomers = 1;
     public Vector2 spawnIntervalRange = new Vector2(2f, 5f);
     [SerializeField] Transform exitPoint;
     const string SellingStandTag = "SellingStand";
@@ -17,6 +16,9 @@ public class CustomersManager : MonoBehaviour
     readonly Queue<NavMeshAgent> waitingAgents = new Queue<NavMeshAgent>();
     StandQueueController[] stands;
     Coroutine retryRoutine;
+    int maxCustomers = 1;
+    int totalServed;
+    int nextAdjustAt = 5;
 
     void Awake()
     {
@@ -25,6 +27,7 @@ public class CustomersManager : MonoBehaviour
 
     void Start()
     {
+        RefreshStands();
         InvokeRepeating(nameof(RefreshStands), 5f, 5f);
     }
 
@@ -46,11 +49,6 @@ public class CustomersManager : MonoBehaviour
     {
         var go = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
         var agent = go.GetComponent<NavMeshAgent>();
-        var thought = go.GetComponentInChildren<ThoughtBubble>();
-        if (thought != null)
-        {
-            thought.ShowThought(0, 5f);
-        }
         spawnedCount++;
         if (!AssignToStand(agent)) waitingAgents.Enqueue(agent);
         if (retryRoutine == null) retryRoutine = StartCoroutine(RetryAssignLoop());
@@ -77,7 +75,20 @@ public class CustomersManager : MonoBehaviour
         for (int i = 0; i < stands.Length; i++)
         {
             var s = stands[(start + i) % stands.Length];
-            if (s && !s.IsFull && s.Enqueue(agent)) return true;
+            if (s && !s.IsFull && s.Enqueue(agent))
+            {
+                var customerController = agent.GetComponent<CustomerAgentController>();
+                if (customerController != null)
+                {
+                    customerController.SetStand(s);
+                    var thought = agent.GetComponentInChildren<ThoughtBubble>();
+                    if (thought != null)
+                    {
+                        thought.ShowThought(0, 5f, s.GetJuiceData().icon);
+                    }
+                }
+                return true;
+            }
         }
         return false;
     }
@@ -100,9 +111,34 @@ public class CustomersManager : MonoBehaviour
 
     public void OnCustomerServed(NavMeshAgent agent)
     {
+        totalServed++;
+        if (totalServed >= nextAdjustAt)
+        {
+            AdjustMaxCustomers();
+            nextAdjustAt = totalServed + Random.Range(3, 6);
+        }
+        OnCustomerLeft(agent);
+    }
+
+    public void OnCustomerLeft(NavMeshAgent agent)
+    {
         if (!agent || !exitPoint) return;
         agent.SetDestination(exitPoint.position);
         Destroy(agent.gameObject, 10f);
         spawnedCount = Mathf.Max(0, spawnedCount - 1);
+    }
+
+    void AdjustMaxCustomers()
+    {
+        var standCount = stands != null ? stands.Length : 0;
+        if (standCount <= 0)
+        {
+            maxCustomers = 1;
+            return;
+        }
+        var upper = Mathf.Max(1, standCount * 2);
+        var delta = Random.Range(-1, 2);
+        var next = Mathf.Clamp(maxCustomers + delta, 1, upper);
+        maxCustomers = next;
     }
 }

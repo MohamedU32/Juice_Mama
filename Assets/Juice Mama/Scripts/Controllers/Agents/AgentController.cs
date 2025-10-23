@@ -6,6 +6,8 @@ public class AgentController : MonoBehaviour
     protected NavMeshAgent agent;
     public Animator animator;
 
+    public bool isWaiting = false;
+
     protected void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -15,5 +17,6 @@ public class AgentController : MonoBehaviour
     {
         float speed = agent.velocity.magnitude;
         animator.SetFloat("Speed", speed);
+        isWaiting = agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending;
     }
 }

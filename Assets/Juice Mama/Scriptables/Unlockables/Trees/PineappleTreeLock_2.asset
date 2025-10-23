@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ba7e53d5a6225a41824a82561a3f6fc, type: 3}
-  m_Name: AppleTreeLock
+  m_Name: PineappleTreeLock_2
   m_EditorClassIdentifier: 
-  id: apple-tree-lock
-  displayName: Apple Tree Lock
-  unlockCost: 200
+  id: pineapple-tree-lock-2
+  displayName: Pineapple Tree Lock
+  unlockCost: 450
   isUnlockedByDefault: 0

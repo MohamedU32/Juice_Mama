@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9092302922793789535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.382562
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.027865203
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.41749588
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 037e7d5cfbfb5fc4792b1e80c25a6b94, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 037e7d5cfbfb5fc4792b1e80c25a6b94, type: 2}
+    - target: {fileID: 919132149155446097, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      propertyPath: m_Name
+      value: Pineapple_LP 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8188266795499733564}
+  m_SourcePrefab: {fileID: 100100000, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+--- !u!1 &8281891583978345742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0104039ac122caf4dba5f314d06e7fef, type: 3}
+  m_PrefabInstance: {fileID: 9092302922793789535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8188266795499733564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281891583978345742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b381b3f18c652ac4fade7c23b5845bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitData: {fileID: 0}
+  isGrown: 0
+  startScale: {x: 0.25, y: 0.25, z: 0.25}
+  targetScale: {x: 4, y: 4, z: 4}

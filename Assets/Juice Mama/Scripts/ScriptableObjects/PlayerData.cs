@@ -3,4 +3,5 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public float money;
+    public int numberOfHarvesters = 0;
 }

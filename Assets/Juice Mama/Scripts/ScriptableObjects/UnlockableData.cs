@@ -7,4 +7,5 @@ public class UnlockableData : ScriptableObject
     public string displayName;
     public int unlockCost;
     public bool isUnlockedByDefault;
+    public bool isAvailableByDefault;
 }

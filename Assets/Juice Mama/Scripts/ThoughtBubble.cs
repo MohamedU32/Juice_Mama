@@ -4,7 +4,6 @@ public class ThoughtBubble : MonoBehaviour
 {
     [SerializeField] private GameObject thoughtContainer;
     [SerializeField] private SpriteRenderer thoughtIconRenderer;
-    [SerializeField] private Sprite[] thoughtSprites;
 
     private void Awake()
     {
@@ -15,17 +14,17 @@ public class ThoughtBubble : MonoBehaviour
         ClearThought();
     }
 
-    public void ShowThought(int index, float duration = 0f)
+    public void ShowThought(int index, float duration = 0f, Sprite thoughtSprite = null)
     {
-        if (index >= 0 && index < thoughtSprites.Length)
+        if (thoughtSprite != null)
         {
-            thoughtIconRenderer.sprite = thoughtSprites[index];
+            thoughtIconRenderer.sprite = thoughtSprite;
             thoughtContainer.SetActive(true);
-        }
-
-        if (duration > 0f)
-        {
-            Invoke(nameof(ClearThought), duration);
+            if (duration > 0f)
+            {
+                Invoke(nameof(ClearThought), duration);
+            }
+            return;
         }
     }
 
