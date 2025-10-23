@@ -35,8 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlaySound(AudioNames.BACKGROUND_MUSIC);
-        AudioManager.Instance.SetVolume(AudioNames.BACKGROUND_MUSIC, 0.3f);
+        AudioManager.Instance.PlaySound(AudioNames.BACKGROUND_MUSIC, 0.3f, true);
     }
 
     void Update()
