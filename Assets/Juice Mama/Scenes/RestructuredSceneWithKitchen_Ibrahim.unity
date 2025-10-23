@@ -8021,10 +8021,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25af18a724a1494a8a623b7b9674f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1622765032}
+  playerStorage: {fileID: 1622765028}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
-  m_fruitText: {fileID: 674498451}
-  m_juiceText: {fileID: 533840119}
-  m_moneyText: {fileID: 2069477762}
+  fruitText: {fileID: 674498451}
+  juiceText: {fileID: 533840119}
+  moneyText: {fileID: 2069477762}
+  instructionPanel: {fileID: 0}
+  instructionText: {fileID: 0}
+  instructionFadeSpeed: 5
 --- !u!4 &962871025
 Transform:
   m_ObjectHideFlags: 0

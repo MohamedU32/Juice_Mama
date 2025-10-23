@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Apple Juice
   icon: {fileID: 21300000, guid: f31f3404bc39f684dbaa74ebde9dc1a9, type: 3}
   prefab: {fileID: 1256417900779130, guid: 5810c64f2732e41458782e77db3446c7, type: 3}
+  price: 25
