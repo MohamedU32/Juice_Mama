@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Juice Mama/Scenes/TitleScreen.unity
+    guid: c4363d4daabc14e4da7469cf08b40d00
+  - enabled: 1
+    path: Assets/Juice Mama/Scenes/RestructuredSceneWithKitchen_Ibrahim.unity
+    guid: 1c696354cedf29f418524a71c0664652
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

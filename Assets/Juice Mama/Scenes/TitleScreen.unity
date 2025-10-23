@@ -835,7 +835,7 @@ MonoBehaviour:
   playButton: {fileID: 923237970}
   loadingPanel: {fileID: 1975957600}
   loadingImage: {fileID: 81859682}
-  gameSceneName: GameScene
+  gameSceneName: RestructuredSceneWithKitchen_Ibrahim
   pulseDuration: 5
   pulseSpeed: 2
   pulseScale: 1.2
