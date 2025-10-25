@@ -11,7 +11,6 @@ public class Interactible : MonoBehaviour
     private GameObject hover;
     Vector3 baseOffset;
     bool active;
-
     void Awake()
     {
         var col = GetComponent<Collider>();
@@ -37,6 +36,7 @@ public class Interactible : MonoBehaviour
         p.interactible = this;
         hover.SetActive(false);
     }
+
 
     void LateUpdate()
     {

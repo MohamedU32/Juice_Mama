@@ -1,10 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/Fruit")]
-public class FruitData : ScriptableObject
+[CreateAssetMenu(menuName = "Data/FruitSO")]
+public class FruitData : ItemData
 {
-    public string id;
-    public string displayName;
-    public Sprite icon;
-    public GameObject fruitPrefab;
+    public float growthTime = 10f;
 }

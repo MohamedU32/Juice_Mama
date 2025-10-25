@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e739a18639246469f780c165310de8, type: 3}
+  m_Name: SimplePineappleJuicer
+  m_EditorClassIdentifier: 
+  id: simple-pineapple-juicer
+  displayName: Pineapple Juice Machine
+  processTime: 2
+  maxPerFruit: 5
+  juiceData: {fileID: 11400000, guid: af2aff3ae531f7c4a9fdee17a28e58d4, type: 2}
+  outputCount: 1
+  recipe:
+  - fruitData: {fileID: 11400000, guid: 31968e15284a46549ae06dd8940e88e7, type: 2}
+    count: 1

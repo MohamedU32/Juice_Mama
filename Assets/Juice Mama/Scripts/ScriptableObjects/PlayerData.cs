@@ -1,6 +1,7 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "Data/Player")]
+[CreateAssetMenu(menuName = "Data/PlayerSO")]
 public class PlayerData : ScriptableObject
 {
-    public int money;
+    public float money;
+    public int numberOfHarvesters = 0;
 }

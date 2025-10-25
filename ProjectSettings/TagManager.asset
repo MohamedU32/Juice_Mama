@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - SellingStand
+  - Fruit
+  - Fluid
+  - Juice
+  - Fridge
+  - AppleTree
+  - Juicer
+  - Shop
   layers:
   - Default
   - TransparentFX
@@ -41,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2845419093
     locked: 0
   m_RenderingLayers:
   - Default
