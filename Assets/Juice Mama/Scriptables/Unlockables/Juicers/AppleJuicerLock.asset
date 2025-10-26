@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Apple Juicer Lock
   unlockCost: 150
   isUnlockedByDefault: 0
-  isAvailableByDefault: 0
+  isAvailableByDefault: 1
