@@ -3,6 +3,7 @@ using UnityEngine;
 public class TutorialsManager : MonoBehaviour
 {
     public GameObject player;
+    private StorageController playerStorage;
     public float detectionRadius = 2f;
     public int tutorialStep = 1;
 
@@ -12,22 +13,30 @@ public class TutorialsManager : MonoBehaviour
     [Header("Step (2)")]
     public UnlockableData appleTreeLock1;
 
+
     void Start()
     {
+        playerStorage = player.GetComponent<StorageController>();
         UIManager.Instance.ShowInstruction("Go to the Farm");
     }
 
     void Update()
     {
-        if (CheckProximity(firstAppleTree) && tutorialStep == 1)
+        if (tutorialStep == 1 && firstAppleTree != null && CheckProximity(firstAppleTree))
         {
             UIManager.Instance.UpdateInstructions("Unlock your first tree by tapping the yellow arrow.");
             tutorialStep++;
         }
 
-        if (appleTreeLock1 !=null && tutorialStep == 2 && appleTreeLock1.isUnlockedByDefault)
+        if (tutorialStep == 2 && appleTreeLock1 !=null && appleTreeLock1.isUnlockedByDefault)
         {
             UIManager.Instance.UpdateInstructions("Wait for the fruits to grow. Then, tap on them to collect them.");
+            tutorialStep++;
+        }
+
+        if (tutorialStep == 3 && player && playerStorage.GetFruitCount() > 0)
+        {
+            UIManager.Instance.UpdateInstructions("Go to the Kitchen.");
             tutorialStep++;
         }
     }
