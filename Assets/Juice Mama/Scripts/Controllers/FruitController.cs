@@ -1,9 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FruitController : MonoBehaviour
 {
-    [SerializeField] private FruitData fruitData;
-    
+    [SerializeField] public FruitData fruitData;
+
     [Header("Fruit Growing Settings")]
     public bool isGrown = false;
     [SerializeField] private Vector3 startScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -18,10 +19,10 @@ public class FruitController : MonoBehaviour
     private void Start()
     {
         transform.localScale = startScale;
-        
+
         // Find player
         player = GameObject.FindGameObjectWithTag("Player");
-        
+
         if (player == null)
         {
             Debug.LogError(" Player not found! Make sure the player is tagged 'Player'.");
@@ -30,7 +31,7 @@ public class FruitController : MonoBehaviour
 
         // Cache PlayerController component
         playerController = player.GetComponent<PlayerController>();
-        
+
         if (playerController == null)
         {
             Debug.LogError(" PlayerController component not found on Player GameObject!");
@@ -39,12 +40,15 @@ public class FruitController : MonoBehaviour
 
     private void Update()
     {
-        // Grow the fruit
         if (!isGrown)
         {
             transform.localScale += new Vector3(scaleValue, scaleValue, scaleValue);
-            if (transform.localScale.x >= targetScale.x) 
+            if (transform.localScale.x >= targetScale.x)
+            {
                 isGrown = true;
+                var tree = GetComponentInParent<TreeController>();
+                GameEvents.OnTreeFruitGrown?.Invoke(tree.gameObject);
+            }
         }
 
         // Check for touch/click
@@ -76,7 +80,7 @@ public class FruitController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            
+
             if (Physics.Raycast(ray, out RaycastHit hit, 100f))
             {
                 // Check if we hit this fruit and it's grown

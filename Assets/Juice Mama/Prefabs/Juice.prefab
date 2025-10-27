@@ -228,7 +228,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4907132975711940}
   - component: {fileID: 65624710833762576}
-  - component: {fileID: 6507371072759385069}
   m_Layer: 0
   m_Name: Juice
   m_TagString: Juice
@@ -275,21 +274,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19531633, y: 0.2986416, z: 0.17498165}
   m_Center: {x: 0, y: 0.1493208, z: 0.000000044703484}
---- !u!114 &6507371072759385069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256417900779130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e4ab9c88a678341966f3823cbf3295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectedJuiceSoundEffect: {fileID: 8300000, guid: 181a1513b72c176479afdef7e406bbe5, type: 3}
-  juiceData: {fileID: 0}
-  moveSpeed: 10
 --- !u!1 &1953285335742280
 GameObject:
   m_ObjectHideFlags: 0

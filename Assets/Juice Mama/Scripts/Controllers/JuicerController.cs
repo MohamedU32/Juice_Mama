@@ -65,6 +65,8 @@ public class JuicerController : MonoBehaviour
         // ✅ Notify tutorial that juice production is complete
         TutorialEventSystem.RaiseStepCompleted("MakeJuice");
 
+        GameEvents.OnJuiceProcessed?.Invoke(juicerData.juiceData);
+
         SyncVisuals();
         isProcessing = false;
     }
@@ -95,6 +97,11 @@ public class JuicerController : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    public JuicerData GetJuicerData()
+    {
+        return juicerData;
     }
 
     public void FillStorage(StorageController sourceStorage)
