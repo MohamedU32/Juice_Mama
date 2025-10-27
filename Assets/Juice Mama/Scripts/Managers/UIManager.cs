@@ -170,6 +170,13 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void UpdateInstructions(string text)
+    {
+        if (instructionText != null)
+        {
+            instructionText.text = text;
+        }
+    }
 
     public void HideInstruction()
     {
