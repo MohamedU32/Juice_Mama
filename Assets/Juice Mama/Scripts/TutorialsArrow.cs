@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialArrow : MonoBehaviour
+public class TutorialsArrow : MonoBehaviour
 {
     public Transform player;
-    public Transform goal;
+    public Transform target;
     public RectTransform arrowUI;
     public Image arrowImage;
 
@@ -16,9 +16,9 @@ public class TutorialArrow : MonoBehaviour
 
     void Update()
     {
-        if (player == null || goal == null || arrowUI == null || arrowImage == null) return;
+        if (player == null || target == null || arrowUI == null || arrowImage == null) return;
 
-        float worldDistance = Vector3.Distance(player.position, goal.position);
+        float worldDistance = Vector3.Distance(player.position, target.position);
 
         // Hide arrow if too close
         bool shouldShow = worldDistance > hideDistance;
@@ -27,10 +27,10 @@ public class TutorialArrow : MonoBehaviour
 
         // Convert world positions to screen space
         Vector3 playerScreen = Camera.main.WorldToScreenPoint(player.position);
-        Vector3 goalScreen = Camera.main.WorldToScreenPoint(goal.position);
+        Vector3 targetScreen = Camera.main.WorldToScreenPoint(target.position);
 
         // 1. Position arrow halfway between player and goal
-        Vector3 midPoint = (playerScreen + goalScreen) / 2f;
+        Vector3 midPoint = (playerScreen + targetScreen) / 2f;
         // Clamp to screen bounds
         float padding = 50f; // Optional: keeps arrow away from edges
         midPoint.x = Mathf.Clamp(midPoint.x, padding, Screen.width - padding);
@@ -38,7 +38,7 @@ public class TutorialArrow : MonoBehaviour
         arrowUI.position = midPoint + Vector3.up * offsetFromMidpoint;
 
         // 2. Rotate arrow to point toward goal
-        Vector2 direction = goalScreen - playerScreen;
+        Vector2 direction = targetScreen - playerScreen;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         arrowUI.rotation = Quaternion.Euler(0, 0, angle);
 
