@@ -69,4 +69,9 @@ public class TreeController : MonoBehaviour
             Invoke(nameof(SpawnFruits), 2f);
         }
     }
+
+    public TreeData GetTreeData()
+    {
+        return treeData;
+    }
 }

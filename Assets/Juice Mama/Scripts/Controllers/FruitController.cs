@@ -3,6 +3,12 @@ using UnityEngine;
 public class FruitController : MonoBehaviour
 {
     [SerializeField] private FruitData fruitData;
+
+    // Public accessor for other systems to read the fruit type
+    public FruitData GetFruitData()
+    {
+        return fruitData;
+    }
     
     [Header("Fruit Growing Settings")]
     public bool isGrown = false;

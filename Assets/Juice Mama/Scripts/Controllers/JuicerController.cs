@@ -84,6 +84,12 @@ public class JuicerController : MonoBehaviour
         }
     }
 
+    // Public getter for external checks
+    public JuicerData GetJuicerData()
+    {
+        return juicerData;
+    }
+
     private bool hasFruitsForRecipe()
     {
         if (juicerData.recipe.Count == 0) return false;

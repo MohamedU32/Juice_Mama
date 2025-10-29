@@ -6,10 +6,16 @@ using UnityEngine.AI;
 public class CustomersManager : MonoBehaviour
 {
     public static CustomersManager Instance { get; private set; }
+    
+    [Header("Customer Spawning")]
     public GameObject customerPrefab;
     public Transform spawnPoint;
     public Vector2 spawnIntervalRange = new Vector2(2f, 5f);
-    [SerializeField] Transform exitPoint;
+    [SerializeField] private Transform exitPoint;
+    
+    [Header("Customer Count Tracking")]
+    private int currentCustomerCount = 0;
+    
     const string SellingStandTag = "SellingStand";
     float spawnTimer;
     int spawnedCount;
@@ -22,7 +28,14 @@ public class CustomersManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); } else Destroy(gameObject);
+        if (Instance == null) 
+        { 
+            Instance = this; 
+        } 
+        else 
+        { 
+            Destroy(gameObject); 
+        }
     }
 
     void Start()
@@ -34,8 +47,10 @@ public class CustomersManager : MonoBehaviour
     void Update()
     {
         if (!CanSpawn()) return;
+        
         spawnTimer -= Time.deltaTime;
         if (spawnTimer > 0f) return;
+        
         SpawnCustomer();
         spawnTimer = Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
     }
@@ -50,8 +65,19 @@ public class CustomersManager : MonoBehaviour
         var go = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
         var agent = go.GetComponent<NavMeshAgent>();
         spawnedCount++;
-        if (!AssignToStand(agent)) waitingAgents.Enqueue(agent);
-        if (retryRoutine == null) retryRoutine = StartCoroutine(RetryAssignLoop());
+        
+        // Increment customer count when spawned
+        IncrementCustomerCount();
+        
+        if (!AssignToStand(agent)) 
+        {
+            waitingAgents.Enqueue(agent);
+        }
+        
+        if (retryRoutine == null) 
+        {
+            retryRoutine = StartCoroutine(RetryAssignLoop());
+        }
     }
 
     void RefreshStands()
@@ -71,6 +97,7 @@ public class CustomersManager : MonoBehaviour
         if (!agent) return false;
         if (stands == null || stands.Length == 0) RefreshStands();
         if (stands == null || stands.Length == 0) return false;
+        
         int start = Random.Range(0, stands.Length);
         for (int i = 0; i < stands.Length; i++)
         {
@@ -123,9 +150,28 @@ public class CustomersManager : MonoBehaviour
     public void OnCustomerLeft(NavMeshAgent agent)
     {
         if (!agent || !exitPoint) return;
+        
         agent.SetDestination(exitPoint.position);
         Destroy(agent.gameObject, 10f);
         spawnedCount = Mathf.Max(0, spawnedCount - 1);
+        
+        // Decrement count when customer leaves
+        DecrementCustomerCount();
+    }
+
+    // New method specifically for when a customer leaves unserved due to impatience
+    public void OnCustomerLeftUnserved(NavMeshAgent agent)
+    {
+        Debug.Log("Customer left unserved due to impatience!");
+        
+        // Show notification popup
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.ShowCustomerLeftNotification();
+        }
+        
+        // Use existing logic to handle customer departure
+        OnCustomerLeft(agent);
     }
 
     void AdjustMaxCustomers()
@@ -140,5 +186,28 @@ public class CustomersManager : MonoBehaviour
         var delta = Random.Range(-1, 2);
         var next = Mathf.Clamp(maxCustomers + delta, 1, upper);
         maxCustomers = next;
+    }
+
+    // Public property to access current customer count
+    public int CurrentCustomerCount => currentCustomerCount;
+
+    // Method to increment customer count and update UI
+    public void IncrementCustomerCount()
+    {
+        currentCustomerCount++;
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateCustomerCount(currentCustomerCount);
+        }
+    }
+
+    // Method to decrement customer count and update UI
+    public void DecrementCustomerCount()
+    {
+        currentCustomerCount = Mathf.Max(0, currentCustomerCount - 1);
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateCustomerCount(currentCustomerCount);
+        }
     }
 }
