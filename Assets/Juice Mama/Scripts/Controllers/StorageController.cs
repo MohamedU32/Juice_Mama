@@ -1,12 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class StorageController : MonoBehaviour
 {
+    public string storageID;
     public List<ItemEntry> items = new List<ItemEntry>();
 
     public List<ItemEntry> GetItems => items;
 
+    [SerializeField] private bool canContainDifferentItems = false;
+
+
+    public void Awake()
+    {
+        storageID = Guid.NewGuid().ToString();
+        Debug.Log($"StorageController initialized with ID: {storageID}");
+    }
 
     public int GetFruitCount()
     {
@@ -83,10 +93,18 @@ public class StorageController : MonoBehaviour
         if (entry != null)
         {
             entry.count += count;
+            GameEvents.StorageUpdated?.Invoke(storageID);
         }
         else
         {
+            var allFruits = GetAllFruits();
+            var allJuices = GetAllJuices();
+            if (!canContainDifferentItems && (allFruits.Count > 0 && (item is FruitData) || (allJuices.Count > 0 && item is JuiceData)))
+            {
+                return false;
+            }
             items.Add(new ItemEntry { item = item, count = count });
+            GameEvents.StorageUpdated?.Invoke(storageID);
         }
         return true;
     }
@@ -102,6 +120,7 @@ public class StorageController : MonoBehaviour
             {
                 items.Remove(entry);
             }
+            GameEvents.StorageUpdated?.Invoke(storageID);
             return true;
         }
         return false;
@@ -121,6 +140,7 @@ public class StorageController : MonoBehaviour
                 {
                     items.Remove(entry);
                 }
+                GameEvents.StorageUpdated?.Invoke(storageID);
                 return transferableCount;
             }
         }

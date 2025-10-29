@@ -287,8 +287,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockable: {fileID: 11400000, guid: 31c98f10ea8ffa946811326a8f68abc4, type: 2}
   lockObject: {fileID: 0}
+  lockerObject: {fileID: 0}
+  unlockedObject: {fileID: 0}
   costText: {fileID: 0}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+  inversedVisibility: 0
 --- !u!1 &8360105520572192203
 GameObject:
   m_ObjectHideFlags: 0

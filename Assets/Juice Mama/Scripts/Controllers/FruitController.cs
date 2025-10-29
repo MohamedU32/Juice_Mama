@@ -1,8 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FruitController : MonoBehaviour
 {
-    [SerializeField] private FruitData fruitData;
+    public FruitData fruitData;
     
     [Header("Fruit Growing Settings")]
     public bool isGrown = false;
@@ -18,19 +19,16 @@ public class FruitController : MonoBehaviour
     private void Start()
     {
         transform.localScale = startScale;
-        
-        // Find player
         player = GameObject.FindGameObjectWithTag("Player");
-        
+
         if (player == null)
         {
             Debug.LogError(" Player not found! Make sure the player is tagged 'Player'.");
             return;
         }
 
-        // Cache PlayerController component
         playerController = player.GetComponent<PlayerController>();
-        
+
         if (playerController == null)
         {
             Debug.LogError(" PlayerController component not found on Player GameObject!");
@@ -39,18 +37,17 @@ public class FruitController : MonoBehaviour
 
     private void Update()
     {
-        // Grow the fruit
         if (!isGrown)
         {
             transform.localScale += new Vector3(scaleValue, scaleValue, scaleValue);
-            if (transform.localScale.x >= targetScale.x) 
+            if (transform.localScale.x >= targetScale.x)
+            {
                 isGrown = true;
+                var tree = GetComponentInParent<TreeController>();
+                GameEvents.OnTreeFruitGrown?.Invoke(tree.gameObject);
+            }
         }
 
-        // Check for touch/click
-        DetectFruitTouch();
-
-        // Move to player if collected
         if (moveToPlayer && player != null)
         {
             Vector3 targetPos = player.transform.position + Vector3.up * 1.0f;
@@ -71,47 +68,30 @@ public class FruitController : MonoBehaviour
         }
     }
 
-    void DetectFruitTouch()
+    public bool CollectFruit()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isGrown) return false;
+        if (playerController == null)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+            Debug.LogError(" PlayerController reference is null!");
+            return false;
+        }
+
+        if (playerController.TryCollectFruit(fruitData))
+        {
+            moveToPlayer = true;
+
+            // Notify tutorial system (if active)
+            if (SimpleTutorialManager.Instance != null)
             {
-                // Check if we hit this fruit and it's grown
-                if (hit.collider.gameObject == gameObject && isGrown)
-                {
-                    // Safety checks
-                    if (player == null)
-                    {
-                        Debug.LogError("Player reference is null!");
-                        return;
-                    }
-
-                    if (playerController == null)
-                    {
-                        Debug.LogError(" PlayerController component is null! Make sure Player has PlayerController script attached.");
-                        return;
-                    }
-
-                    // Try to collect the fruit
-                    if (playerController.TryCollectFruit(fruitData))
-                    {
-                        moveToPlayer = true;
-
-                        // Notify tutorial system (if active)
-                        if (SimpleTutorialManager.Instance != null)
-                        {
-                            SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log(" Inventory full or cannot collect fruit right now.");
-                    }
-                }
+                SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
             }
+            return true;
+        }
+        else
+        {
+            Debug.Log("Inventory full or cannot collect fruit right now.");
+            return false;
         }
     }
 }

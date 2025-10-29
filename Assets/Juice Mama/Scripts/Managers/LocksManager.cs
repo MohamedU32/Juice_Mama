@@ -29,7 +29,6 @@ public class LocksManager : MonoBehaviour
 
     private void OnItemUnlocked(string itemId)
     {
-        Debug.Log(itemId);
         switch (itemId)
         {
             // First Sequence (first section)

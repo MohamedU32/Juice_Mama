@@ -40,7 +40,7 @@ public class StandQueueController : MonoBehaviour
         {
             Debug.LogError("JuiceData is not assigned in StandQueueController.");
         }
-        UpdateJuiceCount(juiceData);
+        UpdateJuiceCount();
     }
 
     public JuiceData GetJuiceData()
@@ -48,10 +48,10 @@ public class StandQueueController : MonoBehaviour
         return juiceData;
     }
 
-    public void UpdateJuiceCount(JuiceData data)
+    public void UpdateJuiceCount()
     {
-        if (data == null) return;
-        totalJuiceCount = fridgeStorage.GetCount(data);
+        if (juiceData == null) return;
+        totalJuiceCount = fridgeStorage.GetCount(juiceData);
         if (juiceCountText != null)
         {
             juiceCountText.text = totalJuiceCount.ToString();
@@ -81,7 +81,7 @@ public class StandQueueController : MonoBehaviour
         fridgeStorage.Remove(juiceData, 1);
         playerData.money += juiceData.price;
         UIManager.Instance.UpdateMoney();
-        UpdateJuiceCount(juiceData);
+        UpdateJuiceCount();
         AudioManager.Instance.PlaySound(AudioNames.JUICE_SOLD, 1.0f);
         CustomersManager.Instance.OnCustomerServed(DequeueFront());
         isServing = false;
@@ -153,7 +153,7 @@ public class StandQueueController : MonoBehaviour
 
     void OnFridgeLoaded()
     {
-        UpdateJuiceCount(juiceData);
+        UpdateJuiceCount();
     }
 
     void OnEnable()
