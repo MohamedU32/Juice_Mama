@@ -66,6 +66,11 @@ public class Interactible : MonoBehaviour
     {
         if (active) onClick?.Invoke();
     }
+
+    void OnMouseDown()
+    {
+        Click();
+    }
 }
 
 public class HoverClickProxy : MonoBehaviour

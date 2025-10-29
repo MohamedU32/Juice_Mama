@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class StorageController : MonoBehaviour
 {
     public List<ItemEntry> items = new List<ItemEntry>();
 
     public List<ItemEntry> GetItems => items;
+
+    [SerializeField] private bool canContainDifferentItems = false;
 
 
     public int GetFruitCount()
@@ -86,6 +89,12 @@ public class StorageController : MonoBehaviour
         }
         else
         {
+            var allFruits = GetAllFruits();
+            var allJuices = GetAllJuices();
+            if (!canContainDifferentItems && (allFruits.Count > 0 && (item is FruitData) || (allJuices.Count > 0 && item is JuiceData)))
+            {
+                return false;
+            }
             items.Add(new ItemEntry { item = item, count = count });
         }
         return true;

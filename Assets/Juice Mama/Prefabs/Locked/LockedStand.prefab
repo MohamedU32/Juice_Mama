@@ -231,6 +231,22 @@ PrefabInstance:
       propertyPath: soundEffect
       value: 
       objectReference: {fileID: 8300000, guid: d2120cb6b8dd01f41a779da287b29d15, type: 3}
+    - target: {fileID: 659691036517470391, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 659691036517470391, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: m_Size.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 659691036517470391, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: m_Center.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 659691036517470391, guid: 28f674d211f183542b13c0b017960f56, type: 3}
+      propertyPath: m_Center.z
+      value: -0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 2721886629061808806, guid: 28f674d211f183542b13c0b017960f56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5100002

@@ -11448,6 +11448,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8519476807314097959, guid: 05fa88b4fa377418eaac0976b320709e, type: 3}
+      propertyPath: items.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519476807314097959, guid: 05fa88b4fa377418eaac0976b320709e, type: 3}
+      propertyPath: canContainDifferentItems
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8868262779948000514, guid: 05fa88b4fa377418eaac0976b320709e, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -19578,6 +19586,12 @@ PrefabInstance:
     - {fileID: 7382375894979739566, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
     - {fileID: 3741378064497704520, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
     - {fileID: 7114548718955927071, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 6336857739533608230, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 7526866807791392020, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 3547988471642890513, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 6214094733535270567, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 7136453285844062221, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+    - {fileID: 3271796441339627962, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1989441850487844086, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
       insertIndex: 4

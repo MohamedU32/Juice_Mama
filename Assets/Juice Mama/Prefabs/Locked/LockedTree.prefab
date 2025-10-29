@@ -414,9 +414,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8675054489927361184}
     m_Modifications:
+    - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_Center.y
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2287967843019441751, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: lockObject
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888904159389051594, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnlockController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7375196738648993835, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: m_LocalPosition.x
