@@ -86,11 +86,6 @@ public class JuicerController : MonoBehaviour
         }
     }
 
-    // Public getter for external checks
-    public JuicerData GetJuicerData()
-    {
-        return juicerData;
-    }
 
     private bool hasFruitsForRecipe()
     {
@@ -107,7 +102,7 @@ public class JuicerController : MonoBehaviour
 
     public JuicerData GetJuicerData()
     {
-        return juicerData;
+        return juicerData; 
     }
 
     public void FillStorage(StorageController sourceStorage)

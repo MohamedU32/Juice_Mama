@@ -3,11 +3,7 @@ using UnityEngine;
 
 public class FruitController : MonoBehaviour
 {
-    [SerializeField] private FruitData fruitData;
-    public FruitData GetFruitData()
-    {
-        return fruitData;
-    }
+    public FruitData fruitData;
     
     [Header("Fruit Growing Settings")]
     public bool isGrown = false;
@@ -23,8 +19,6 @@ public class FruitController : MonoBehaviour
     private void Start()
     {
         transform.localScale = startScale;
-
-        // Find player
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (player == null)
@@ -33,7 +27,6 @@ public class FruitController : MonoBehaviour
             return;
         }
 
-        // Cache PlayerController component
         playerController = player.GetComponent<PlayerController>();
 
         if (playerController == null)
