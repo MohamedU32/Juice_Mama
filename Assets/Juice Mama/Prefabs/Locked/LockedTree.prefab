@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: m_Size.z
@@ -428,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400649600220375912, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: m_Center.y
-      value: 1.8
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2287967843019441751, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: lockObject
@@ -445,14 +445,14 @@ PrefabInstance:
     - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8241752752844512173}
     - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: CollectFruits
       objectReference: {fileID: 0}
     - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnlockController, Assembly-CSharp
+      value: TreeController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6985497884780040638, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -523,6 +523,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7707303330505999897, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
   m_PrefabInstance: {fileID: 121153306552745466}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8241752752844512173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8344882295698990679, guid: 472afb3e52e297947a37d2d49d07f104, type: 3}
+  m_PrefabInstance: {fileID: 121153306552745466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735983223054695395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b2f797636b224449e754001045a1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2207023970544806531
 PrefabInstance:
   m_ObjectHideFlags: 0

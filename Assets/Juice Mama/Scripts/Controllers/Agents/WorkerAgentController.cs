@@ -52,7 +52,7 @@ public class WorkerAgentController : AgentController
                 if (Arrived()) state = State.Pick;
                 break;
             case State.Pick:
-                if (!TryPickFruit() || storage.GetFruitCount() >= maxFruitCapacity || !HasGrownFruit(tree))
+                if (!TryPickFruit() || storage.GetFruitCount() >= maxFruitCapacity)
                 {
                     GoJuicer();
                 }
@@ -71,7 +71,7 @@ public class WorkerAgentController : AgentController
                 if (juiceReady) GoCollect();
                 break;
             case State.GoCollect:
-                if (Arrived()) state = State.GoCollect;
+                if (Arrived())
                 {
                     if (TryCollectJuice())
                     {
@@ -129,15 +129,12 @@ public class WorkerAgentController : AgentController
         var objs = GameObject.FindGameObjectsWithTag(job.treeTag);
         for (int i = 0; i < objs.Length; i++)
         {
-            if (objs[i].GetComponent<TreeController>() == null) continue;
-            var any = objs[i].GetComponentsInChildren<FruitController>(true);
-            bool match = false;
-            for (int k = 0; k < any.Length; k++)
+            var treeController = objs[i].GetComponent<TreeController>();
+            if (treeController == null) continue;
+            if (treeController.GetTreeData()?.fruitData == job.fruitData)
             {
-                var f = any[k];
-                if (f.fruitData == job.fruitData) { match = true; break; }
+                trees.Add(objs[i].transform);
             }
-            if (match) trees.Add(objs[i].transform);
         }
         nextTreesRefreshAt = Time.time + 5f;
     }
@@ -179,10 +176,15 @@ public class WorkerAgentController : AgentController
         for (int i = 0; i < objs.Length; i++)
         {
             var s = objs[i].GetComponentInChildren<JuicerController>();
-            if ((s == null) || (s.GetJuicerData().juiceData != job.juiceData)) continue;
-            juicer = s;
+            if (s == null) continue;
+            var juicerData = s.GetJuicerData();
+            if (juicerData != null && juicerData.juiceData == job.juiceData)
+            {
+                juicer = s;
+                return true;
+            }
         }
-        return juicer != null;
+        return false;
     }
 
     bool FindFridge()
@@ -193,20 +195,24 @@ public class WorkerAgentController : AgentController
         for (int i = 0; i < objs.Length; i++)
         {
             var controller = objs[i].GetComponent<StorageController>();
-            if (controller == null) continue;
-            fridgeStorage = controller;
+            if (controller != null)
+            {
+                fridgeStorage = controller;
+                return true;
+            }
         }
-        return fridgeStorage != null;
+        return false;
     }
 
     bool TryPickFruit()
     {
-        if (tree == null || job == null || job.fruitData == null || storage == null) return false;
+        if (tree == null || job == null || storage == null) return false;
+        if (storage.GetFruitCount() >= maxFruitCapacity) return false;
         var fruits = tree.GetComponentsInChildren<FruitController>();
         for (int i = 0; i < fruits.Length; i++)
         {
             var fruit = fruits[i];
-            if (fruit.fruitData == job.fruitData && fruit.isGrown && (storage.GetFruitCount() < maxFruitCapacity))
+            if (fruit.fruitData == job.fruitData && fruit.isGrown && fruit.gameObject.activeInHierarchy)
             {
                 storage.Add(job.fruitData, 1);
                 Destroy(fruit.gameObject);
@@ -230,16 +236,12 @@ public class WorkerAgentController : AgentController
 
     void StoreAllJuice()
     {
-        if (storage == null || fridgeStorage == null) return;
-        var juices = storage.GetAllJuices();
-        for (int i = 0; i < juices.Count; i++)
+        if (storage == null || fridgeStorage == null || job == null) return;
+        var count = storage.GetCount(job.juiceData);
+        if (count > 0)
         {
-            var count = storage.GetCount(juices[i]);
-            if (count > 0)
-            {
-                storage.TransferItemsTo(fridgeStorage, juices[i], count);
-                GameEvents.OnFridgeLoaded?.Invoke();
-            }
+            storage.TransferItemsTo(fridgeStorage, job.juiceData, count);
+            GameEvents.OnFridgeLoaded?.Invoke();
         }
     }
 

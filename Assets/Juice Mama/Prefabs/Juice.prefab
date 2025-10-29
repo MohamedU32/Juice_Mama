@@ -227,7 +227,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4907132975711940}
-  - component: {fileID: 65624710833762576}
   m_Layer: 0
   m_Name: Juice
   m_TagString: Juice
@@ -253,27 +252,6 @@ Transform:
   - {fileID: 4689562027698832}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65624710833762576
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256417900779130}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.19531633, y: 0.2986416, z: 0.17498165}
-  m_Center: {x: 0, y: 0.1493208, z: 0.000000044703484}
 --- !u!1 &1953285335742280
 GameObject:
   m_ObjectHideFlags: 0

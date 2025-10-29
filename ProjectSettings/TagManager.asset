@@ -12,6 +12,9 @@ TagManager:
   - AppleTree
   - Juicer
   - Shop
+  - PearTree
+  - PineappleTree
+  - OrangeTree
   layers:
   - Default
   - TransparentFX

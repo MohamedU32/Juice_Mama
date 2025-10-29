@@ -4,12 +4,19 @@ using System;
 
 public class StorageController : MonoBehaviour
 {
+    public string storageID;
     public List<ItemEntry> items = new List<ItemEntry>();
 
     public List<ItemEntry> GetItems => items;
 
     [SerializeField] private bool canContainDifferentItems = false;
 
+
+    public void Awake()
+    {
+        storageID = Guid.NewGuid().ToString();
+        Debug.Log($"StorageController initialized with ID: {storageID}");
+    }
 
     public int GetFruitCount()
     {
@@ -86,6 +93,7 @@ public class StorageController : MonoBehaviour
         if (entry != null)
         {
             entry.count += count;
+            GameEvents.StorageUpdated?.Invoke(storageID);
         }
         else
         {
@@ -96,6 +104,7 @@ public class StorageController : MonoBehaviour
                 return false;
             }
             items.Add(new ItemEntry { item = item, count = count });
+            GameEvents.StorageUpdated?.Invoke(storageID);
         }
         return true;
     }
@@ -111,6 +120,7 @@ public class StorageController : MonoBehaviour
             {
                 items.Remove(entry);
             }
+            GameEvents.StorageUpdated?.Invoke(storageID);
             return true;
         }
         return false;
@@ -130,6 +140,7 @@ public class StorageController : MonoBehaviour
                 {
                     items.Remove(entry);
                 }
+                GameEvents.StorageUpdated?.Invoke(storageID);
                 return transferableCount;
             }
         }

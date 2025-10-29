@@ -7,6 +7,7 @@ public class CustomerAgentController : AgentController
     [SerializeField] private Transform patienceBarRoot;
     [SerializeField] private SpriteRenderer patienceBarFill;
     [SerializeField] private float patienceSeconds = 30f;
+    public Transform charactersTransform;
     private Timer patienceTimer;
     public StandQueueController standQueueController;
     private bool barInit;
@@ -17,6 +18,27 @@ public class CustomerAgentController : AgentController
     public void SetStand(StandQueueController stand)
     {
         standQueueController = stand;
+    }
+
+    private void Awake()
+    {
+        if (charactersTransform != null)
+        {
+            int count = charactersTransform.childCount;
+            if (count > 0)
+            {
+                int selectedIndex = Random.Range(0, count);
+                for (int i = 0; i < count; i++)
+                {
+                    Transform child = charactersTransform.GetChild(i);
+                    child.gameObject.SetActive(i == selectedIndex);
+                    if (i == selectedIndex)
+                    {
+                        animator = child.GetComponent<Animator>();
+                    }
+                }
+            }
+        }
     }
 
     void OnDisable()
@@ -38,6 +60,7 @@ public class CustomerAgentController : AgentController
         InitBar();
         SetBar(1f);
     }
+
     new void Update()
     {
         base.Update();

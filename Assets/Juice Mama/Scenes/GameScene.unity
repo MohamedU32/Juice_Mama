@@ -2175,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedOrangeJuicer
       objectReference: {fileID: 0}
+    - target: {fileID: 4714213649721012222, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
+      propertyPath: m_TagString
+      value: Juicer
+      objectReference: {fileID: 0}
     - target: {fileID: 5519392463718119121, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -2455,6 +2459,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293879351}
   m_Mesh: {fileID: 4300004, guid: 013043932069e224e90b516d38cdab48, type: 3}
+--- !u!1001 &297041528
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_Name
+      value: PineappleWorker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.049682617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146352804536225384, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: job
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b944b7e39240854e856f364ce267721, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
 --- !u!1 &321162793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,6 +2629,10 @@ PrefabInstance:
     - target: {fileID: 4714213649721012222, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
       propertyPath: m_Name
       value: LockedPineappleJuicer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714213649721012222, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
+      propertyPath: m_TagString
+      value: Juicer
       objectReference: {fileID: 0}
     - target: {fileID: 5519392463718119121, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -3390,6 +3463,10 @@ PrefabInstance:
     - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: m_Name
       value: LockedPearTree 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: PearTree
       objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
@@ -4273,6 +4350,10 @@ PrefabInstance:
     - target: {fileID: 6666572154130619459, guid: e749d8235034e554c9c9a3c82c98a4ef, type: 3}
       propertyPath: m_Name
       value: FarmSeparator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428482534787192737, guid: e749d8235034e554c9c9a3c82c98a4ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7627,13 +7708,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
   m_LocalPosition: {x: 29.4, y: 43.9, z: -33.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7647,7 +7728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1622765027}
-  offset: {x: 0, y: 14, z: -14}
+  offset: {x: 0, y: 18, z: -7}
 --- !u!82 &963194230
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8904,6 +8985,10 @@ PrefabInstance:
     - target: {fileID: 6666572154130619459, guid: e749d8235034e554c9c9a3c82c98a4ef, type: 3}
       propertyPath: m_Name
       value: FarmSeparator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428482534787192737, guid: e749d8235034e554c9c9a3c82c98a4ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10367,6 +10452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedPineappleTree 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: PineappleTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
       value: 
@@ -10775,7 +10864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b304af405ebd3794ba7d10ab92bdacd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 2399213993253069767, guid: b0e763571d8d2514b906824fdf8938d5, type: 3}
+  customerPrefab: {fileID: 2399213993253069767, guid: acbba7fac1b5f2f498cb7cd9162dd99e, type: 3}
   spawnPoint: {fileID: 1278960571}
   spawnIntervalRange: {x: 2, y: 5}
   exitPoint: {fileID: 28032434}
@@ -14146,6 +14235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedPearTree 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: PearTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
       value: 
@@ -14602,6 +14695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedPearJuicer
       objectReference: {fileID: 0}
+    - target: {fileID: 4714213649721012222, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
+      propertyPath: m_TagString
+      value: Juicer
+      objectReference: {fileID: 0}
     - target: {fileID: 5519392463718119121, guid: f74f5d205564cd2468795b8bc774b55a, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -14774,6 +14871,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694822365}
   m_Mesh: {fileID: 4300010, guid: 8537129dc3fbbe44186add4eea186b85, type: 3}
+--- !u!1001 &1700156368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_Name
+      value: 'PearWorker '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.049682617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146352804536225384, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: job
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a54ac256cdf5fa4a84663b20892d58f, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
 --- !u!1001 &1706698099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15155,6 +15317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedPineappleTree 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: PineappleTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
       value: 
@@ -15318,6 +15484,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761601548}
   m_Mesh: {fileID: 4300010, guid: 8537129dc3fbbe44186add4eea186b85, type: 3}
+--- !u!1001 &1771784152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_Name
+      value: OrangeWorker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.049682617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146352804536225384, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
+      propertyPath: job
+      value: 
+      objectReference: {fileID: 11400000, guid: 53178f1190f248d448f1c13ecfb69dc2, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
 --- !u!1001 &1778951637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15328,7 +15559,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_Name
-      value: Worker
+      value: AppleWorker
       objectReference: {fileID: 0}
     - target: {fileID: 2399213993253069767, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_TagString
@@ -15336,7 +15567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.73
+      value: 35.43
       objectReference: {fileID: 0}
     - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15344,7 +15575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.421911
+      value: -11.15
       objectReference: {fileID: 0}
     - target: {fileID: 4739027145370060874, guid: f808310a0703b3b449d4ba8365d28109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15622,6 +15853,10 @@ PrefabInstance:
     - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: m_Name
       value: LockedOrangeTree 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: OrangeTree
       objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
@@ -18193,6 +18428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedOrangeTree 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6795219486403389874, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+      propertyPath: m_TagString
+      value: OrangeTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8241752752844512173, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
       propertyPath: treeData
       value: 
@@ -19367,6 +19606,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 758857324174824453, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 758857324174824453, guid: 2a9e12cbaa0564643b28faa0835a2f11, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 1d1c3db08d5b92545a18cb60b6360406, type: 2}
@@ -19946,6 +20189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FarmSeparator
       objectReference: {fileID: 0}
+    - target: {fileID: 8428482534787192737, guid: e749d8235034e554c9c9a3c82c98a4ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19994,3 +20241,6 @@ SceneRoots:
   - {fileID: 1046914029}
   - {fileID: 2120300787}
   - {fileID: 1778951637}
+  - {fileID: 1771784152}
+  - {fileID: 297041528}
+  - {fileID: 1700156368}

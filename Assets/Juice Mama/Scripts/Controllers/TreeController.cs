@@ -74,4 +74,19 @@ public class TreeController : MonoBehaviour
     {
         return treeData;
     }
+
+    public void CollectFruits()
+    {
+        var fruits = GetComponentsInChildren<FruitController>();
+
+        int collected = 0;
+
+        foreach (var fruit in fruits)
+        {
+            if (fruit.CollectFruit())
+            {
+                collected++;
+            }
+        }
+    }
 }

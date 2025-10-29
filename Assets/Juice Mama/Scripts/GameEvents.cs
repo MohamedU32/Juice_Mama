@@ -10,4 +10,5 @@ public static class GameEvents
     public static Action<GameObject> OnTreeFruitGrown;
     public static Action<string> OnUnlockableAvailable;
     public static Action<string> OnItemUnlocked;
+    public static Action<string> StorageUpdated;
 }

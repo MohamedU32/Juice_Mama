@@ -15,6 +15,6 @@ MonoBehaviour:
   id: apple-worker-job
   fruitData: {fileID: 11400000, guid: 7fadab5d12c1b9044a25a79d04966be3, type: 2}
   juiceData: {fileID: 11400000, guid: decf43b1ca12b7240ac374e635a549dc, type: 2}
-  treeTag: AppleTree
+  treeTag: OrangeTree
   juicerTag: Juicer
   fridgeTag: Fridge

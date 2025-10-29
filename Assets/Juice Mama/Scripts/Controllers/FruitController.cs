@@ -51,8 +51,8 @@ public class FruitController : MonoBehaviour
             }
         }
 
-        // Check for touch/click
-        DetectFruitTouch();
+        /* // Check for touch/click
+        DetectFruitTouch(); */
 
         // Move to player if collected
         if (moveToPlayer && player != null)
@@ -75,47 +75,53 @@ public class FruitController : MonoBehaviour
         }
     }
 
-    void DetectFruitTouch()
+    public bool CollectFruit()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isGrown) return false;
+        if (playerController == null)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.LogError(" PlayerController reference is null!");
+            return false;
+        }
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        if (playerController.TryCollectFruit(fruitData))
+        {
+            moveToPlayer = true;
+
+            // Notify tutorial system (if active)
+            if (SimpleTutorialManager.Instance != null)
             {
-                // Check if we hit this fruit and it's grown
-                if (hit.collider.gameObject == gameObject && isGrown)
-                {
-                    // Safety checks
-                    if (player == null)
-                    {
-                        Debug.LogError("Player reference is null!");
-                        return;
-                    }
-
-                    if (playerController == null)
-                    {
-                        Debug.LogError(" PlayerController component is null! Make sure Player has PlayerController script attached.");
-                        return;
-                    }
-
-                    // Try to collect the fruit
-                    if (playerController.TryCollectFruit(fruitData))
-                    {
-                        moveToPlayer = true;
-
-                        // Notify tutorial system (if active)
-                        if (SimpleTutorialManager.Instance != null)
-                        {
-                            SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log(" Inventory full or cannot collect fruit right now.");
-                    }
-                }
+                SimpleTutorialManager.Instance.ManualComplete("CollectFruit");
             }
+            return true;
+        }
+        else
+        {
+            Debug.Log("Inventory full or cannot collect fruit right now.");
+            return false;
         }
     }
+
+    /*  void DetectFruitTouch()
+     {
+         if (Input.GetMouseButtonDown(0))
+         {
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+             if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+             {
+                 // Check if we hit this fruit and it's grown
+                 if (hit.collider.gameObject == gameObject && isGrown)
+                 {
+                     // Safety checks
+                     if (player == null)
+                     {
+                         Debug.LogError("Player reference is null!");
+                         return;
+                     }
+                     CollectFruit();
+                 }
+             }
+         }
+     } */
 }
