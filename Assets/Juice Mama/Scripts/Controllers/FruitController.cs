@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class FruitController : MonoBehaviour
 {
-    [SerializeField] public FruitData fruitData;
-
+    [SerializeField] private FruitData fruitData;
+    public FruitData GetFruitData()
+    {
+        return fruitData;
+    }
+    
     [Header("Fruit Growing Settings")]
     public bool isGrown = false;
     [SerializeField] private Vector3 startScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -51,10 +55,6 @@ public class FruitController : MonoBehaviour
             }
         }
 
-        /* // Check for touch/click
-        DetectFruitTouch(); */
-
-        // Move to player if collected
         if (moveToPlayer && player != null)
         {
             Vector3 targetPos = player.transform.position + Vector3.up * 1.0f;
@@ -101,27 +101,4 @@ public class FruitController : MonoBehaviour
             return false;
         }
     }
-
-    /*  void DetectFruitTouch()
-     {
-         if (Input.GetMouseButtonDown(0))
-         {
-             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-             if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-             {
-                 // Check if we hit this fruit and it's grown
-                 if (hit.collider.gameObject == gameObject && isGrown)
-                 {
-                     // Safety checks
-                     if (player == null)
-                     {
-                         Debug.LogError("Player reference is null!");
-                         return;
-                     }
-                     CollectFruit();
-                 }
-             }
-         }
-     } */
 }

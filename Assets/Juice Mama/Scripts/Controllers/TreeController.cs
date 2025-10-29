@@ -5,7 +5,7 @@ public class TreeController : MonoBehaviour
     [SerializeField] private TreeData treeData;
     private GameObject[] spawnedFruits;
     private bool isWaitingToRespawn = false;
-    private bool tutorialNotified = false; //  ensures we trigger the tutorial only once
+    private bool tutorialNotified = false;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class TreeController : MonoBehaviour
             spawnedFruits[i] = fruit;
         }
 
-        isWaitingToRespawn = false; // Reset flag
+        isWaitingToRespawn = false;
     }
 
     void MonitorFruitStatus()
