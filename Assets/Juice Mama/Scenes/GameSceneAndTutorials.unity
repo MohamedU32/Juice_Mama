@@ -7395,7 +7395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  target: {fileID: 1446034719}
+  target: {fileID: 0}
   minScale: 0.5
   maxScale: 1.5
   maxDistance: 20
@@ -13024,11 +13024,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428473262}
   m_Mesh: {fileID: 4300010, guid: 8537129dc3fbbe44186add4eea186b85, type: 3}
---- !u!1 &1446034719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7735983223054695395, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
-  m_PrefabInstance: {fileID: 1897542296863646374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1452105805
 GameObject:
   m_ObjectHideFlags: 0
@@ -16333,7 +16328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1622765027}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
-  onScreenArrow: {fileID: 860331818}
+  Arrow: {fileID: 860331818}
+  arrowTarget: {fileID: 0}
   detectionRadius: 2
   currentPlayerMoney: 0
   currentPlayerPosition: {x: 0, y: 0, z: 0}
