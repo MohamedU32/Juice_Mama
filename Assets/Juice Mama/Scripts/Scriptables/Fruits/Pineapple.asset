@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7178786cc46ba2a499a04e1cbb2b25e5, type: 3}
   m_Name: Pineapple
   m_EditorClassIdentifier: 
-  id: Pineapple
+  id: pineapple
   displayName: Pineapple
   icon: {fileID: 21300000, guid: dc8662f5e3f3bab4897582c26cedd148, type: 3}
   prefab: {fileID: 2009780039639217946, guid: 8d8799cfa03fc13498bdb743eef23225, type: 3}

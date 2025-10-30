@@ -14,8 +14,6 @@ public class UIManager : MonoBehaviour
     public PlayerData playerData;
 
     [Header("General Resource Display")]
-    [SerializeField] private TextMeshProUGUI fruitText;
-    [SerializeField] private TextMeshProUGUI juiceText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI customerCountText;
 
@@ -40,16 +38,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject instructionPanel;
     [SerializeField] private TextMeshProUGUI instructionText;
     [SerializeField] private float instructionFadeSpeed = 5f;
-    
+
+    [SerializeField] private GameObject employeePanel;
+
+
     private CanvasGroup instructionCanvasGroup;
     private bool instructionVisible = false;
     private GameObject player;
-
-    // === Internal Data Structures ===
-    private Dictionary<string, TextMeshProUGUI> fruitTextMap;
-    private Dictionary<string, TextMeshProUGUI> juiceTextMap;
-    private Dictionary<string, int> fruitCounts = new Dictionary<string, int>();
-    private Dictionary<string, int> juiceCounts = new Dictionary<string, int>();
 
     private void Awake()
     {
@@ -71,32 +66,6 @@ public class UIManager : MonoBehaviour
 
             instructionCanvasGroup.alpha = 0f;
             instructionPanel.SetActive(true);
-        }
-
-        // Setup mappings
-        fruitTextMap = new Dictionary<string, TextMeshProUGUI>
-        {
-            {"Apple", appleFruitText},
-            {"Orange", orangeFruitText},
-            {"Pineapple", pineappleFruitText},
-            {"Pear", pearFruitText}
-        };
-
-        juiceTextMap = new Dictionary<string, TextMeshProUGUI>
-        {
-            {"Apple", appleJuiceText},
-            {"Orange", orangeJuiceText},
-            {"Pineapple", pineappleJuiceText},
-            {"Pear", pearJuiceText}
-        };
-
-        // Initialize all counts
-        foreach (var key in fruitTextMap.Keys)
-        {
-            fruitCounts[key] = 0;
-            juiceCounts[key] = 0;
-            UpdateFruitText(key);
-            UpdateJuiceText(key);
         }
 
         // Hide notification by default
@@ -138,75 +107,63 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ToggleEmployeePanel(bool show)
+    {
+        if (employeePanel != null)
+            employeePanel.SetActive(show);
+    }
+
     // === Resource Updates ===
     public void UpdateFruitCount()
     {
-        if (fruitText != null && playerStorage != null && playerController != null)
-            fruitText.text = $"{playerStorage.GetFruitCount()}/{playerController.maxFruitCapacity}";
+        var fruits = playerStorage.GetAllFruits();
+        foreach (var fruit in fruits)
+        {
+            switch (fruit.id)
+            {
+                case "apple":
+                    appleFruitText.text = playerStorage.GetCount(fruit).ToString();
+                    break;
+                case "orange":
+                    orangeFruitText.text = playerStorage.GetCount(fruit).ToString();
+                    break;
+                case "pineapple":
+                    pineappleFruitText.text = playerStorage.GetCount(fruit).ToString();
+                    break;
+                case "pear":
+                    pearFruitText.text = playerStorage.GetCount(fruit).ToString();
+                    break;
+            }
+        }
     }
 
     public void UpdateJuiceCount()
     {
-        if (juiceText != null && playerStorage != null && playerController != null)
-            juiceText.text = $"{playerStorage.GetJuiceCount()}/{playerController.maxJuiceCapacity}";
+        var juices = playerStorage.GetAllJuices();
+        foreach (var juice in juices)
+        {
+            switch (juice.id)
+            {
+                case "apple-juice":
+                    appleJuiceText.text = playerStorage.GetCount(juice).ToString();
+                    break;
+                case "orange-juice":
+                    orangeJuiceText.text = playerStorage.GetCount(juice).ToString();
+                    break;
+                case "pineapple-juice":
+                    pineappleJuiceText.text = playerStorage.GetCount(juice).ToString();
+                    break;
+                case "pear-juice":
+                    pearJuiceText.text = playerStorage.GetCount(juice).ToString();
+                    break;
+            }
+        }
     }
 
     public void UpdateMoney()
     {
         if (moneyText != null && playerData != null)
             moneyText.text = $"${(int)playerData.money}";
-    }
-
-    // === Per-type Fruit/Juice Updates ===
-    public void AddFruit(string type)
-    {
-        Debug.Log($"AddFruit called with: '{type}' | Available keys: {string.Join(", ", fruitTextMap.Keys)}");
-        
-        if (!fruitCounts.ContainsKey(type))
-        {
-            Debug.LogWarning($"Fruit type '{type}' NOT FOUND in dictionary!");
-            return;
-        }
-        
-        fruitCounts[type]++;
-        UpdateFruitText(type);
-    }
-
-    public void AddJuice(string type)
-    {
-        Debug.Log($"AddJuice called with: '{type}' | Available keys: {string.Join(", ", juiceTextMap.Keys)}");
-        
-        if (!juiceCounts.ContainsKey(type))
-        {
-            Debug.LogWarning($"Juice type '{type}' NOT FOUND in dictionary!");
-            return;
-        }
-        
-        juiceCounts[type]++;
-        UpdateJuiceText(type);
-    }
-
-    private void UpdateFruitText(string type)
-    {
-        if (fruitTextMap.ContainsKey(type) && fruitTextMap[type] != null)
-            fruitTextMap[type].text = $"{fruitCounts[type]}/4";
-    }
-
-    private void UpdateJuiceText(string type)
-    {
-        if (juiceTextMap.ContainsKey(type) && juiceTextMap[type] != null)
-            juiceTextMap[type].text = $"{juiceCounts[type]}/4";
-    }
-
-    public void ResetCounts()
-    {
-        foreach (var key in fruitCounts.Keys)
-        {
-            fruitCounts[key] = 0;
-            juiceCounts[key] = 0;
-            UpdateFruitText(key);
-            UpdateJuiceText(key);
-        }
     }
 
     // === Customer Management ===

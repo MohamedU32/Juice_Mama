@@ -13,13 +13,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
     public int maxFruitCapacity = 4;
-    public AudioClip collectedFruitSoundEffect;
     public bool canCarryFruit => playerStorage == null ? false : (playerStorage.GetFruitCount() < maxFruitCapacity);
 
     public int maxJuiceCapacity = 4;
-    public AudioClip collectedJuiceSoundEffect;
-
-    public AudioClip FailedCollectionSoundEffect;
 
     public bool canCarryJuice => playerStorage == null ? false : (playerStorage.GetJuiceCount() < maxJuiceCapacity);
 

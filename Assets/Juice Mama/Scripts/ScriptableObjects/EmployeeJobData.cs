@@ -9,4 +9,7 @@ public class EmployeeJobData : ScriptableObject
     public string treeTag;
     public string juicerTag;
     public string fridgeTag;
+    public float hirePrice;
+    public GameObject employeePrefab;
+    public int totalHired = 0;
 }

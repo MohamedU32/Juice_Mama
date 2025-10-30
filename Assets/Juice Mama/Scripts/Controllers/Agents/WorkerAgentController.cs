@@ -30,6 +30,11 @@ public class WorkerAgentController : AgentController
         GameEvents.OnTreeFruitGrown -= OnTreeFruitGrown;
     }
 
+    public void SetJob(EmployeeJobData jobData)
+    {
+        job = jobData;
+    }
+
     new void Start()
     {
         base.Start();
@@ -52,7 +57,8 @@ public class WorkerAgentController : AgentController
                 if (Arrived()) state = State.Pick;
                 break;
             case State.Pick:
-                if (!TryPickFruit() || storage.GetFruitCount() >= maxFruitCapacity)
+                var picked = TryPickFruit();
+                if (storage.GetFruitCount() >= maxFruitCapacity || (!picked && storage.GetFruitCount() > 0))
                 {
                     GoJuicer();
                 }
@@ -164,7 +170,23 @@ public class WorkerAgentController : AgentController
             var dd = Vector3.SqrMagnitude(transform.position - t.position);
             if (dd < d) { d = dd; best = t; }
         }
-        tree = best;
+        if (best == null)
+        {
+            Transform any = null;
+            float da = float.MaxValue;
+            for (int i = 0; i < trees.Count; i++)
+            {
+                var t = trees[i];
+                if (!t) continue;
+                var dd = Vector3.SqrMagnitude(transform.position - t.position);
+                if (dd < da) { da = dd; any = t; }
+            }
+            tree = any;
+        }
+        else
+        {
+            tree = best;
+        }
         return tree != null;
     }
 

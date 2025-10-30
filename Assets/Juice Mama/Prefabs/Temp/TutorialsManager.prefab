@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7195968140442270515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3509298612815613057}
+  - component: {fileID: 4703201730624980342}
+  - component: {fileID: 16616837107911982}
+  m_Layer: 0
+  m_Name: TutorialsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3509298612815613057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195968140442270515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -35.58, y: 0, z: -2.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4703201730624980342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195968140442270515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f4b04ca38b16f4bb367c9ba0e9e1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+  detectionRadius: 2
+  currentPlayerMoney: 0
+  currentPlayerPosition: {x: 0, y: 0, z: 0}
+  tutorialStep: 1
+  firstAppleTree: {fileID: 0}
+  appleTreeLock1: {fileID: 11400000, guid: 31c98f10ea8ffa946811326a8f68abc4, type: 2}
+  appleJuicer: {fileID: 0}
+  appleJuicerLock: {fileID: 11400000, guid: 163716193035b9c42a5cac5bff409db9, type: 2}
+  fridge: {fileID: 0}
+  appleJuiceStand: {fileID: 0}
+  appleStandLock: {fileID: 11400000, guid: ebf8c8f8131ad574b9ee14b34b86f8cc, type: 2}
+  firstFarmSeparator: {fileID: 0}
+  orangeGateLock: {fileID: 11400000, guid: c19e567a7ebe92b4cb826424655ab56a, type: 2}
+--- !u!114 &16616837107911982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195968140442270515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ec275505ca0da43b5673e0823f6ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  target: {fileID: 0}
+  arrowUI: {fileID: 0}
+  arrowImage: {fileID: 0}
+  minScale: 0.5
+  maxScale: 1.5
+  maxDistance: 20
+  offsetFromMidpoint: 2.5
+  hideDistance: 7

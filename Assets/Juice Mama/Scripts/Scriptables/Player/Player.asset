@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f51ee7d72890a4d9ae09dd6a487eeb, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  money: 100000
-  numberOfHarvesters: 0
+  money: 9000

@@ -87,7 +87,7 @@ public class CustomerAgentController : AgentController
     {
         if (standQueueController != null)
         {
-            CustomersManager.Instance.OnCustomerServed(standQueueController.DequeueFront());
+            CustomersManager.Instance.OnCustomerLeftUnserved(standQueueController.DequeueFront());
         }
     }
 

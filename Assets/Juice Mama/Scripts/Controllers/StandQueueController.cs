@@ -159,6 +159,7 @@ public class StandQueueController : MonoBehaviour
     void OnEnable()
     {
         GameEvents.OnFridgeLoaded += OnFridgeLoaded;
+        UpdateJuiceCount();
     }
 
     void OnDisable()

@@ -10,9 +10,11 @@ public class TutorialsManager : MonoBehaviour
     public float currentPlayerMoney = 0;
     public Vector3 currentPlayerPosition = Vector3.zero;
     public int tutorialStep = 1;
+    public TutorialsArrow tutorialsArrow;
 
     [Header("Step (1)")]
     public GameObject firstAppleTree;
+    public GameObject secondAppleTree;
 
     [Header("Step (2)")]
     public UnlockableData appleTreeLock1;
@@ -33,7 +35,7 @@ public class TutorialsManager : MonoBehaviour
     public UnlockableData appleStandLock;
 
     [Header("Step (12)")]
-    public GameObject firstFarmSeparator ;
+    public GameObject firstFarmSeparator;
 
     [Header("Step (13)")]
     public UnlockableData orangeGateLock;
@@ -42,24 +44,27 @@ public class TutorialsManager : MonoBehaviour
     {
         playerStorage = player.GetComponent<StorageController>();
         UIManager.Instance.ShowInstruction("Go to the Farm");
+        tutorialsArrow.SetTarget(firstAppleTree.transform);
     }
 
     void Update()
     {
-        if (tutorialStep == 1 && firstAppleTree != null && CheckProximity(firstAppleTree))
+        if (tutorialStep == 1 && firstAppleTree != null && secondAppleTree != null && (CheckProximity(firstAppleTree) || CheckProximity(secondAppleTree)))
         {
+            tutorialsArrow.SetTarget(firstAppleTree.transform);
             UIManager.Instance.UpdateInstructions("Unlock your first tree by tapping the yellow arrow.");
             tutorialStep++;
         }
 
-        if (tutorialStep == 2 && appleTreeLock1 !=null && appleTreeLock1.isUnlockedByDefault)
+        if (tutorialStep == 2 && appleTreeLock1 != null && appleTreeLock1.isUnlockedByDefault)
         {
             UIManager.Instance.UpdateInstructions("Wait for the fruits to grow. Then, tap on them to collect them.");
             tutorialStep++;
         }
 
-        if (tutorialStep == 3 && playerStorage!= null && playerStorage.GetFruitCount() > 0)
+        if (tutorialStep == 3 && playerStorage != null && playerStorage.GetFruitCount() > 0)
         {
+            tutorialsArrow.SetTarget(appleJuicer.transform);
             UIManager.Instance.UpdateInstructions("Go to the Kitchen.");
             tutorialStep++;
         }
@@ -72,6 +77,7 @@ public class TutorialsManager : MonoBehaviour
 
         if (tutorialStep == 5 && appleJuicerLock != null && appleJuicerLock.isUnlockedByDefault)
         {
+            tutorialsArrow.SetTarget(appleJuicer.transform);
             UIManager.Instance.UpdateInstructions("Tap the yellow arrow above the blender to start creating juice.");
             tutorialStep++;
         }
@@ -84,6 +90,7 @@ public class TutorialsManager : MonoBehaviour
 
         if (tutorialStep == 7 && playerStorage != null && playerStorage.GetJuiceCount() > 0)
         {
+            tutorialsArrow.SetTarget(fridge.transform);
             UIManager.Instance.UpdateInstructions("Go to the fridge.");
             tutorialStep++;
         }
@@ -102,6 +109,7 @@ public class TutorialsManager : MonoBehaviour
 
         if (tutorialStep == 10 && appleJuiceStand != null && CheckProximity(appleJuiceStand))
         {
+            tutorialsArrow.SetTarget(appleJuiceStand.transform);
             UIManager.Instance.UpdateInstructions("Unlock your first stand by tapping the yellow arrow.");
             tutorialStep++;
         }
@@ -115,12 +123,14 @@ public class TutorialsManager : MonoBehaviour
 
         if (tutorialStep == 12 && playerData != null && playerData.money > currentPlayerMoney)
         {
+            tutorialsArrow.SetTarget(firstFarmSeparator.transform);
             UIManager.Instance.UpdateInstructions("Go outside to unlock a new section");
             tutorialStep++;
         }
 
         if (tutorialStep == 13 && firstFarmSeparator != null && CheckProximity(firstFarmSeparator))
         {
+            tutorialsArrow.SetTarget(firstFarmSeparator.transform);
             UIManager.Instance.UpdateInstructions("Unlock the new section by tapping the yellow arrow.");
             tutorialStep++;
         }
@@ -132,7 +142,7 @@ public class TutorialsManager : MonoBehaviour
             currentPlayerPosition = player.transform.position;
         }
 
-        if (tutorialStep == 15 && player.transform != null && (player.transform.position - currentPlayerPosition).sqrMagnitude > 0 )
+        if (tutorialStep == 15 && player.transform != null && (player.transform.position - currentPlayerPosition).sqrMagnitude > 0)
         {
             UIManager.Instance.UpdateInstructions("To review this tutorial click on the (?) icon.");
             tutorialStep++;
@@ -142,17 +152,17 @@ public class TutorialsManager : MonoBehaviour
 
     IEnumerator HidingInstructions()
     {
-        yield return(new WaitForSeconds(5));
+        yield return (new WaitForSeconds(5));
         UIManager.Instance.HideInstruction();
     }
-    
 
-    private bool CheckProximity (GameObject target)
+
+    private bool CheckProximity(GameObject target)
     {
         Vector3 offset = player.transform.position - target.transform.position;
 
         //"sqrMagnitude" is used instead of "Magnitude" to avoid Square root Calculations (computationally expensive)
-        float sqrDistance = offset.sqrMagnitude;        
+        float sqrDistance = offset.sqrMagnitude;
         float sqrDetectionRadius = detectionRadius * detectionRadius;
 
         if (sqrDistance <= sqrDetectionRadius)

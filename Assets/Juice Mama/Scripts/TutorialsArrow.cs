@@ -14,6 +14,11 @@ public class TutorialsArrow : MonoBehaviour
     public float offsetFromMidpoint = 2.5f;
     public float hideDistance = 1.5f; // Distance at which arrow disappears
 
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
     void Update()
     {
         if (player == null || target == null || arrowUI == null || arrowImage == null) return;

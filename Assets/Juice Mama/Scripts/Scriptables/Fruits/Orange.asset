@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7178786cc46ba2a499a04e1cbb2b25e5, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
-  id: Orange
+  id: orange
   displayName: Orange
   icon: {fileID: 21300000, guid: 833e144701f014b44825ee6143a6a989, type: 3}
   prefab: {fileID: 5395009580068461287, guid: 0605e3143077e3649860b77be103454d, type: 3}
