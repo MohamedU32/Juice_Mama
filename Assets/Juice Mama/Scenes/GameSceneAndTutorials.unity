@@ -7317,6 +7317,7 @@ GameObject:
   - component: {fileID: 860331819}
   - component: {fileID: 860331821}
   - component: {fileID: 860331820}
+  - component: {fileID: 860331822}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -7381,6 +7382,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860331818}
   m_CullTransparentMesh: 1
+--- !u!114 &860331822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860331818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ec275505ca0da43b5673e0823f6ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  target: {fileID: 1446034719}
+  minScale: 0.5
+  maxScale: 1.5
+  maxDistance: 20
+  offsetFromMidpoint: 2.5
+  hideDistance: 1.5
 --- !u!1 &871810603
 GameObject:
   m_ObjectHideFlags: 0
@@ -7836,6 +7856,18 @@ MonoBehaviour:
   fruitText: {fileID: 674498451}
   juiceText: {fileID: 533840119}
   moneyText: {fileID: 2069477762}
+  customerCountText: {fileID: 0}
+  notificationPanel: {fileID: 0}
+  notificationText: {fileID: 0}
+  notificationDuration: 3
+  appleFruitText: {fileID: 0}
+  orangeFruitText: {fileID: 0}
+  pineappleFruitText: {fileID: 0}
+  pearFruitText: {fileID: 0}
+  appleJuiceText: {fileID: 0}
+  orangeJuiceText: {fileID: 0}
+  pineappleJuiceText: {fileID: 0}
+  pearJuiceText: {fileID: 0}
   instructionPanel: {fileID: 370495461}
   instructionText: {fileID: 605130486}
   instructionFadeSpeed: 5
@@ -11823,7 +11855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bdc26feb6902e418b9c208497ac731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storageID: 
   items: []
+  canContainDifferentItems: 0
 --- !u!1 &1335410308
 GameObject:
   m_ObjectHideFlags: 0
@@ -12990,6 +13024,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428473262}
   m_Mesh: {fileID: 4300010, guid: 8537129dc3fbbe44186add4eea186b85, type: 3}
+--- !u!1 &1446034719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7735983223054695395, guid: c3e446324edc59047871cfc60f00d93d, type: 3}
+  m_PrefabInstance: {fileID: 1897542296863646374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1452105805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14770,11 +14809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c445c6fc09d15b4dae2a45eb3b761e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1622765033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5079067928542861180, guid: ea7d7897c47b2f74aabfe2e494a120cc, type: 3}
-  m_PrefabInstance: {fileID: 6080839070705984119}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624285265
 GameObject:
   m_ObjectHideFlags: 0
@@ -16263,7 +16297,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1834538235}
   - component: {fileID: 1834538236}
-  - component: {fileID: 1834538237}
   m_Layer: 0
   m_Name: TutorialsManager
   m_TagString: Untagged
@@ -16300,7 +16333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1622765027}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
-  arrow: {fileID: 0}
+  onScreenArrow: {fileID: 860331818}
   detectionRadius: 2
   currentPlayerMoney: 0
   currentPlayerPosition: {x: 0, y: 0, z: 0}
@@ -16314,27 +16347,6 @@ MonoBehaviour:
   appleStandLock: {fileID: 11400000, guid: ebf8c8f8131ad574b9ee14b34b86f8cc, type: 2}
   firstFarmSeparator: {fileID: 425050362}
   orangeGateLock: {fileID: 11400000, guid: c19e567a7ebe92b4cb826424655ab56a, type: 2}
---- !u!114 &1834538237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834538234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ec275505ca0da43b5673e0823f6ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1622765033}
-  target: {fileID: 0}
-  arrowUI: {fileID: 860331819}
-  arrowImage: {fileID: 860331820}
-  minScale: 0.5
-  maxScale: 1.5
-  maxDistance: 20
-  offsetFromMidpoint: 2.5
-  hideDistance: 7
 --- !u!1 &1837589464
 GameObject:
   m_ObjectHideFlags: 0

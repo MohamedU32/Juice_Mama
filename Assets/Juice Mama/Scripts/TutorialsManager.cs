@@ -6,6 +6,8 @@ public class TutorialsManager : MonoBehaviour
     public GameObject player;
     private StorageController playerStorage;
     public PlayerData playerData;
+    public GameObject onScreenArrow;
+    private Vector3 arrowTarget = Vector3.zero;
     public float detectionRadius = 2f;
     public float currentPlayerMoney = 0;
     public Vector3 currentPlayerPosition = Vector3.zero;
@@ -41,6 +43,7 @@ public class TutorialsManager : MonoBehaviour
     void Start()
     {
         playerStorage = player.GetComponent<StorageController>();
+        arrowTarget = onScreenArrow.GetComponent<TutorialsArrow>().target.transform.position;
         UIManager.Instance.ShowInstruction("Go to the Farm");
     }
 
