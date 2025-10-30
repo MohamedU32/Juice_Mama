@@ -7,6 +7,10 @@ public class StorageController : MonoBehaviour
     public string storageID;
     public List<ItemEntry> items = new List<ItemEntry>();
 
+    [Header("Storage Type")]
+    [SerializeField] private bool isPlayerStorage = false; // Set true only for player storage
+    [SerializeField] private bool isFridgeStorage = false; // Set true only for fridge storage
+
     public List<ItemEntry> GetItems => items;
 
     [SerializeField] private bool canContainDifferentItems = false;
@@ -106,6 +110,34 @@ public class StorageController : MonoBehaviour
             items.Add(new ItemEntry { item = item, count = count });
             GameEvents.StorageUpdated?.Invoke(storageID);
         }
+
+        // ⭐ UPDATE UI - Using displayName field with fallback to id
+        if (UIManager.Instance != null)
+        {
+            if (item is FruitData fruitData)
+            {
+                // Use displayName if available, otherwise capitalize id
+                string fruitName = !string.IsNullOrEmpty(fruitData.displayName)
+                    ? fruitData.displayName
+                    : System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fruitData.id);
+
+                Debug.Log($"Adding fruit: '{fruitName}' (displayName: '{fruitData.displayName}', id: '{fruitData.id}')");
+                UIManager.Instance.AddFruit(fruitName);
+                UIManager.Instance.UpdateFruitCount();
+            }
+            else if (item is JuiceData juiceData)
+            {
+                // Use displayName if available, otherwise capitalize id
+                string juiceName = !string.IsNullOrEmpty(juiceData.displayName)
+                    ? juiceData.displayName
+                    : System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(juiceData.id);
+
+                Debug.Log($"Adding juice: '{juiceName}' (displayName: '{juiceData.displayName}', id: '{juiceData.id}')");
+                UIManager.Instance.AddJuice(juiceName);
+                UIManager.Instance.UpdateJuiceCount();
+            }
+        }
+
         return true;
     }
 
@@ -121,6 +153,19 @@ public class StorageController : MonoBehaviour
                 items.Remove(entry);
             }
             GameEvents.StorageUpdated?.Invoke(storageID);
+
+            if (UIManager.Instance != null)
+            {
+                if (item is FruitData)
+                {
+                    UIManager.Instance.UpdateFruitCount();
+                }
+                else if (item is JuiceData)
+                {
+                    UIManager.Instance.UpdateJuiceCount();
+                }
+            }
+
             return true;
         }
         return false;
@@ -141,6 +186,18 @@ public class StorageController : MonoBehaviour
                     items.Remove(entry);
                 }
                 GameEvents.StorageUpdated?.Invoke(storageID);
+                if (UIManager.Instance != null)
+                {
+                    if (item is FruitData)
+                    {
+                        UIManager.Instance.UpdateFruitCount();
+                    }
+                    else if (item is JuiceData)
+                    {
+                        UIManager.Instance.UpdateJuiceCount();
+                    }
+                }
+
                 return transferableCount;
             }
         }

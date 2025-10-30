@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7178786cc46ba2a499a04e1cbb2b25e5, type: 3}
   m_Name: Pear
   m_EditorClassIdentifier: 
-  id: pear
+  id: Pear
   displayName: Pear
   icon: {fileID: 21300000, guid: f971b19a19490d44a9367c7ee03b2ec4, type: 3}
   prefab: {fileID: 6979728067979428076, guid: af1ce4fbc26751a489d0b98b394a0914, type: 3}
   growthTime: 12
+  baseMaxFruits: 3
+  juiceYield: 1
+  juiceColor: {r: 1, g: 0, b: 0, a: 1}
+  fruitColor: {r: 1, g: 1, b: 1, a: 1}
+  harvestEffect: {fileID: 0}
+  baseValue: 10
+  upgradeCostMultiplier: 1.5

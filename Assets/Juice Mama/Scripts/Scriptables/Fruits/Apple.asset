@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7178786cc46ba2a499a04e1cbb2b25e5, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  id: apple
+  id: Apple
   displayName: Apple
   icon: {fileID: 21300000, guid: 1c37041458002944e9cdea70017b65d5, type: 3}
   prefab: {fileID: 7636875300174412836, guid: 976d4c7fc2c6af941ac53fc8bf9e1800, type: 3}
   growthTime: 10
+  baseMaxFruits: 3
+  juiceYield: 1
+  juiceColor: {r: 1, g: 0, b: 0, a: 1}
+  fruitColor: {r: 1, g: 1, b: 1, a: 1}
+  harvestEffect: {fileID: 0}
+  baseValue: 10
+  upgradeCostMultiplier: 1.5
