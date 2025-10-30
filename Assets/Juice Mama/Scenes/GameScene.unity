@@ -948,6 +948,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b944b7e39240854e856f364ce267721, type: 2}
   workerSpawnPoint: {fileID: 1244068514}
   playerData: {fileID: 11400000, guid: 4156ada7d73056940b72806c0a426d19, type: 2}
+  playerTransform: {fileID: 1622765033}
 --- !u!1 &89981696
 GameObject:
   m_ObjectHideFlags: 0

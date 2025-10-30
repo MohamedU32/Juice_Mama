@@ -8,6 +8,7 @@ public class WorkersManager : MonoBehaviour
     [SerializeField] private List<EmployeeJobData> jobs;
     [SerializeField] private Transform workerSpawnPoint;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private Transform playerTransform;
 
     void Awake()
     {
@@ -57,7 +58,7 @@ public class WorkersManager : MonoBehaviour
         playerData.money -= jobData.hirePrice;
         jobData.totalHired++;
 
-        var go = Instantiate(jobData.employeePrefab, transform.position + new Vector3(0, 0, 1), Quaternion.identity, transform);
+        var go = Instantiate(jobData.employeePrefab, playerTransform.position + new Vector3(0, 0, 1), Quaternion.identity, transform);
         var worker = go.GetComponent<WorkerAgentController>();
         if (worker != null)
         {
