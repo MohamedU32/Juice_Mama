@@ -17,10 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fruitText;
     [SerializeField] private TextMeshProUGUI juiceText;
     [SerializeField] private TextMeshProUGUI moneyText;
-    [SerializeField] private TextMeshProUGUI customerCountText; // ✅ Added: customer counter UI
+    [SerializeField] private TextMeshProUGUI customerCountText;
 
     [Header("Notification UI")]
-    [SerializeField] private GameObject notificationPanel;       // ✅ Added: for unserved customer notification
+    [SerializeField] private GameObject notificationPanel;
     [SerializeField] private TextMeshProUGUI notificationText;
     [SerializeField] private float notificationDuration = 3f;
 
@@ -160,28 +160,42 @@ public class UIManager : MonoBehaviour
     // === Per-type Fruit/Juice Updates ===
     public void AddFruit(string type)
     {
-        if (!fruitCounts.ContainsKey(type)) return;
+        Debug.Log($"AddFruit called with: '{type}' | Available keys: {string.Join(", ", fruitTextMap.Keys)}");
+        
+        if (!fruitCounts.ContainsKey(type))
+        {
+            Debug.LogWarning($"Fruit type '{type}' NOT FOUND in dictionary!");
+            return;
+        }
+        
         fruitCounts[type]++;
         UpdateFruitText(type);
     }
 
     public void AddJuice(string type)
     {
-        if (!juiceCounts.ContainsKey(type)) return;
+        Debug.Log($"AddJuice called with: '{type}' | Available keys: {string.Join(", ", juiceTextMap.Keys)}");
+        
+        if (!juiceCounts.ContainsKey(type))
+        {
+            Debug.LogWarning($"Juice type '{type}' NOT FOUND in dictionary!");
+            return;
+        }
+        
         juiceCounts[type]++;
         UpdateJuiceText(type);
     }
 
     private void UpdateFruitText(string type)
     {
-        if (fruitTextMap[type] != null)
-            fruitTextMap[type].text = $"{fruitCounts[type]}/3";
+        if (fruitTextMap.ContainsKey(type) && fruitTextMap[type] != null)
+            fruitTextMap[type].text = $"{fruitCounts[type]}/4";
     }
 
     private void UpdateJuiceText(string type)
     {
-        if (juiceTextMap[type] != null)
-            juiceTextMap[type].text = $"{juiceCounts[type]}/3";
+        if (juiceTextMap.ContainsKey(type) && juiceTextMap[type] != null)
+            juiceTextMap[type].text = $"{juiceCounts[type]}/4";
     }
 
     public void ResetCounts()
@@ -199,7 +213,7 @@ public class UIManager : MonoBehaviour
     public void UpdateCustomerCount(int count)
     {
         if (customerCountText != null)
-            customerCountText.text = $"Customers: {count}";
+            customerCountText.text = $"{count}";
     }
 
     public void ShowCustomerLeftNotification()
@@ -207,7 +221,7 @@ public class UIManager : MonoBehaviour
         if (notificationPanel == null || notificationText == null) return;
 
         StopAllCoroutines();
-        StartCoroutine(ShowNotificationCoroutine("⚠️ A customer left unserved!"));
+        StartCoroutine(ShowNotificationCoroutine(" A customer left unserved!"));
     }
 
     private System.Collections.IEnumerator ShowNotificationCoroutine(string message)

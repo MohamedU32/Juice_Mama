@@ -27,16 +27,31 @@ public class HireWorkersPanel : MonoBehaviour
             return;
         }
         
+        // Debug logs to check assignments
+        Debug.Log($"HireWorkersPanel Start - panelObject: {panelObject != null}, closeButton: {closeButton != null}, openPanelIcon: {openPanelIcon != null}");
+        
         // Setup open panel icon button
         if (openPanelIcon != null)
         {
+            openPanelIcon.onClick.RemoveAllListeners(); // Clear any existing listeners
             openPanelIcon.onClick.AddListener(OpenPanel);
+            Debug.Log("Open panel icon button listener added!");
+        }
+        else
+        {
+            Debug.LogError("HireWorkersPanel: openPanelIcon is NULL! Drag the HireWorker Button into the Inspector.");
         }
         
         // Setup close button
         if (closeButton != null)
         {
+            closeButton.onClick.RemoveAllListeners();
             closeButton.onClick.AddListener(ClosePanel);
+            Debug.Log("Close button listener added!");
+        }
+        else
+        {
+            Debug.LogError("HireWorkersPanel: closeButton is NULL!");
         }
         
         // Initialize worker slots

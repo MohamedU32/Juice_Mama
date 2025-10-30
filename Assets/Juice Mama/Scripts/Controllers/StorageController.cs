@@ -4,6 +4,10 @@ using System.Collections.Generic;
 public class StorageController : MonoBehaviour
 {
     public List<ItemEntry> items = new List<ItemEntry>();
+    
+    [Header("Storage Type")]
+    [SerializeField] private bool isPlayerStorage = false; // Set true only for player storage
+    [SerializeField] private bool isFridgeStorage = false; // Set true only for fridge storage
 
     public List<ItemEntry> GetItems => items;
 
@@ -88,6 +92,34 @@ public class StorageController : MonoBehaviour
         {
             items.Add(new ItemEntry { item = item, count = count });
         }
+        
+        // ⭐ UPDATE UI - Using displayName field with fallback to id
+        if (UIManager.Instance != null)
+        {
+            if (item is FruitData fruitData)
+            {
+                // Use displayName if available, otherwise capitalize id
+                string fruitName = !string.IsNullOrEmpty(fruitData.displayName) 
+                    ? fruitData.displayName 
+                    : System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fruitData.id);
+                
+                Debug.Log($"Adding fruit: '{fruitName}' (displayName: '{fruitData.displayName}', id: '{fruitData.id}')");
+                UIManager.Instance.AddFruit(fruitName);
+                UIManager.Instance.UpdateFruitCount();
+            }
+            else if (item is JuiceData juiceData)
+            {
+                // Use displayName if available, otherwise capitalize id
+                string juiceName = !string.IsNullOrEmpty(juiceData.displayName) 
+                    ? juiceData.displayName 
+                    : System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(juiceData.id);
+                
+                Debug.Log($"Adding juice: '{juiceName}' (displayName: '{juiceData.displayName}', id: '{juiceData.id}')");
+                UIManager.Instance.AddJuice(juiceName);
+                UIManager.Instance.UpdateJuiceCount();
+            }
+        }
+        
         return true;
     }
 
@@ -102,6 +134,20 @@ public class StorageController : MonoBehaviour
             {
                 items.Remove(entry);
             }
+            
+            // ⭐ UPDATE UI when items are removed
+            if (UIManager.Instance != null)
+            {
+                if (item is FruitData)
+                {
+                    UIManager.Instance.UpdateFruitCount();
+                }
+                else if (item is JuiceData)
+                {
+                    UIManager.Instance.UpdateJuiceCount();
+                }
+            }
+            
             return true;
         }
         return false;
@@ -121,6 +167,20 @@ public class StorageController : MonoBehaviour
                 {
                     items.Remove(entry);
                 }
+                
+                // ⭐ UPDATE UI after transfer
+                if (UIManager.Instance != null)
+                {
+                    if (item is FruitData)
+                    {
+                        UIManager.Instance.UpdateFruitCount();
+                    }
+                    else if (item is JuiceData)
+                    {
+                        UIManager.Instance.UpdateJuiceCount();
+                    }
+                }
+                
                 return transferableCount;
             }
         }
