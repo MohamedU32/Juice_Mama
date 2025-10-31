@@ -29,6 +29,7 @@ public class LocksManager : MonoBehaviour
 
     private void OnItemUnlocked(string itemId)
     {
+        AudioManager.Instance.PlaySound(AudioNames.ITEM_UNLOCKED, 0.5f);
         switch (itemId)
         {
             // First Sequence (first section)

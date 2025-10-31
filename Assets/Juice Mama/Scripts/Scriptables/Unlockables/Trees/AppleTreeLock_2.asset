@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Apple Tree Lock
   unlockCost: 200
   isUnlockedByDefault: 0
-  isAvailableByDefault: 0
+  isAvailableByDefault: 1

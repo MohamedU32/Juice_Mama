@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
 
     private StorageController playerStorage;
 
+    private Transform farmAndStoreSeparator;
+    private bool isPlayerInStore = false;
+    private bool lastPlayerInStoreState = false;
+
+
     private float horizontalInput;
     private float verticalInput;
 
@@ -32,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         AudioManager.Instance.PlaySound(AudioNames.BACKGROUND_MUSIC, 0.3f, true);
+        farmAndStoreSeparator = GameObject.Find("FarmAndStoreSeparator").transform;
+        CheckPlayerPosition();
+        PlayAmbientSoundEffect();
     }
 
     void Update()
@@ -49,6 +57,14 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("isWalking", true);
         }
         else playerAnimator.SetBool("isWalking", false);
+
+        CheckPlayerPosition();
+
+        if (isPlayerInStore != lastPlayerInStoreState)
+        {
+            PlayAmbientSoundEffect();
+            lastPlayerInStoreState = isPlayerInStore;
+        }
     }
 
     // ✅ Handles fruit collection and triggers tutorial event
@@ -128,4 +144,28 @@ public class PlayerController : MonoBehaviour
 
         GameEvents.OnFridgeLoaded?.Invoke();
     }
+
+    private void PlayAmbientSoundEffect ()
+    {
+        AudioManager.Instance.StopSound(AudioNames.AMBIENT_FARM);
+        AudioManager.Instance.StopSound(AudioNames.AMBIENT_STORE);
+
+        if (isPlayerInStore)
+        {
+            AudioManager.Instance.PlaySound(AudioNames.AMBIENT_STORE, 0.5f, true);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(AudioNames.AMBIENT_FARM, 0.5f, true);
+        }
+    }
+
+    private void CheckPlayerPosition ()
+    {
+        if (farmAndStoreSeparator != null)
+        {
+            isPlayerInStore = gameObject.transform.position.x >= farmAndStoreSeparator.position.x;
+        }
+    }
+
 }

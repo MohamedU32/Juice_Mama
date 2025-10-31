@@ -22,6 +22,7 @@ public class TitleScreenManager : MonoBehaviour
     
     void Start()
     {
+        AudioManager.Instance.PlaySound(AudioNames.TITLE_BACKGROUND, 0.2f);
         //  loading panel is hidden at start
         if (loadingPanel != null)
             loadingPanel.SetActive(false);
@@ -104,10 +105,7 @@ public class TitleScreenManager : MonoBehaviour
     
     private void PlayButtonSound()
     {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
+        AudioManager.Instance.PlaySound(AudioNames.PLAYBUTTON, 1.0f);
     }
     
     void Update()

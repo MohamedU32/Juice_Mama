@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Orange Tree Lock
   unlockCost: 300
   isUnlockedByDefault: 0
+  isAvailableByDefault: 1
