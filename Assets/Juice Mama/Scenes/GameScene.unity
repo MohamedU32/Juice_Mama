@@ -2777,6 +2777,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0245136b2efa5904baefcb2d537e8e62, type: 3}
   - type: ItemUnlocked
     clip: {fileID: 8300000, guid: 50dd38ef88185604a926846a40017806, type: 3}
+  - type: StepsStore
+    clip: {fileID: 8300000, guid: b93e1c9422dfdaa4293f9c1624f0e52a, type: 3}
+  - type: StepsFarm
+    clip: {fileID: 8300000, guid: 34a98f8afe7cea44a85e12c30897e2a2, type: 3}
+  - type: AmbientStore
+    clip: {fileID: 8300000, guid: 512d80c6ac4381c44a72b9333530a543, type: 3}
+  - type: AmbientFarm
+    clip: {fileID: 8300000, guid: 7af43ba7a992feb4693cadb3afd92525, type: 3}
 --- !u!114 &337315949 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 979605329889836186, guid: 077d6a02a441e3049b06336d335976f6, type: 3}
